@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TickDown – historia zmian</title>
+<meta name="description" content="Historia zmian aplikacji TickDown – nowe funkcje i poprawki w kolejnych wersjach.">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="alternate" type="text/markdown" href="changelog.md">
+<link rel="stylesheet" href="site.css?v=14efd879bc">
+<script src="site.js?v=0d95f28084" defer></script>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="icon.svg" alt="">TickDown</a>
+    <nav class="links">
+      <a class="opt" href="./#funkcje" data-en="Features">Funkcje</a>
+      <a class="opt" href="./#pobierz" data-en="Download">Pobierz</a>
+      <a class="opt" href="./#glosuj" data-en="Vote">Głosuj</a>
+      <button class="lang" id="lang" type="button">EN</button>
+    </nav>
+  </div>
+</header>
+<main class="page">
+  <div class="wrap">
+    <h1 data-en="Changelog">Historia zmian</h1>
+    <p class="sub" data-en="New features and fixes in each version (descriptions in Polish). Also as <a href=&quot;changelog.md&quot;>Markdown</a> and <a href=&quot;changelog.json&quot;>JSON</a>.">
+      Nowe funkcje i poprawki w kolejnych wersjach. Także jako <a href="changelog.md">Markdown</a> i <a href="changelog.json">JSON</a>.</p>
+    <article class="release" id="v0.2.6">
+      <div><h2>0.2.6</h2><time datetime="2026-11-19">2026-11-19</time><a class="badge ok" href="https://github.com/s29829/tickdown-releases/releases/tag/v0.2.6">macOS ↓</a></div>
+      <ul>
+        <li>Licznik leków: harmonogram dla każdego leku (godziny, co X h z przerwą nocną, do posiłków), dni tygodnia / miesiąca, co N dni, cykle np. 21/7, kuracja od–do, gotowe szablony</li>
+        <li>Alarm dawki z potwierdzeniem i historią; brakujący lek można od razu dopisać do listy zakupów</li>
+        <li>Listy do zrobienia i zakupów (ilość, jednostka, grupa) z przypomnieniem – wpisz „2 kg ziemniaki”, reszta uzupełni się sama</li>
+        <li>Archiwum zamkniętych liczników: przywracanie i usuwanie</li>
+        <li>Liczniki pracy i tygodnia: osobne skórki na pracę i czas wolny, domyślne nazwy „Praca” / „Czas wolny”</li>
+      </ul>
+    </article>
+    <article class="release" id="v0.2.5">
+      <div><h2>0.2.5</h2><time datetime="2026-11-18">2026-11-18</time></div>
+      <ul>
+        <li>Nowa nazwa: TickDown (dawniej Odliczacz) – ustawienia i skórki przenoszą się automatycznie</li>
+        <li>Okno mini zawsze na wierzchu: lista w 1–3 kolumnach albo pasek w 1–3 wierszach, napisy skalują się z oknem</li>
+        <li>Menu ikonki w pasku menu: pokaż okno, okno mini, liczniki z formą prezentacji, szybka zmiana motywu</li>
+        <li>Godziny pracy: osobna nazwa licznika w pracy i poza nią</li>
+        <li>Ustawienia i okno licznika podzielone na kategorie, z przyciskami Zapisz / Anuluj</li>
+        <li>Konfigurator kolorów skórek, wybór kolorystyki ikony w Docku</li>
+      </ul>
+    </article>
+    <article class="release" id="v0.2.4">
+      <div><h2>0.2.4</h2><time datetime="2026-11-18">2026-11-18</time></div>
+      <ul>
+        <li>Interfejs po angielsku – język dobierany według ustawień systemu</li>
+        <li>Ikona w Docku rysowana na żywo: stoper z postępem albo cyfry odliczania najbliższego licznika</li>
+        <li>Moment startu odliczania – postęp liczony od chwili ustawienia licznika</li>
+      </ul>
+    </article>
+    <article class="release" id="v0.2.3">
+      <div><h2>0.2.3</h2><time datetime="2026-11-17">2026-11-17</time></div>
+      <ul>
+        <li>Licznik „Tydzień / weekend”: do piątku 17:00, potem do niedzieli 24:00 – powiadomienia na przejściach, automatyczne skórki praca / weekend</li>
+        <li>Pięć stylów aplikacji: Klasyczny, Szkło, Bento, Minimalistyczny, Miękki (Ustawienia → Wygląd aplikacji)</li>
+        <li>Osiem nowych motywów kolorów: Północ, Zorza, Śnieg, Mięta, Lawenda, Sorbet, Kawa, Grafit nowoczesny</li>
+        <li>15 nowych czcionek zegara, w tym 12 wbudowanych w aplikację (licencja OFL)</li>
+        <li>14 nowych skórek (m.in. LCD, Terminal, Nixie, Cyber, Bauhaus) i 77 ikon w grupach tematycznych</li>
+      </ul>
+    </article>
+    <article class="release" id="v0.2.2">
+      <div><h2>0.2.2</h2><time datetime="2026-11-17">2026-11-17</time></div>
+      <ul>
+        <li>Odliczanie do świąt: Polska (10), Europa, Wielka Brytania, USA i Chiny (po 5) oraz własne uroczystości (jednorazowo lub co roku)</li>
+        <li>Odliczanie do następnej (lub wybranej) pory roku – astronomiczny początek z dokładnością do minuty</li>
+        <li>17 skórek świątecznych dobieranych automatycznie do święta / pory roku</li>
+        <li>Sześć wielkości kart: mały kwadrat, kwadrat, pion i poziom mały, pion i poziom duży; widoki skalują się do karty</li>
+        <li>Przy odliczaniu dłuższym niż doba wszystkie widoki pokazują liczbę dni; przypomnienia „1 tydzień” i „1 dzień” przed świętem</li>
+      </ul>
+    </article>
+    <article class="release" id="v0.2.1">
+      <div><h2>0.2.1</h2><time datetime="2026-11-16">2026-11-16</time></div>
+      <ul>
+        <li>Plakietka na ikonie w Docku: liczba aktywnych liczników i czas do najbliższego końca (np. <code>3 · 12:34</code>)</li>
+      </ul>
+    </article>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <span>© <span id="year">2026</span> TickDown</span>
+    <a href="./" data-en="Home">Strona główna</a>
+    <a href="https://github.com/s29829/tickdown-releases/releases" data-en="All releases">Wszystkie wydania</a>
+  </div>
+</footer>
+</body>
+</html>

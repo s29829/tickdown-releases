@@ -3,137 +3,25 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>TickDown – odliczanie czasu</title>
-<meta name="description" content="TickDown – wiele liczników naraz: do godziny, minutnik, praca i weekend, święta, leki, listy zakupów. macOS, Windows, Linux.">
+<title>TickDown – odliczanie czasu na Maca</title>
+<meta name="description" content="TickDown – wiele liczników naraz: do godziny, minutnik, praca i weekend, święta, leki, listy zakupów. Na macOS, wkrótce Windows i Android.">
 <meta property="og:title" content="TickDown">
 <meta property="og:description" content="Odliczanie do godziny, końca pracy, weekendu, świąt i kolejnej dawki leków.">
 <meta property="og:image" content="icon-256.png">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="icon-256.png">
-<style>
-:root {
-  --bg: #1d1f24; --bg2: #23262c; --card: #272a31; --fg: #f2f3f5; --muted: #9aa0ab;
-  --accent: #ff9f43; --accent-fg: #1d1f24; --track: #3a3e47; --line: #343841;
-  --radius: 18px; --max: 1080px;
-  color-scheme: dark;
-}
-@media (prefers-color-scheme: light) {
-  :root:not([data-theme="dark"]) {
-    --bg: #f4f1ea; --bg2: #ece8de; --card: #ffffff; --fg: #23211d; --muted: #6f6a60;
-    --accent: #d9480f; --accent-fg: #ffffff; --track: #e6e1d6; --line: #e2ddd2;
-    color-scheme: light;
-  }
-}
-:root[data-theme="light"] {
-  --bg: #f4f1ea; --bg2: #ece8de; --card: #ffffff; --fg: #23211d; --muted: #6f6a60;
-  --accent: #d9480f; --accent-fg: #ffffff; --track: #e6e1d6; --line: #e2ddd2;
-  color-scheme: light;
-}
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0; background: var(--bg); color: var(--fg);
-  font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, sans-serif;
-  -webkit-font-smoothing: antialiased;
-}
-a { color: var(--accent); }
-.wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
-.num { font-variant-numeric: tabular-nums; }
-
-/* nagłówek */
-header.top { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--bg) 85%, transparent);
-  backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
-header.top .wrap { display: flex; align-items: center; gap: 16px; height: 60px; }
-.brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 18px; color: var(--fg); text-decoration: none; }
-.brand img { width: 30px; height: 30px; }
-nav.links { margin-left: auto; display: flex; gap: 18px; align-items: center; }
-nav.links a { color: var(--muted); text-decoration: none; font-size: 15px; }
-nav.links a:hover { color: var(--fg); }
-.lang { border: 1px solid var(--line); background: none; color: var(--fg); border-radius: 8px; padding: 4px 10px; font: inherit; font-size: 13px; cursor: pointer; }
-@media (max-width: 640px) { nav.links a.opt { display: none; } }
-
-/* hero */
-.hero { padding: 72px 0 56px; }
-.hero .wrap { display: grid; grid-template-columns: 1.15fr 1fr; gap: 48px; align-items: center; }
-@media (max-width: 820px) { .hero .wrap { grid-template-columns: 1fr; } .hero { padding-top: 40px; } }
-.hero h1 { font-size: clamp(34px, 5.4vw, 56px); line-height: 1.08; margin: 0 0 18px; letter-spacing: -0.02em; }
-.hero h1 em { font-style: normal; color: var(--accent); }
-.hero p.lead { font-size: 19px; color: var(--muted); margin: 0 0 28px; max-width: 34em; }
-.cta { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
-.btn { display: inline-flex; align-items: center; gap: 10px; padding: 13px 22px; border-radius: 12px; font-weight: 600;
-  text-decoration: none; border: 1px solid transparent; font-size: 16px; cursor: pointer; }
-.btn.primary { background: var(--accent); color: var(--accent-fg); }
-.btn.primary:hover { filter: brightness(1.07); }
-.btn.ghost { border-color: var(--line); color: var(--fg); background: var(--card); }
-.btn.ghost:hover { border-color: var(--muted); }
-.btn svg { width: 18px; height: 18px; flex: none; }
-.hint { color: var(--muted); font-size: 14px; margin-top: 12px; }
-
-/* podgląd licznika */
-.demo { background: var(--card); border: 1px solid var(--line); border-radius: 28px; padding: 28px; box-shadow: 0 30px 60px -30px rgba(0,0,0,.45); }
-.demo-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
-.demo-title { font-weight: 600; }
-.demo-sub { color: var(--muted); font-size: 14px; }
-.ring { position: relative; width: min(100%, 300px); aspect-ratio: 1; margin: 10px auto 18px; }
-.ring svg { width: 100%; height: 100%; transform: rotate(-90deg); }
-.ring .t { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; }
-.ring .t b { font-size: clamp(34px, 7vw, 46px); font-weight: 700; letter-spacing: -0.02em; }
-.ring .t span { color: var(--muted); font-size: 14px; }
-.chips { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
-.chip { background: var(--bg2); border-radius: 12px; padding: 10px 12px; }
-.chip small { display: block; color: var(--muted); font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.chip b { font-size: 17px; }
-
-/* sekcje */
-section { padding: 64px 0; }
-section.alt { background: var(--bg2); }
-h2 { font-size: clamp(26px, 3.6vw, 36px); margin: 0 0 10px; letter-spacing: -0.01em; }
-p.sub { color: var(--muted); margin: 0 0 36px; max-width: 42em; }
-.grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
-.card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; }
-.card .ic { font-size: 26px; line-height: 1; margin-bottom: 12px; }
-.card h3 { margin: 0 0 6px; font-size: 17px; }
-.card p { margin: 0; color: var(--muted); font-size: 15px; }
-.feat2 { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
-@media (max-width: 400px) { .feat2 { grid-template-columns: 1fr; } }
-.card ul { margin: 8px 0 0; padding-left: 18px; color: var(--muted); font-size: 15px; }
-
-/* pobieranie */
-.platforms { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
-.plat { display: flex; flex-direction: column; gap: 14px; }
-.plat-head { display: flex; align-items: center; gap: 12px; }
-.plat-head svg { width: 34px; height: 34px; color: var(--fg); }
-.plat-head h3 { margin: 0; }
-.plat-head .badge { margin-left: auto; }
-.badge { font-size: 12px; font-weight: 600; padding: 3px 9px; border-radius: 99px; background: var(--track); color: var(--muted); white-space: nowrap; }
-.badge.ok { background: color-mix(in srgb, var(--accent) 20%, transparent); color: var(--accent); }
-.files { display: flex; flex-direction: column; gap: 8px; }
-.file { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 11px 14px; border-radius: 12px;
-  background: var(--bg2); color: var(--fg); text-decoration: none; border: 1px solid transparent; }
-.file:hover { border-color: var(--accent); }
-.file span { font-weight: 600; }
-.file small { color: var(--muted); white-space: nowrap; }
-.plat .note { color: var(--muted); font-size: 14px; margin: 0; }
-.relinfo { color: var(--muted); font-size: 14px; margin-top: 18px; }
-details.install { margin-top: 28px; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 4px 22px; }
-details.install summary { cursor: pointer; font-weight: 600; padding: 14px 0; }
-details.install ol { color: var(--muted); padding-left: 20px; }
-code { background: var(--bg2); padding: 2px 6px; border-radius: 6px; font-size: 14px; color: var(--fg); }
-pre { background: var(--bg2); padding: 12px 14px; border-radius: 10px; overflow-x: auto; }
-
-footer { border-top: 1px solid var(--line); padding: 32px 0 48px; color: var(--muted); font-size: 14px; }
-footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: center; }
-footer a { color: var(--muted); }
-</style>
+<link rel="stylesheet" href="site.css?v=14efd879bc">
+<script src="site.js?v=0d95f28084" defer></script>
 </head>
 <body>
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#"><img src="icon.svg" alt="">TickDown</a>
+    <a class="brand" href="./"><img src="icon.svg" alt="">TickDown</a>
     <nav class="links">
       <a class="opt" href="#funkcje" data-en="Features">Funkcje</a>
       <a class="opt" href="#pobierz" data-en="Download">Pobierz</a>
-      <a class="opt" href="https://github.com/s29829/tickdown-releases/releases" data-en="Releases">Wydania</a>
+      <a class="opt" href="changelog.html" data-en="Changelog">Zmiany</a>
+      <a class="opt" href="#glosuj" data-en="Vote">Głosuj</a>
       <button class="lang" id="lang" type="button">EN</button>
     </nav>
   </div>
@@ -150,17 +38,17 @@ footer a { color: var(--muted); }
       <div class="cta">
         <a class="btn primary" id="hero-dl" href="#pobierz">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12m0 0-5-5m5 5 5-5M5 20h14"/></svg>
-          <span id="hero-dl-text" data-en="Download">Pobierz</span>
+          <span id="hero-dl-text" data-en="Download for macOS">Pobierz na macOS</span>
         </a>
         <a class="btn ghost" href="#funkcje" data-en="See features">Zobacz funkcje</a>
       </div>
-      <div class="hint num" id="hero-hint" data-en="Free · macOS, Windows, Linux">Za darmo · macOS, Windows, Linux</div>
+      <div class="hint num" id="hero-hint" data-en="Free · macOS 11+ · Windows and Android coming soon">Za darmo · macOS 11+ · wkrótce Windows i Android</div>
     </div>
 
     <div class="demo" aria-label="Podgląd licznika">
       <div class="demo-head">
         <span class="demo-title" data-en="Work">Praca</span>
-        <span class="demo-sub num" id="demo-sub" data-en="until 17:00">do 17:00</span>
+        <span class="demo-sub num" id="demo-sub">do 17:00</span>
       </div>
       <div class="ring">
         <svg viewBox="0 0 120 120">
@@ -168,10 +56,10 @@ footer a { color: var(--muted); }
           <circle id="demo-arc" cx="60" cy="60" r="52" fill="none" stroke="var(--accent)" stroke-width="10"
                   stroke-linecap="round" stroke-dasharray="326.7" stroke-dashoffset="326.7"/>
         </svg>
-        <div class="t"><b class="num" id="demo-time">--:--:--</b><span id="demo-label" data-en="left">zostało</span></div>
+        <div class="t"><b class="num" id="demo-time">--:--:--</b><span data-en="left">zostało</span></div>
       </div>
       <div class="chips">
-        <div class="chip"><small data-en="Weekend">Weekend</small><b class="num" id="demo-weekend">–</b></div>
+        <div class="chip"><small>Weekend</small><b class="num" id="demo-weekend">–</b></div>
         <div class="chip"><small data-en="Christmas">Wigilia</small><b class="num" id="demo-xmas">–</b></div>
         <div class="chip"><small data-en="New Year">Nowy Rok</small><b class="num" id="demo-ny">–</b></div>
       </div>
@@ -203,7 +91,7 @@ footer a { color: var(--muted); }
         <p data-en="Lists with a reminder; type “2 kg potatoes” and quantity and unit fill themselves in.">Listy z przypomnieniem; wpisz „2 kg ziemniaki”, a ilość i jednostka uzupełnią się same.</p></div>
     </div>
 
-    <div style="height:40px"></div>
+    <div class="spacer"></div>
     <h2 data-en="Looks the way you like">Wygląda tak, jak lubisz</h2>
     <p class="sub" data-en="From a minimal ring to a flip clock – and your own skins made in any graphics program.">Od minimalnego pierścienia po zegar klapkowy – i własne skórki z dowolnego programu graficznego.</p>
     <div class="feat2">
@@ -221,13 +109,13 @@ footer a { color: var(--muted); }
       <div class="card"><h3 data-en="Always in view">Zawsze na widoku</h3>
         <ul>
           <li data-en="mini window on top (list or strip)">okno mini zawsze na wierzchu (lista lub pasek)</li>
-          <li data-en="time left in the menu bar / tray">pozostały czas w pasku menu / zasobniku</li>
+          <li data-en="time left in the menu bar">pozostały czas w pasku menu</li>
           <li data-en="live Dock icon: stopwatch or digits">ikona w Docku na żywo: stoper albo cyfry</li>
         </ul></div>
       <div class="card"><h3 data-en="Small and private">Lekka i prywatna</h3>
         <ul>
-          <li data-en="a few MB, native Tauri app">kilka MB, natywna aplikacja Tauri</li>
-          <li data-en="no account, no ads, data stays on your device">bez konta i reklam, dane tylko na Twoim komputerze</li>
+          <li data-en="a few MB, native app">kilka MB, natywna aplikacja</li>
+          <li data-en="no account, no ads, data stays on your Mac">bez konta i reklam, dane tylko na Twoim Macu</li>
           <li data-en="Polish and English interface">interfejs po polsku i angielsku</li>
         </ul></div>
     </div>
@@ -237,7 +125,7 @@ footer a { color: var(--muted); }
 <section id="pobierz">
   <div class="wrap">
     <h2 data-en="Download">Pobierz</h2>
-    <p class="sub" data-en="Pick the file for your system. Installers always come from the latest release on GitHub.">Wybierz plik dla swojego systemu. Instalatory pochodzą zawsze z najnowszego wydania na GitHubie.</p>
+    <p class="sub" data-en="TickDown is available for macOS 11 Big Sur and newer. Windows and Android versions are on the way.">TickDown jest dostępny na macOS 11 Big Sur i nowsze. Wersje na Windows i Androida są w drodze.</p>
     <div class="platforms" id="platforms"></div>
     <div class="relinfo num" id="relinfo"></div>
 
@@ -254,15 +142,40 @@ footer a { color: var(--muted); }
         <pre><code>xattr -cr /Applications/TickDown.app</code></pre>
       </div>
     </details>
-    <details class="install">
-      <summary data-en="Windows: “Windows protected your PC”">Windows: „System Windows ochronił ten komputer”</summary>
-      <p data-en="The installer is not signed yet. Click <b>More info</b> → <b>Run anyway</b>.">Instalator nie jest jeszcze podpisany. Kliknij <b>Więcej informacji</b> → <b>Uruchom mimo to</b>.</p>
-    </details>
-    <details class="install">
-      <summary data-en="Linux: which file?">Linux: który plik?</summary>
-      <p data-en="<b>.AppImage</b> – runs anywhere (<code>chmod +x</code>, then launch). <b>.deb</b> – Ubuntu, Debian, Mint. <b>.rpm</b> – Fedora, openSUSE.">
-        <b>.AppImage</b> – działa wszędzie (<code>chmod +x</code>, potem uruchom). <b>.deb</b> – Ubuntu, Debian, Mint. <b>.rpm</b> – Fedora, openSUSE.</p>
-    </details>
+  </div>
+</section>
+
+<section id="nowosci" class="alt">
+  <div class="wrap">
+    <h2 data-en="What’s new">Co nowego</h2>
+    <div class="card news" id="news">
+      <p class="small"><a href="changelog.html" data-en="Full changelog">Pełna historia zmian</a></p>
+    </div>
+  </div>
+</section>
+
+<section id="glosuj">
+  <div class="wrap">
+    <h2 data-en="What are you waiting for?">Na co czekasz?</h2>
+    <p class="sub" data-en="Vote with a 👍 on GitHub – the most wanted platforms and features get built first. Voting needs a free GitHub account.">
+      Zagłosuj 👍 na GitHubie – najczęściej wybierane platformy i funkcje powstaną najpierw. Do głosowania wystarczy darmowe konto GitHub.</p>
+    <div class="votes">
+      <div class="card">
+        <h3 data-en="Platforms">Platformy</h3>
+        <div class="vote-list" id="votes-platform"></div>
+        <div class="actions">
+          <a class="btn ghost" id="vote-platform-new" href="https://github.com/s29829/tickdown-releases/issues/new?template=platforma.yml" data-en="Request a platform">Zgłoś platformę</a>
+        </div>
+      </div>
+      <div class="card">
+        <h3 data-en="Features">Funkcje</h3>
+        <div class="vote-list" id="votes-feature"></div>
+        <div class="actions">
+          <a class="btn ghost" href="https://github.com/s29829/tickdown-releases/issues/new?template=funkcja.yml" data-en="Suggest a feature">Zaproponuj funkcję</a>
+          <a class="btn ghost" href="https://github.com/s29829/tickdown-releases/discussions" data-en="Discussions">Dyskusje</a>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 </main>
@@ -270,150 +183,10 @@ footer a { color: var(--muted); }
 <footer>
   <div class="wrap">
     <span>© <span id="year">2026</span> TickDown</span>
+    <a href="changelog.html" data-en="Changelog">Historia zmian</a>
     <a href="https://github.com/s29829/tickdown-releases/releases" data-en="All releases">Wszystkie wydania</a>
-    <a href="https://github.com/s29829/tickdown-releases/issues" data-en="Report a problem">Zgłoś problem</a>
+    <a href="https://github.com/s29829/tickdown-releases/issues/new?template=blad.yml" data-en="Report a problem">Zgłoś problem</a>
   </div>
 </footer>
-
-<script>
-(() => {
-  const REPO = 's29829/tickdown-releases';
-  const RELEASES = `https://github.com/${REPO}/releases`;
-
-  /* ---------- język ---------- */
-  const nodes = [...document.querySelectorAll('[data-en]')];
-  nodes.forEach(n => { n.dataset.pl = n.innerHTML; });
-  let lang = 'pl';
-  try { lang = localStorage.getItem('td-lang') || ''; } catch {}
-  if (!lang) lang = (navigator.language || 'pl').toLowerCase().startsWith('pl') ? 'pl' : 'en';
-  const T = {
-    pl: { download: 'Pobierz', for: 'dla', soon: 'wkrótce', avail: 'dostępne', none: 'Wersja w przygotowaniu – zajrzyj niedługo.',
-          latest: 'Najnowsze wydanie', all: 'wszystkie wydania i historia zmian', err: 'Nie udało się pobrać listy plików.',
-          open: 'Otwórz stronę wydań', left: 'zostało', until: 'do', weekendNow: 'trwa!', d: 'd', rosetta: 'Na Macach z Apple Silicon działa przez Rosettę 2.',
-          universal: 'Apple Silicon i Intel', intel: 'Intel (i Apple Silicon przez Rosettę)', arm: 'Apple Silicon', setup: 'instalator', portable: 'archiwum aplikacji',
-          mobile: 'iPhone, iPad i Android – w planach.' },
-    en: { download: 'Download', for: 'for', soon: 'coming soon', avail: 'available', none: 'In preparation – check back soon.',
-          latest: 'Latest release', all: 'all releases and changelog', err: 'Could not load the file list.',
-          open: 'Open the releases page', left: 'left', until: 'until', weekendNow: 'now!', d: 'd', rosetta: 'Runs on Apple Silicon Macs via Rosetta 2.',
-          universal: 'Apple Silicon and Intel', intel: 'Intel (and Apple Silicon via Rosetta)', arm: 'Apple Silicon', setup: 'installer', portable: 'app archive',
-          mobile: 'iPhone, iPad and Android – planned.' },
-  };
-  const t = k => T[lang][k];
-  const btn = document.getElementById('lang');
-  function applyLang() {
-    document.documentElement.lang = lang;
-    nodes.forEach(n => { n.innerHTML = lang === 'en' ? n.dataset.en : n.dataset.pl; });
-    btn.textContent = lang === 'en' ? 'PL' : 'EN';
-    renderDownloads();
-    tick();
-  }
-  btn.addEventListener('click', () => {
-    lang = lang === 'en' ? 'pl' : 'en';
-    try { localStorage.setItem('td-lang', lang); } catch {}
-    applyLang();
-  });
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  /* ---------- podgląd licznika ---------- */
-  const $ = id => document.getElementById(id);
-  const pad = n => String(n).padStart(2, '0');
-  const hms = ms => { const s = Math.max(0, Math.floor(ms / 1000)); return `${pad(Math.floor(s / 3600))}:${pad(Math.floor(s / 60) % 60)}:${pad(s % 60)}`; };
-  const days = ms => Math.ceil(ms / 86400000) + ' ' + t('d');
-  const ARC = 326.7;
-  function tick() {
-    const now = new Date();
-    // praca 9–17: przed 9 – do 9, 9–17 – do 17, po 17 – do 9 jutro
-    const at = (d, h) => { const x = new Date(d); x.setHours(h, 0, 0, 0); return x; };
-    let start, end, label;
-    const h = now.getHours();
-    if (h < 9) { start = at(now, 17); start.setDate(start.getDate() - 1); end = at(now, 9); label = '9:00'; }
-    else if (h < 17) { start = at(now, 9); end = at(now, 17); label = '17:00'; }
-    else { start = at(now, 17); end = at(now, 9); end.setDate(end.getDate() + 1); label = '9:00'; }
-    const left = end - now, total = end - start;
-    $('demo-time').textContent = hms(left);
-    $('demo-sub').textContent = `${t('until')} ${label}`;
-    $('demo-arc').setAttribute('stroke-dashoffset', String(ARC * (1 - (total - left) / total)));
-    // weekend: do piątku 17:00
-    const fri = at(now, 17); fri.setDate(fri.getDate() + ((5 - now.getDay() + 7) % 7));
-    const dow = now.getDay();
-    const inWeekend = dow === 6 || dow === 0 || (dow === 5 && h >= 17);
-    $('demo-weekend').textContent = inWeekend ? t('weekendNow') : (fri - now < 86400000 ? hms(fri - now) : days(fri - now));
-    let x = new Date(now.getFullYear(), 11, 24); if (x < now) x = new Date(now.getFullYear() + 1, 11, 24);
-    $('demo-xmas').textContent = days(x - now);
-    $('demo-ny').textContent = days(new Date(now.getFullYear() + 1, 0, 1) - now);
-  }
-  setInterval(tick, 1000);
-
-  /* ---------- pobieranie ---------- */
-  const ICONS = {
-    mac: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.4 12.6c0-2.4 2-3.6 2.1-3.7-1.2-1.7-3-1.9-3.6-2-1.5-.2-3 .9-3.8.9-.8 0-2-.9-3.3-.9-1.7 0-3.3 1-4.2 2.6-1.8 3.1-.5 7.7 1.3 10.2.8 1.2 1.8 2.6 3.1 2.6 1.3-.1 1.7-.8 3.3-.8 1.5 0 1.9.8 3.3.8 1.4 0 2.2-1.2 3-2.5.9-1.4 1.3-2.8 1.4-2.8-.1 0-2.6-1-2.6-4.4ZM14 5.4c.7-.8 1.2-2 1-3.1-1 0-2.2.7-2.9 1.5-.6.7-1.2 1.9-1 3 1.1.1 2.2-.6 2.9-1.4Z"/></svg>',
-    win: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.5 10.5 4.5v7H3v-6Zm0 13 7.5 1v-7H3v6Zm8.5 1.1L21 21v-8.5h-9.5v7.1Zm0-15.2v7.1H21V3l-9.5 1.4Z"/></svg>',
-    linux: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c-2 0-3.3 1.7-3.3 4.2 0 1.3.3 2.2-.4 3.4-.9 1.5-2.6 3.6-2.6 6 0 .6.1 1.1.3 1.6-.6.4-1.6.7-1.7 1.6-.1 1 1.5 1.3 3.2 2.1 1 .5 2 .4 2.6-.4.5.1 1.2.2 1.9.2s1.4-.1 1.9-.2c.6.8 1.6.9 2.6.4 1.7-.8 3.3-1.1 3.2-2.1-.1-.9-1.1-1.2-1.7-1.6.2-.5.3-1 .3-1.6 0-2.4-1.7-4.5-2.6-6-.7-1.2-.4-2.1-.4-3.4C15.3 3.7 14 2 12 2Zm-1.4 3.6c.4 0 .7.5.7 1.1 0 .3-.1.5-.2.7l-.6-.2c.1-.1.1-.3.1-.5 0-.3-.1-.5-.3-.5s-.3.2-.3.5v.2l-.5-.2v-.1c0-.6.4-1 1.1-1Zm2.8 0c.6 0 1 .4 1 1v.2l-.5.1v-.2c0-.3-.2-.6-.4-.6s-.3.3-.3.6c0 .1 0 .3.1.4l-.6.2c-.1-.2-.2-.4-.2-.7 0-.6.4-1 .9-1Zm-1.4 2c.8 0 1.8.5 1.8.9 0 .3-.9.9-1.8.9s-1.8-.6-1.8-.9c0-.4 1-.9 1.8-.9Z"/></svg>',
-    phone: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg>',
-  };
-  const NAMES = { mac: 'macOS', win: 'Windows', linux: 'Linux' };
-
-  function classify(a) {
-    const n = a.name.toLowerCase();
-    if (n.endsWith('.sig') || n.endsWith('.txt') || n.endsWith('.json') || n.endsWith('.md') || n.includes('.tar.gz')) return null;
-    if (n.endsWith('.dmg')) return { os: 'mac', label: '.dmg', arch: n.includes('universal') ? 'universal' : n.includes('aarch64') ? 'arm' : 'intel', rank: 0 };
-    if (n.endsWith('.app.zip')) return { os: 'mac', label: '.zip', arch: n.includes('universal') ? 'universal' : n.includes('aarch64') ? 'arm' : 'intel', rank: 1, kind: 'portable' };
-    if (n.endsWith('.exe')) return { os: 'win', label: '.exe', arch: n.includes('arm64') || n.includes('aarch64') ? 'ARM64' : 'x64', rank: 0, kind: 'setup' };
-    if (n.endsWith('.msi')) return { os: 'win', label: '.msi', arch: n.includes('arm64') || n.includes('aarch64') ? 'ARM64' : 'x64', rank: 1 };
-    if (n.endsWith('.appimage')) return { os: 'linux', label: '.AppImage', arch: n.includes('aarch64') ? 'ARM64' : 'x64', rank: 0 };
-    if (n.endsWith('.deb')) return { os: 'linux', label: '.deb', arch: n.includes('arm64') ? 'ARM64' : 'x64', rank: 1 };
-    if (n.endsWith('.rpm')) return { os: 'linux', label: '.rpm', arch: n.includes('aarch64') ? 'ARM64' : 'x64', rank: 2 };
-    return null;
-  }
-  const mb = b => (b / 1048576).toFixed(1) + ' MB';
-  const archText = c => c.os === 'mac' ? t(c.arch) : c.arch;
-  function detectOS() {
-    const p = (navigator.userAgentData?.platform || navigator.platform || navigator.userAgent).toLowerCase();
-    if (/iphone|ipad|android/.test(navigator.userAgent.toLowerCase())) return 'mobile';
-    if (p.includes('mac')) return 'mac';
-    if (p.includes('win')) return 'win';
-    if (p.includes('linux') || p.includes('x11')) return 'linux';
-    return '';
-  }
-
-  let release = null, failed = false;
-  function renderDownloads() {
-    const box = $('platforms');
-    const groups = { mac: [], win: [], linux: [] };
-    (release?.assets || []).forEach(a => { const c = classify(a); if (c) groups[c.os].push({ ...c, a }); });
-    Object.values(groups).forEach(g => g.sort((x, y) => x.rank - y.rank));
-    const os = detectOS();
-    const order = ['mac', 'win', 'linux'].sort((x, y) => (y === os) - (x === os));
-    box.innerHTML = order.map(k => {
-      const g = groups[k];
-      const files = g.map(f => `<a class="file" href="${f.a.browser_download_url}"><span>${f.label}${f.kind ? ' · ' + t(f.kind) : ''}</span><small>${archText(f)} · ${mb(f.a.size)}</small></a>`).join('');
-      const note = k === 'mac' && g.length && g.every(f => f.arch === 'intel') ? `<p class="note">${t('rosetta')}</p>` : '';
-      return `<div class="card plat">
-        <div class="plat-head">${ICONS[k]}<h3>${NAMES[k]}</h3><span class="badge ${g.length ? 'ok' : ''}">${g.length ? t('avail') : t('soon')}</span></div>
-        ${g.length ? `<div class="files">${files}</div>${note}` : `<p class="note">${release || !failed ? t('none') : t('err') + ` <a href="${RELEASES}">${t('open')}</a>`}</p>`}
-      </div>`;
-    }).join('') + `<div class="card plat"><div class="plat-head">${ICONS.phone}<h3>iOS · Android</h3><span class="badge">${t('soon')}</span></div><p class="note">${t('mobile')}</p></div>`;
-
-    $('relinfo').innerHTML = release
-      ? `${t('latest')}: <b>${release.tag_name}</b> · ${new Date(release.published_at).toLocaleDateString(lang === 'en' ? 'en-GB' : 'pl-PL')} · <a href="${RELEASES}">${t('all')}</a>`
-      : `<a href="${RELEASES}">${t('all')}</a>`;
-
-    // przycisk w nagłówku: najlepszy plik dla wykrytego systemu
-    const best = groups[os]?.[0];
-    const hero = $('hero-dl'), heroText = $('hero-dl-text');
-    if (best) { hero.href = best.a.browser_download_url; heroText.textContent = `${t('download')} ${t('for')} ${NAMES[os]}`; }
-    else { hero.href = '#pobierz'; heroText.textContent = t('download'); }
-    if (release) $('hero-hint').textContent = `${release.tag_name} · ${lang === 'en' ? 'Free' : 'Za darmo'} · macOS, Windows, Linux`;
-  }
-
-  fetch(`https://api.github.com/repos/${REPO}/releases/latest`, { headers: { Accept: 'application/vnd.github+json' } })
-    .then(r => r.ok ? r.json() : Promise.reject(r.status))
-    .then(j => { release = j; })
-    .catch(() => { failed = true; })
-    .finally(renderDownloads);
-
-  applyLang();
-})();
-</script>
 </body>
 </html>
