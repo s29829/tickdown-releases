@@ -1,5 +1,21 @@
 [
   {
+    "version": "0.2.9",
+    "date": "2026-11-19",
+    "items": [
+      "Listy na kafelku: nazwa listy i przewijana lista z polami wyboru – odhaczaj pozycje jako załatwione albo odznaczaj, bez otwierania okna",
+      "Czas dla list jest teraz opcją: nowa lista domyślnie nie ma przypomnienia; z przypomnieniem zegar jest mniejszy niż w licznikach czasu, a pozycje listy mają większą czcionkę dopasowaną do kafelka",
+      "Nowy układ kafelka: u góry tylko nazwa i ikonki (kształt, edycja, archiwum, usuń), ikona i opis na dole",
+      "Kształt i wielkość kafelka zmienisz z dymka pod przyciskiem kształtu – nie zasłania już ikonek ani przycisków",
+      "Równe przyciski na wszystkich kafelkach (Start, Pauza, Reset, Weź teraz, Otwórz listę) – ich wielkość zależy od wielkości kafelka",
+      "Gotowe schematy leków od razu z przykładowymi lekami (np. 3× dziennie: Tabletki 1 i Syrop 2) – wystarczy zmienić nazwy i dawki",
+      "Kafelek leków lepiej wykorzystuje miejsce: większe napisy i tabletki na dużych kafelkach, na szerokim kafelku zegar po lewej, leki po prawej",
+      "Pasek menu macOS: gdy licznik ma własną ikonę, ikonka aplikacji się chowa; bez ikony licznika (lub bez licznika) ikonka jest widoczna",
+      "Okno mini floating samo dopasowuje wysokość do liczby liczników, a gdy brakuje miejsca na ekranie, zmniejsza licznik główny",
+      "Ustawienia → Ogólne: reset aplikacji – liczniki trafiają do archiwum, ustawienia wracają do domyślnych"
+    ]
+  },
+  {
     "version": "0.2.8",
     "date": "2026-11-19",
     "items": [
