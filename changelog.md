@@ -1,5 +1,19 @@
 # TickDown – historia zmian
 
+## 0.2.8 – 2026-11-19
+
+- Nowy panel boczny po lewej: Nowy licznik, Nowa lista, Archiwum, Mini i Ustawienia – z opisami albo same ikony
+- Nowy licznik w dwóch krokach: wybierz rodzaj z kafelków (nazwa jest opcjonalna), potem ustawienia
+- Gotowe propozycje dla każdego rodzaju: pobudka, lunch, pora snu, minutniki od 5 s do 2 h, praca 8–16 i 9–17, rozciąganie co 45 min, najbliższe święta, pory roku, listy zakupów – ustawienia i kolory wypełniają się same
+- Konfigurator leków: wybierz, ile razy dziennie – godziny zaproponują się same; potem ten sam zestaw leków o każdej godzinie albo osobny dla każdej
+
+## 0.2.7 – 2026-11-19
+
+- Nowy układ okna mini – floating: jeden duży licznik główny (nazwa, do kiedy, odliczanie i przyciski start / pauza / reset), a pod nim pozostałe liczniki jako małe kafelki z czasem w skrócie, po 3 w wierszu
+- Kliknięcie kafelka robi z niego licznik główny; kolejność kafelków ustawisz w Ustawieniach → Okno mini
+- Licznik główny może mieć własną formę prezentacji, czcionkę i kolor akcentu
+- Przycisk ⇄ w oknie mini przełącza układy: lista, pasek, floating
+
 ## 0.2.6 – 2026-11-19
 
 - Licznik leków: harmonogram dla każdego leku (godziny, co X h z przerwą nocną, do posiłków), dni tygodnia / miesiąca, co N dni, cykle np. 21/7, kuracja od–do, gotowe szablony
