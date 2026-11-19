@@ -1,0 +1,44 @@
+name: 📱 Chcę TickDown na innej platformie / Request a platform
+description: Powiedz, na jakim systemie chcesz używać TickDown – Tell us where you want to use TickDown
+title: "Platforma: "
+labels: ["platforma"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Najpierw sprawdź [listę głosowania](https://github.com/s29829/tickdown-releases/issues?q=is%3Aissue+is%3Aopen+label%3Aglosowanie) –
+        jeśli Twoja platforma tam jest, wystarczy 👍 pod zgłoszeniem.** Jeśli nie ma – wypełnij formularz.
+
+        *Check the [voting list](https://github.com/s29829/tickdown-releases/issues?q=is%3Aissue+is%3Aopen+label%3Aglosowanie) first – if your platform is there, just add a 👍.*
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platforma / Platform
+      options:
+        - Windows 10 / 11
+        - Android – telefon / phone
+        - Android – tablet
+        - iPhone
+        - iPad
+        - Linux
+        - Inna / Other
+    validations:
+      required: true
+  - type: checkboxes
+    id: features
+    attributes:
+      label: Które funkcje są dla Ciebie najważniejsze? / Which features matter most to you?
+      options:
+        - label: Odliczanie do godziny / minutnik – Countdown to a time / timer
+        - label: Godziny pracy, tydzień i weekend – Work hours, week and weekend
+        - label: Święta i pory roku – Holidays and seasons
+        - label: Leki z alarmem – Medication with alarm
+        - label: Listy zadań i zakupów – To-do and shopping lists
+        - label: Okno mini / widżet – Mini window / widget
+        - label: Pasek menu, ikona z odliczaniem – Menu bar, countdown icon
+        - label: Skórki i motywy – Skins and themes
+  - type: textarea
+    id: use
+    attributes:
+      label: Jak chcesz używać TickDown? / How would you use TickDown?
+      description: Opcjonalnie – np. na telefonie w pracy, jako widżet na ekranie głównym… / Optional

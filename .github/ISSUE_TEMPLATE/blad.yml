@@ -1,0 +1,35 @@
+name: 🐞 Błąd / Bug report
+description: Coś nie działa – Something is not working
+title: "Błąd: "
+labels: ["blad"]
+body:
+  - type: input
+    id: version
+    attributes:
+      label: Wersja TickDown / TickDown version
+      description: Np. z nazwy pobranego pliku .dmg / e.g. from the downloaded .dmg file name
+      placeholder: "0.2.6"
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: Wersja macOS / macOS version
+      placeholder: "15.1"
+    validations:
+      required: true
+  - type: dropdown
+    id: chip
+    attributes:
+      label: Procesor / Chip
+      options:
+        - Apple Silicon (M1–M4)
+        - Intel
+        - Nie wiem / Don't know
+  - type: textarea
+    id: what
+    attributes:
+      label: Co się dzieje? / What happens?
+      description: Co zrobiłeś(-aś), czego się spodziewałeś(-aś), co się stało. Zrzut ekranu bardzo pomaga. / Steps, expected, actual. A screenshot helps.
+    validations:
+      required: true

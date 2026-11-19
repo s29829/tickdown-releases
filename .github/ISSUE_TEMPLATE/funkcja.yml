@@ -1,0 +1,40 @@
+name: 💡 Pomysł na funkcję / Feature idea
+description: Zaproponuj nową funkcję lub ulepszenie – Suggest a new feature or improvement
+title: "Funkcja: "
+labels: ["funkcja"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Sprawdź najpierw [istniejące propozycje](https://github.com/s29829/tickdown-releases/issues?q=is%3Aissue+label%3Afunkcja) – 👍 pod podobną liczy się jako głos.
+        *Check [existing ideas](https://github.com/s29829/tickdown-releases/issues?q=is%3Aissue+label%3Afunkcja) first – a 👍 counts as a vote.*
+  - type: dropdown
+    id: area
+    attributes:
+      label: Obszar / Area
+      options:
+        - Liczniki i odliczanie / Timers
+        - Leki / Medication
+        - Listy zadań i zakupów / Lists
+        - Wygląd – widoki, skórki, motywy / Look
+        - Pasek menu, Dock, okno mini / Menu bar, Dock, mini window
+        - Powiadomienia i dźwięki / Notifications and sounds
+        - Inne / Other
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: Co chcesz móc zrobić? / What would you like to do?
+      description: Opisz potrzebę, nie tylko rozwiązanie – po co Ci to? / Describe the need, not just the solution.
+    validations:
+      required: true
+  - type: checkboxes
+    id: platforms
+    attributes:
+      label: Na jakich platformach? / On which platforms?
+      options:
+        - label: macOS
+        - label: Windows
+        - label: Android
+        - label: iPhone / iPad

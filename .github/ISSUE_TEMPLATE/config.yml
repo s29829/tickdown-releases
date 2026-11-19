@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Dyskusje i ankiety / Discussions & polls
+    url: https://github.com/s29829/tickdown-releases/discussions
+    about: Pytania, pomysły, ankiety – Questions, ideas, polls
+  - name: 🗳️ Głosowanie na platformy / Vote for platforms
+    url: https://github.com/s29829/tickdown-releases/issues?q=is%3Aissue+is%3Aopen+label%3Aglosowanie+sort%3Areactions-%2B1-desc
+    about: Dodaj 👍 pod platformą lub funkcją, na którą czekasz – Add a 👍 to what you are waiting for
