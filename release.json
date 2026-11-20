@@ -5,7 +5,7 @@
   "assets": [
     {
       "name": "SHA256SUMS.txt",
-      "size": 376,
+      "size": 198,
       "browser_download_url": "https://github.com/s29829/tickdown-releases/releases/download/v0.2.9/SHA256SUMS.txt"
     },
     {
@@ -17,16 +17,6 @@
       "name": "TickDown_0.2.9_universal.dmg",
       "size": 4887735,
       "browser_download_url": "https://github.com/s29829/tickdown-releases/releases/download/v0.2.9/TickDown_0.2.9_universal.dmg"
-    },
-    {
-      "name": "TickDown_0.2.9_x64.app.zip",
-      "size": 2513066,
-      "browser_download_url": "https://github.com/s29829/tickdown-releases/releases/download/v0.2.9/TickDown_0.2.9_x64.app.zip"
-    },
-    {
-      "name": "TickDown_0.2.9_x64.dmg",
-      "size": 2736020,
-      "browser_download_url": "https://github.com/s29829/tickdown-releases/releases/download/v0.2.9/TickDown_0.2.9_x64.dmg"
     }
   ]
 }
