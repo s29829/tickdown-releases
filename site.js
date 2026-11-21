@@ -1,4 +1,4 @@
-// Strona TickDown – język PL/EN, podgląd (zakładki: licznik, projekt z wykresem Gantta, notatki i listy), pliki do pobrania (najnowsze wydanie z GitHuba),
+// Strona TickDown – język PL/EN, motyw kolorystyczny (kwadraciki w nagłówku), podgląd (slider: notatki i listy, projekt z wykresem Gantta, licznik), pliki do pobrania (najnowsze wydanie z GitHuba),
 // „Co nowego” (changelog.json) i głosowanie (zgłoszenia z etykietą „glosowanie” w repo wydań).
 (() => {
   const REPO = 's29829/tickdown-releases';
@@ -7,9 +7,25 @@
   const $ = (id) => document.getElementById(id);
   const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
+  /* ---------- motyw kolorystyczny (pomarańczowy, błękitny, fuksja, zielony) ---------- */
+  const ACCENTS = ['orange', 'blue', 'fuchsia', 'green'];
+  const swatches = [...document.querySelectorAll('.sw[data-accent]')];
+  function setAccent(a, save) {
+    if (!ACCENTS.includes(a)) a = 'orange';
+    if (a === 'orange') delete document.documentElement.dataset.accent; else document.documentElement.dataset.accent = a;
+    swatches.forEach((b) => b.setAttribute('aria-checked', String(b.dataset.accent === a)));
+    if (save) try { localStorage.setItem('td-accent', a); } catch { /* brak dostępu */ }
+  }
+  let accent = 'orange';
+  try { accent = localStorage.getItem('td-accent') || 'orange'; } catch { /* brak dostępu */ }
+  setAccent(accent);
+  swatches.forEach((b) => b.addEventListener('click', () => setAccent(b.dataset.accent, true)));
+
   /* ---------- język ---------- */
   const nodes = [...document.querySelectorAll('[data-en]')];
   nodes.forEach((n) => { n.dataset.pl = n.innerHTML; });
+  const titled = [...document.querySelectorAll('[data-en-title]')];
+  titled.forEach((n) => { n.dataset.plTitle = n.title; });
   let lang = '';
   try { lang = localStorage.getItem('td-lang') || ''; } catch { /* brak dostępu */ }
   if (!lang) lang = (navigator.language || 'pl').toLowerCase().startsWith('pl') ? 'pl' : 'en';
@@ -41,7 +57,8 @@
   function applyLang() {
     document.documentElement.lang = lang;
     nodes.forEach((n) => { n.innerHTML = lang === 'en' ? n.dataset.en : n.dataset.pl; });
-    if (langBtn) langBtn.textContent = lang === 'en' ? 'PL' : 'EN';
+    titled.forEach((n) => { n.title = lang === 'en' ? n.dataset.enTitle : n.dataset.plTitle; });
+    langBtn?.querySelectorAll('[data-l]').forEach((s) => s.classList.toggle('on', s.dataset.l === lang));
     renderAll();
   }
   langBtn?.addEventListener('click', () => {
@@ -81,19 +98,42 @@
   }
   setInterval(tick, 1000);
 
-  /* ---------- zakładki podglądu (same się zmieniają, dopóki ktoś nie kliknie) ---------- */
+  /* ---------- slider podglądu: notatki → projekt → licznik (sam się przesuwa, dopóki ktoś nie kliknie) ---------- */
   const tabs = [...document.querySelectorAll('.demo-tab')];
-  function showDemo(id) {
-    tabs.forEach((b) => b.setAttribute('aria-selected', String(b.dataset.demo === id)));
-    document.querySelectorAll('.demo-panel').forEach((p) => { p.hidden = p.dataset.panel !== id; });
+  const panels = [...document.querySelectorAll('.demo-panel')];
+  const dots = [...document.querySelectorAll('#demo-dots i')];
+  const track = $('demo-track');
+  let slide = 0;
+  function showDemo(i) {
+    slide = (i + panels.length) % panels.length;
+    tabs.forEach((b, k) => b.setAttribute('aria-selected', String(k === slide)));
+    dots.forEach((d, k) => d.classList.toggle('on', k === slide));
+    panels.forEach((p, k) => { p.setAttribute('aria-hidden', String(k !== slide)); p.inert = k !== slide; });
+    if (track) track.style.transform = `translateX(${-slide * 100}%)`;
   }
-  let rotate = tabs.length && !matchMedia('(prefers-reduced-motion: reduce)').matches ? setInterval(() => {
-    const i = tabs.findIndex((b) => b.getAttribute('aria-selected') === 'true');
-    showDemo(tabs[(i + 1) % tabs.length].dataset.demo);
-  }, 7000) : null;
+  showDemo(0);
+  let rotate = panels.length && !matchMedia('(prefers-reduced-motion: reduce)').matches
+    ? setInterval(() => showDemo(slide + 1), 7000) : null;
   const stopRotate = () => { clearInterval(rotate); rotate = null; };
-  tabs.forEach((b) => b.addEventListener('click', () => { stopRotate(); showDemo(b.dataset.demo); }));
-  document.querySelector('.demo')?.addEventListener('pointerdown', stopRotate);
+  const go = (i) => { stopRotate(); showDemo(i); };
+  tabs.forEach((b, k) => b.addEventListener('click', () => go(k)));
+  dots.forEach((d, k) => d.addEventListener('click', () => go(k)));
+  document.querySelectorAll('.demo-arrow').forEach((b) => b.addEventListener('click', () => go(slide + Number(b.dataset.step))));
+  const demo = document.querySelector('.demo');
+  demo?.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') { if (e.target.matches('input, textarea')) return; go(slide + (e.key === 'ArrowRight' ? 1 : -1)); }
+  });
+  // przesunięcie palcem / myszą w bok
+  let swipeX = null, swipeY = 0;
+  const viewport = document.querySelector('.demo-viewport');
+  viewport?.addEventListener('pointerdown', (e) => { stopRotate(); swipeX = e.clientX; swipeY = e.clientY; });
+  viewport?.addEventListener('pointerup', (e) => {
+    if (swipeX == null) return;
+    const dx = e.clientX - swipeX, dy = e.clientY - swipeY;
+    swipeX = null;
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) go(slide + (dx < 0 ? 1 : -1));
+  });
+  viewport?.addEventListener('pointercancel', () => { swipeX = null; });
   const card = $('flashcard');
   card?.addEventListener('click', () => {
     card.classList.toggle('flipped');
@@ -216,7 +256,7 @@
     if (!box || !changelog?.length) return;
     const v = changelog[0];
     box.innerHTML = `<h3>${t('version')} ${esc(v.version)}</h3><span class="small">${esc(v.date)}</span>
-      <ul>${v.items.map((i) => `<li>${esc(i)}</li>`).join('')}</ul>
+      <ul>${((lang === 'en' && v.items_en) || v.items).map((i) => `<li>${esc(i)}</li>`).join('')}</ul>
       <a class="more" href="changelog.html">${t('more')} →</a>`;
   }
 

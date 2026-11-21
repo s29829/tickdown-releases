@@ -10,13 +10,19 @@
 <meta property="og:image" content="icon-256.png">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="icon-256.png">
-<link rel="stylesheet" href="site.css?v=f9acdcfd13">
-<script src="site.js?v=83010ff092" defer></script>
+<link rel="stylesheet" href="site.css?v=4a2692028a">
+<script src="site.js?v=7865c42424" defer></script>
 </head>
 <body>
 <header class="top">
   <div class="wrap">
     <a class="brand" href="./"><img src="icon.svg" alt="">TickDown</a>
+    <div class="accents" role="radiogroup" aria-label="Kolor">
+      <button type="button" class="sw" role="radio" data-accent="orange" title="Pomarańczowy" data-en-title="Orange"></button>
+      <button type="button" class="sw" role="radio" data-accent="blue" title="Błękitny" data-en-title="Sky blue"></button>
+      <button type="button" class="sw" role="radio" data-accent="fuchsia" title="Fuksja" data-en-title="Fuchsia"></button>
+      <button type="button" class="sw" role="radio" data-accent="green" title="Zielony" data-en-title="Green"></button>
+    </div>
     <nav class="links">
       <a class="opt" href="#tablica" data-en="Board">Tablica</a>
       <a class="opt" href="#funkcje" data-en="Features">Funkcje</a>
@@ -24,7 +30,7 @@
       <a class="opt" href="#pobierz" data-en="Download">Pobierz</a>
       <a class="opt" href="changelog.html" data-en="Changelog">Zmiany</a>
       <a class="opt" href="#glosuj" data-en="Vote">Głosuj</a>
-      <button class="lang" id="lang" type="button">EN</button>
+      <button class="lang" id="lang" type="button" aria-label="Język / Language"><span data-l="pl"><svg class="flag" viewBox="0 0 16 10" aria-hidden="true"><rect width="16" height="5" fill="#fff"/><rect y="5" width="16" height="5" fill="#dc143c"/></svg>PL</span><span data-l="en"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><clipPath id="gb-t"><path d="M30 15h30v15zv15H0zH0V0zV0h30z"/></clipPath><path d="M0 0v30h60V0z" fill="#012169"/><path d="M0 0l60 30m0-30L0 30" stroke="#fff" stroke-width="6"/><path d="M0 0l60 30m0-30L0 30" clip-path="url(#gb-t)" stroke="#c8102e" stroke-width="4"/><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="#c8102e" stroke-width="6"/></svg>EN</span></button>
     </nav>
   </div>
 </header>
@@ -47,42 +53,16 @@
       <div class="hint num" id="hero-hint" data-en="Free · macOS 11+ · Windows and Android coming soon">Za darmo · macOS 11+ · wkrótce Windows i Android</div>
     </div>
 
-    <div class="demo" aria-label="Podgląd TickDown">
+    <div class="demo" aria-label="Podgląd TickDown" aria-roledescription="carousel">
       <div class="demo-tabs" role="tablist">
-        <button type="button" role="tab" class="demo-tab" data-demo="timer" aria-selected="true" data-en="Timer">Licznik</button>
+        <button type="button" role="tab" class="demo-tab" data-demo="notes" aria-selected="true" data-en="Notes &amp; lists">Notatki i listy</button>
         <button type="button" role="tab" class="demo-tab" data-demo="project" aria-selected="false" data-en="Project">Projekt</button>
-        <button type="button" role="tab" class="demo-tab" data-demo="notes" aria-selected="false" data-en="Notes &amp; lists">Notatki i listy</button>
+        <button type="button" role="tab" class="demo-tab" data-demo="timer" aria-selected="false" data-en="Timer">Licznik</button>
       </div>
 
-      <div class="demo-panel" data-panel="timer">
-        <div class="demo-head">
-          <span class="demo-title" data-en="Work">Praca</span>
-          <span class="demo-sub num" id="demo-sub">do 17:00</span>
-        </div>
-        <div class="ring">
-          <svg viewBox="0 0 120 120">
-            <circle cx="60" cy="60" r="52" fill="none" stroke="var(--track)" stroke-width="10"/>
-            <circle id="demo-arc" cx="60" cy="60" r="52" fill="none" stroke="var(--accent)" stroke-width="10"
-                    stroke-linecap="round" stroke-dasharray="326.7" stroke-dashoffset="326.7"/>
-          </svg>
-          <div class="t"><b class="num" id="demo-time">--:--:--</b><span data-en="left">zostało</span></div>
-        </div>
-        <div class="chips">
-          <div class="chip"><small>Weekend</small><b class="num" id="demo-weekend">–</b></div>
-          <div class="chip"><small data-en="Christmas">Wigilia</small><b class="num" id="demo-xmas">–</b></div>
-          <div class="chip"><small data-en="New Year">Nowy Rok</small><b class="num" id="demo-ny">–</b></div>
-        </div>
-      </div>
-
-      <div class="demo-panel" data-panel="project" hidden>
-        <div class="demo-head">
-          <span class="demo-title" data-en="Website project">Projekt „Strona”</span>
-          <span class="demo-sub num" data-gantt-progress></span>
-        </div>
-        <div class="gantt" data-gantt="small"></div>
-      </div>
-
-      <div class="demo-panel" data-panel="notes" hidden>
+      <div class="demo-viewport">
+        <div class="demo-track" id="demo-track">
+      <div class="demo-panel" role="tabpanel" data-panel="notes">
         <div class="notes-demo">
           <div class="sticky" data-en="Call mum ☎<br>Pick up the parcel<br>Book the dentist">Zadzwoń do mamy ☎<br>Odbierz paczkę<br>Umów dentystę</div>
           <div class="mini-card">
@@ -103,6 +83,41 @@
             <button type="button" class="flashcard" id="flashcard" data-front="der Zug" data-back="pociąg · train">der Zug</button>
           </div>
         </div>
+      </div>
+      <div class="demo-panel" role="tabpanel" data-panel="project">
+        <div class="demo-head">
+          <span class="demo-title" data-en="Website project">Projekt „Strona”</span>
+          <span class="demo-sub num" data-gantt-progress></span>
+        </div>
+        <div class="gantt" data-gantt="small"></div>
+      </div>
+
+      <div class="demo-panel" role="tabpanel" data-panel="timer">
+        <div class="demo-head">
+          <span class="demo-title" data-en="Work">Praca</span>
+          <span class="demo-sub num" id="demo-sub">do 17:00</span>
+        </div>
+        <div class="ring">
+          <svg viewBox="0 0 120 120">
+            <circle cx="60" cy="60" r="52" fill="none" stroke="var(--track)" stroke-width="10"/>
+            <circle id="demo-arc" cx="60" cy="60" r="52" fill="none" stroke="var(--accent)" stroke-width="10"
+                    stroke-linecap="round" stroke-dasharray="326.7" stroke-dashoffset="326.7"/>
+          </svg>
+          <div class="t"><b class="num" id="demo-time">--:--:--</b><span data-en="left">zostało</span></div>
+        </div>
+        <div class="chips">
+          <div class="chip"><small>Weekend</small><b class="num" id="demo-weekend">–</b></div>
+          <div class="chip"><small data-en="Christmas">Wigilia</small><b class="num" id="demo-xmas">–</b></div>
+          <div class="chip"><small data-en="New Year">Nowy Rok</small><b class="num" id="demo-ny">–</b></div>
+        </div>
+      </div>
+        </div>
+      </div>
+
+      <div class="demo-nav">
+        <button type="button" class="demo-arrow" data-step="-1" aria-label="Poprzedni">‹</button>
+        <div class="demo-dots" id="demo-dots"><i class="on"></i><i></i><i></i></div>
+        <button type="button" class="demo-arrow" data-step="1" aria-label="Następny">›</button>
       </div>
     </div>
   </div>

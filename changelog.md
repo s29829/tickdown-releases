@@ -1,5 +1,13 @@
 # TickDown – historia zmian
 
+## 0.2.12 – 2026-11-21
+
+- Pasek statusu na dole tablicy: przestrzeń lub grupa, liczba elementów i najbliższy koniec odliczania; najechanie wysuwa paletę elementów
+- Paleta: element chwycisz szybciej – wystarczy krótkie przytrzymanie albo ruch w górę, w stronę tablicy
+- Kalendarz Google: osobna kategoria w Ustawieniach, wczytywanie pliku JSON klienta OAuth i lista kalendarzy na koncie; po połączeniu kafelki kalendarza od razu dostają kalendarz główny
+- Ustawienia: czytelniejsze opisy własnego wyglądu przestrzeni i własnych skórek, pola koloru w całości wypełnione próbką
+- Strona TickDown: podgląd jako slider (notatki, projekt, licznik), wybór koloru strony, przełącznik języka z flagami i historia zmian po angielsku
+
 ## 0.2.11 – 2026-11-21
 
 - Tablica z dowolnym układem: przeciągnij kartę za jej wolny fragment na dowolne pole – sąsiednie karty same robią miejsce, a puste pola mogą zostać; Esc anuluje przeciąganie

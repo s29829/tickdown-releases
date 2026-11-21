@@ -7,30 +7,53 @@
 <meta name="description" content="Historia zmian aplikacji TickDown – nowe funkcje i poprawki w kolejnych wersjach.">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="alternate" type="text/markdown" href="changelog.md">
-<link rel="stylesheet" href="site.css?v=f9acdcfd13">
-<script src="site.js?v=83010ff092" defer></script>
+<link rel="stylesheet" href="site.css?v=4a2692028a">
+<script src="site.js?v=7865c42424" defer></script>
 </head>
 <body>
 <header class="top">
   <div class="wrap">
     <a class="brand" href="./"><img src="icon.svg" alt="">TickDown</a>
+    <div class="accents" role="radiogroup" aria-label="Kolor">
+      <button type="button" class="sw" role="radio" data-accent="orange" title="Pomarańczowy" data-en-title="Orange"></button>
+      <button type="button" class="sw" role="radio" data-accent="blue" title="Błękitny" data-en-title="Sky blue"></button>
+      <button type="button" class="sw" role="radio" data-accent="fuchsia" title="Fuksja" data-en-title="Fuchsia"></button>
+      <button type="button" class="sw" role="radio" data-accent="green" title="Zielony" data-en-title="Green"></button>
+    </div>
     <nav class="links">
       <a class="opt" href="./#funkcje" data-en="Features">Funkcje</a>
       <a class="opt" href="./#projekty" data-en="Projects">Projekty</a>
       <a class="opt" href="./#pobierz" data-en="Download">Pobierz</a>
       <a class="opt" href="./#glosuj" data-en="Vote">Głosuj</a>
-      <button class="lang" id="lang" type="button">EN</button>
+      <button class="lang" id="lang" type="button" aria-label="Język / Language"><span data-l="pl"><svg class="flag" viewBox="0 0 16 10" aria-hidden="true"><rect width="16" height="5" fill="#fff"/><rect y="5" width="16" height="5" fill="#dc143c"/></svg>PL</span><span data-l="en"><svg class="flag" viewBox="0 0 60 30" aria-hidden="true"><clipPath id="gb-t"><path d="M30 15h30v15zv15H0zH0V0zV0h30z"/></clipPath><path d="M0 0v30h60V0z" fill="#012169"/><path d="M0 0l60 30m0-30L0 30" stroke="#fff" stroke-width="6"/><path d="M0 0l60 30m0-30L0 30" clip-path="url(#gb-t)" stroke="#c8102e" stroke-width="4"/><path d="M30 0v30M0 15h60" stroke="#fff" stroke-width="10"/><path d="M30 0v30M0 15h60" stroke="#c8102e" stroke-width="6"/></svg>EN</span></button>
     </nav>
   </div>
 </header>
 <main class="page">
   <div class="wrap">
     <h1 data-en="Changelog">Historia zmian</h1>
-    <p class="sub" data-en="New features and fixes in each version (descriptions in Polish). Also as <a href=&quot;changelog.md&quot;>Markdown</a> and <a href=&quot;changelog.json&quot;>JSON</a>.">
+    <p class="sub" data-en="New features and fixes in each version. Also as <a href=&quot;changelog.en.md&quot;>Markdown</a> and <a href=&quot;changelog.json&quot;>JSON</a>.">
       Nowe funkcje i poprawki w kolejnych wersjach. Także jako <a href="changelog.md">Markdown</a> i <a href="changelog.json">JSON</a>.</p>
+    <article class="release" id="v0.2.12">
+      <div><h2>0.2.12</h2><time datetime="2026-11-21">2026-11-21</time></div>
+      <ul class="cl-pl" lang="pl">
+        <li>Pasek statusu na dole tablicy: przestrzeń lub grupa, liczba elementów i najbliższy koniec odliczania; najechanie wysuwa paletę elementów</li>
+        <li>Paleta: element chwycisz szybciej – wystarczy krótkie przytrzymanie albo ruch w górę, w stronę tablicy</li>
+        <li>Kalendarz Google: osobna kategoria w Ustawieniach, wczytywanie pliku JSON klienta OAuth i lista kalendarzy na koncie; po połączeniu kafelki kalendarza od razu dostają kalendarz główny</li>
+        <li>Ustawienia: czytelniejsze opisy własnego wyglądu przestrzeni i własnych skórek, pola koloru w całości wypełnione próbką</li>
+        <li>Strona TickDown: podgląd jako slider (notatki, projekt, licznik), wybór koloru strony, przełącznik języka z flagami i historia zmian po angielsku</li>
+      </ul>
+      <ul class="cl-en" lang="en">
+        <li>Status bar at the bottom of the board: space or group, number of items and the nearest countdown end; hovering slides out the item palette</li>
+        <li>Palette: grab items faster – a short press or a move up towards the board is enough</li>
+        <li>Google Calendar: its own category in Settings, loading the OAuth client JSON file and the list of calendars on the account; once connected, calendar tiles get the primary calendar right away</li>
+        <li>Settings: clearer descriptions of a space's own look and of your own skins, colour fields fully filled with the swatch</li>
+        <li>TickDown website: preview as a slider (notes, project, timer), page colour picker, language switch with flags and an English changelog</li>
+      </ul>
+    </article>
     <article class="release" id="v0.2.11">
       <div><h2>0.2.11</h2><time datetime="2026-11-21">2026-11-21</time><a class="badge ok" href="https://github.com/s29829/tickdown-releases/releases/tag/v0.2.11">macOS ↓</a></div>
-      <ul>
+      <ul class="cl-pl" lang="pl">
         <li>Tablica z dowolnym układem: przeciągnij kartę za jej wolny fragment na dowolne pole – sąsiednie karty same robią miejsce, a puste pola mogą zostać; Esc anuluje przeciąganie</li>
         <li>Wielkość karty zmienisz, ciągnąc za prawy dolny róg – karta przyciąga się do dostępnych rozmiarów</li>
         <li>Paleta na dole okna: ikony liczników, list i notatników – kliknij, żeby dodać element w pierwszym wolnym polu, albo przytrzymaj i upuść w wybranym miejscu tablicy</li>
@@ -47,10 +70,27 @@
         <li>Aktualizacje: TickDown sam sprawdza, czy jest nowa wersja (codziennie, co tydzień albo tylko ręcznie – Ustawienia → Ogólne → Aktualizacje) i w rogu okna proponuje jej pobranie; wybraną wersję możesz pominąć</li>
         <li>Nowa strona TickDown: tablica, listy, notatki, kalendarz i zarządzanie projektami z wykresem Gantta – z interaktywnym podglądem</li>
       </ul>
+      <ul class="cl-en" lang="en">
+        <li>Free-form board: drag a card by any free spot to any cell – neighbouring cards make room on their own and empty cells may stay; Esc cancels the drag</li>
+        <li>Resize a card by dragging its bottom-right corner – it snaps to the available sizes</li>
+        <li>Palette at the bottom of the window: icons of timers, lists and notebooks – click to add an item in the first free cell, or press and hold to drop it anywhere on the board</li>
+        <li>Notebooks: sticky note (handwriting, paper colour), plain text, Markdown (bold, lists, tick-off tasks, safe links – visual or source editing), rotating phrases and flashcards flipped with a click – all written right on the tile</li>
+        <li>Groups: a group tile is another board on the board – drop timers, lists and notes into it and nest groups; the path above the board and the sidebar tree help you find your way</li>
+        <li>Gantt charts: a group or a whole space can be a project with a timeline – move and stretch task bars with the mouse, link tasks with dependencies (hard links push the following tasks), working hours are respected; ready-made projects in the new space window</li>
+        <li>Statistics: a tile with the state of the board or a group – every new space gets one automatically</li>
+        <li>Home screen: an overview of all spaces with board previews and statistics, or start straight in a chosen space</li>
+        <li>Quick skin change: rest the cursor on a card for 2 seconds – skin thumbnails appear, hovering previews, clicking saves</li>
+        <li>Mini window: moves without the “snap to half of the screen” frame, stops at the screen edge, and pushed against the left or right edge it hides as a small tab with the time – click to expand it</li>
+        <li>Menu bar: timers in the icon menu grouped by space (with many timers – a submenu per space); notebooks and groups no longer appear there</li>
+        <li>Starter sets: before the board is created you can change what is on it – card sizes, item settings, duplicates, removing and adding items</li>
+        <li>Calendar: a tile with month, week and day views – events with reminders and repeats, plus the deadlines of timers and lists; optionally connected to Google Calendar</li>
+        <li>Updates: TickDown checks for a new version by itself (daily, weekly or only manually – Settings → General → Updates) and offers the download in the corner of the window; you can skip a chosen version</li>
+        <li>New TickDown website: board, lists, notes, calendar and project management with a Gantt chart – with an interactive preview</li>
+      </ul>
     </article>
     <article class="release" id="v0.2.10">
       <div><h2>0.2.10</h2><time datetime="2026-11-20">2026-11-20</time><a class="badge ok" href="https://github.com/s29829/tickdown-releases/releases/tag/v0.2.10">macOS ↓</a></div>
-      <ul>
+      <ul class="cl-pl" lang="pl">
         <li>Zestawy startowe przy pierwszym uruchomieniu: Uczeń, Student, Praca w biurze, Praca zdalna, Millenials, Rodzic, Senior, Sport i zdrowie – gotowe liczniki i listy z dopasowanym stylem, czcionką i skórkami</li>
         <li>Po wybraniu zestawu: podgląd tablicy, wybór stylu aplikacji i miniaturki schematów kolorystycznych (polecane dla zestawu na początku) – zmiany widać od razu</li>
         <li>Zestaw startowy wybierzesz też później w Ustawieniach → Ogólne (obecne liczniki trafią do archiwum albo zostaną)</li>
@@ -63,10 +103,23 @@
         <li>Nowa przestrzeń na jednym ekranie: nazwa, ikona, rodzaj (Uczeń, Student, Senior… albo pusta tablica), styl i kolory; nazwa wpisuje się sama – z kolejnym numerem, gdy taka już jest (np. „Student 2”); przestrzeń może mieć własny wygląd (kolory, styl, czcionka zegara)</li>
         <li>Licznik przeniesiesz do innej przestrzeni w jego ustawieniach; alarmy i przypomnienia działają we wszystkich przestrzeniach naraz</li>
       </ul>
+      <ul class="cl-en" lang="en">
+        <li>Starter sets on first launch: Pupil, Student, Office work, Remote work, Millennials, Parent, Senior, Sport and health – ready timers and lists with a matching style, font and skins</li>
+        <li>After choosing a set: board preview, app style and colour scheme thumbnails (recommended ones first) – changes are visible right away</li>
+        <li>You can also pick a starter set later in Settings → General (current timers go to the archive or stay)</li>
+        <li>New layout of the starter set window: choices on the left, a scaled-down board with cards in their final sizes and a list of contents on the right</li>
+        <li>Cards in the sets are arranged by importance – the main timer and the main list are the largest, and together they fill the board with no gaps</li>
+        <li>Larger app window at launch (1240×800), with settings and starter set windows to match</li>
+        <li>New timer tile layout: on a small square the clock and ring fill the whole card (no icon or caption) and the smaller Start and Reset buttons fit inside the dial; on large wide tiles the clock is centred with buttons on the sides; on tall tiles the buttons sit right below the clock; timers without buttons show a larger icon and caption next to the clock; on a 2×2 tile the clock takes the full height with buttons in the corners below; digital, flip, seconds, bar and words views fill the full width or height of the tile</li>
+        <li>Lists on the tile: add items with the field at the bottom of the list (in shopping lists “2 kg potatoes” fills in the quantity) and remove them with ✕ – also when the list is empty</li>
+        <li>Spaces: in the sidebar below the app name you can create separate boards, e.g. “Main”, “School”, “Home” – each with its own timers and lists</li>
+        <li>New space on one screen: name, icon, type (Pupil, Student, Senior… or an empty board), style and colours; the name fills itself in – with a number when it already exists (e.g. “Student 2”); a space can have its own look (colours, style, clock font)</li>
+        <li>Move a timer to another space in its settings; alarms and reminders work in all spaces at once</li>
+      </ul>
     </article>
     <article class="release" id="v0.2.9">
       <div><h2>0.2.9</h2><time datetime="2026-11-19">2026-11-19</time><a class="badge ok" href="https://github.com/s29829/tickdown-releases/releases/tag/v0.2.9">macOS ↓</a></div>
-      <ul>
+      <ul class="cl-pl" lang="pl">
         <li>Listy na kafelku: nazwa listy i przewijana lista z polami wyboru – odhaczaj pozycje jako załatwione albo odznaczaj, bez otwierania okna</li>
         <li>Czas dla list jest teraz opcją: nowa lista domyślnie nie ma przypomnienia; z przypomnieniem zegar jest mniejszy niż w licznikach czasu, a pozycje listy mają większą czcionkę dopasowaną do kafelka</li>
         <li>Nowy układ kafelka: u góry tylko nazwa i ikonki (kształt, edycja, archiwum, usuń), ikona i opis na dole</li>
@@ -78,38 +131,69 @@
         <li>Okno mini floating samo dopasowuje wysokość do liczby liczników, a gdy brakuje miejsca na ekranie, zmniejsza licznik główny</li>
         <li>Ustawienia → Ogólne: reset aplikacji – liczniki trafiają do archiwum, ustawienia wracają do domyślnych</li>
       </ul>
+      <ul class="cl-en" lang="en">
+        <li>Lists on the tile: list name and a scrollable list with checkboxes – tick items off as done or untick them without opening a window</li>
+        <li>Time for lists is now optional: a new list has no reminder by default; with a reminder the clock is smaller than on timers and list items use a larger font fitted to the tile</li>
+        <li>New tile layout: only the name and small icons at the top (shape, edit, archive, delete), icon and caption at the bottom</li>
+        <li>Change the tile shape and size from the popover under the shape button – it no longer covers the icons or buttons</li>
+        <li>Even buttons on all tiles (Start, Pause, Reset, Take now, Open list) – their size depends on the tile size</li>
+        <li>Ready medication schedules come with sample medicines (e.g. 3× a day: Tablets 1 and Syrup 2) – just change the names and doses</li>
+        <li>The medication tile uses space better: larger text and pills on large tiles, on a wide tile the clock on the left and medicines on the right</li>
+        <li>macOS menu bar: when a timer has its own icon, the app icon hides; without a timer icon (or without a timer) the app icon is shown</li>
+        <li>The floating mini window adjusts its height to the number of timers, and shrinks the main timer when the screen runs out of space</li>
+        <li>Settings → General: app reset – timers go to the archive, settings return to defaults</li>
+      </ul>
     </article>
     <article class="release" id="v0.2.8">
       <div><h2>0.2.8</h2><time datetime="2026-11-19">2026-11-19</time><a class="badge ok" href="https://github.com/s29829/tickdown-releases/releases/tag/v0.2.8">macOS ↓</a></div>
-      <ul>
+      <ul class="cl-pl" lang="pl">
         <li>Nowy panel boczny po lewej: Nowy licznik, Nowa lista, Archiwum, Mini i Ustawienia – z opisami albo same ikony</li>
         <li>Nowy licznik w dwóch krokach: wybierz rodzaj z kafelków (nazwa jest opcjonalna), potem ustawienia</li>
         <li>Gotowe propozycje dla każdego rodzaju: pobudka, lunch, pora snu, minutniki od 5 s do 2 h, praca 8–16 i 9–17, rozciąganie co 45 min, najbliższe święta, pory roku, listy zakupów – ustawienia i kolory wypełniają się same</li>
         <li>Konfigurator leków: wybierz, ile razy dziennie – godziny zaproponują się same; potem ten sam zestaw leków o każdej godzinie albo osobny dla każdej</li>
       </ul>
+      <ul class="cl-en" lang="en">
+        <li>New sidebar on the left: New timer, New list, Archive, Mini and Settings – with labels or icons only</li>
+        <li>New timer in two steps: pick a type from the tiles (the name is optional), then the settings</li>
+        <li>Ready suggestions for every type: wake-up, lunch, bedtime, timers from 5 s to 2 h, work 8–4 and 9–5, stretching every 45 min, upcoming holidays, seasons, shopping lists – settings and colours fill in by themselves</li>
+        <li>Medication configurator: choose how many times a day – the times are suggested automatically; then the same set of medicines at every time or a separate one for each</li>
+      </ul>
     </article>
     <article class="release" id="v0.2.7">
       <div><h2>0.2.7</h2><time datetime="2026-11-19">2026-11-19</time></div>
-      <ul>
+      <ul class="cl-pl" lang="pl">
         <li>Nowy układ okna mini – floating: jeden duży licznik główny (nazwa, do kiedy, odliczanie i przyciski start / pauza / reset), a pod nim pozostałe liczniki jako małe kafelki z czasem w skrócie, po 3 w wierszu</li>
         <li>Kliknięcie kafelka robi z niego licznik główny; kolejność kafelków ustawisz w Ustawieniach → Okno mini</li>
         <li>Licznik główny może mieć własną formę prezentacji, czcionkę i kolor akcentu</li>
         <li>Przycisk ⇄ w oknie mini przełącza układy: lista, pasek, floating</li>
       </ul>
+      <ul class="cl-en" lang="en">
+        <li>New floating mini window layout: one large main timer (name, until when, countdown and start / pause / reset buttons) with the other timers below as small tiles with a short time, 3 per row</li>
+        <li>Clicking a tile makes it the main timer; set the tile order in Settings → Mini window</li>
+        <li>The main timer can have its own view, font and accent colour</li>
+        <li>The ⇄ button in the mini window switches layouts: list, bar, floating</li>
+      </ul>
     </article>
     <article class="release" id="v0.2.6">
       <div><h2>0.2.6</h2><time datetime="2026-11-19">2026-11-19</time><a class="badge ok" href="https://github.com/s29829/tickdown-releases/releases/tag/v0.2.6">macOS ↓</a></div>
-      <ul>
+      <ul class="cl-pl" lang="pl">
         <li>Licznik leków: harmonogram dla każdego leku (godziny, co X h z przerwą nocną, do posiłków), dni tygodnia / miesiąca, co N dni, cykle np. 21/7, kuracja od–do, gotowe szablony</li>
         <li>Alarm dawki z potwierdzeniem i historią; brakujący lek można od razu dopisać do listy zakupów</li>
         <li>Listy do zrobienia i zakupów (ilość, jednostka, grupa) z przypomnieniem – wpisz „2 kg ziemniaki”, reszta uzupełni się sama</li>
         <li>Archiwum zamkniętych liczników: przywracanie i usuwanie</li>
         <li>Liczniki pracy i tygodnia: osobne skórki na pracę i czas wolny, domyślne nazwy „Praca” / „Czas wolny”</li>
       </ul>
+      <ul class="cl-en" lang="en">
+        <li>Medication timer: a schedule for each medicine (set times, every X h with a night break, with meals), days of the week / month, every N days, cycles such as 21/7, treatment from–to, ready templates</li>
+        <li>Dose alarm with confirmation and history; a missing medicine can be added to the shopping list right away</li>
+        <li>To-do and shopping lists (quantity, unit, group) with a reminder – type “2 kg potatoes” and the rest fills in by itself</li>
+        <li>Archive of closed timers: restore and delete</li>
+        <li>Work and week timers: separate skins for work and free time, default names “Work” / “Free time”</li>
+      </ul>
     </article>
     <article class="release" id="v0.2.5">
       <div><h2>0.2.5</h2><time datetime="2026-11-18">2026-11-18</time></div>
-      <ul>
+      <ul class="cl-pl" lang="pl">
         <li>Nowa nazwa: TickDown (dawniej Odliczacz) – ustawienia i skórki przenoszą się automatycznie</li>
         <li>Okno mini zawsze na wierzchu: lista w 1–3 kolumnach albo pasek w 1–3 wierszach, napisy skalują się z oknem</li>
         <li>Menu ikonki w pasku menu: pokaż okno, okno mini, liczniki z formą prezentacji, szybka zmiana motywu</li>
@@ -117,39 +201,69 @@
         <li>Ustawienia i okno licznika podzielone na kategorie, z przyciskami Zapisz / Anuluj</li>
         <li>Konfigurator kolorów skórek, wybór kolorystyki ikony w Docku</li>
       </ul>
+      <ul class="cl-en" lang="en">
+        <li>New name: TickDown (formerly Odliczacz) – settings and skins move over automatically</li>
+        <li>Always-on-top mini window: a list in 1–3 columns or a bar in 1–3 rows, text scales with the window</li>
+        <li>Menu bar icon menu: show window, mini window, timers with their display format, quick theme change</li>
+        <li>Working hours: a separate timer name during and outside work</li>
+        <li>Settings and the timer window split into categories, with Save / Cancel buttons</li>
+        <li>Skin colour configurator, choice of Dock icon colours</li>
+      </ul>
     </article>
     <article class="release" id="v0.2.4">
       <div><h2>0.2.4</h2><time datetime="2026-11-18">2026-11-18</time></div>
-      <ul>
+      <ul class="cl-pl" lang="pl">
         <li>Interfejs po angielsku – język dobierany według ustawień systemu</li>
         <li>Ikona w Docku rysowana na żywo: stoper z postępem albo cyfry odliczania najbliższego licznika</li>
         <li>Moment startu odliczania – postęp liczony od chwili ustawienia licznika</li>
       </ul>
+      <ul class="cl-en" lang="en">
+        <li>English interface – the language follows the system settings</li>
+        <li>Live Dock icon: a stopwatch with progress or the countdown digits of the nearest timer</li>
+        <li>Countdown start time – progress is measured from the moment the timer was set</li>
+      </ul>
     </article>
     <article class="release" id="v0.2.3">
       <div><h2>0.2.3</h2><time datetime="2026-11-17">2026-11-17</time></div>
-      <ul>
+      <ul class="cl-pl" lang="pl">
         <li>Licznik „Tydzień / weekend”: do piątku 17:00, potem do niedzieli 24:00 – powiadomienia na przejściach, automatyczne skórki praca / weekend</li>
         <li>Pięć stylów aplikacji: Klasyczny, Szkło, Bento, Minimalistyczny, Miękki (Ustawienia → Wygląd aplikacji)</li>
         <li>Osiem nowych motywów kolorów: Północ, Zorza, Śnieg, Mięta, Lawenda, Sorbet, Kawa, Grafit nowoczesny</li>
         <li>15 nowych czcionek zegara, w tym 12 wbudowanych w aplikację (licencja OFL)</li>
         <li>14 nowych skórek (m.in. LCD, Terminal, Nixie, Cyber, Bauhaus) i 77 ikon w grupach tematycznych</li>
       </ul>
+      <ul class="cl-en" lang="en">
+        <li>“Week / weekend” timer: until Friday 5 pm, then until Sunday midnight – notifications at each switch, automatic work / weekend skins</li>
+        <li>Five app styles: Classic, Glass, Bento, Minimal, Soft (Settings → App appearance)</li>
+        <li>Eight new colour themes: Midnight, Aurora, Snow, Mint, Lavender, Sorbet, Coffee, Modern graphite</li>
+        <li>15 new clock fonts, 12 of them built into the app (OFL licence)</li>
+        <li>14 new skins (including LCD, Terminal, Nixie, Cyber, Bauhaus) and 77 icons in themed groups</li>
+      </ul>
     </article>
     <article class="release" id="v0.2.2">
       <div><h2>0.2.2</h2><time datetime="2026-11-17">2026-11-17</time></div>
-      <ul>
+      <ul class="cl-pl" lang="pl">
         <li>Odliczanie do świąt: Polska (10), Europa, Wielka Brytania, USA i Chiny (po 5) oraz własne uroczystości (jednorazowo lub co roku)</li>
         <li>Odliczanie do następnej (lub wybranej) pory roku – astronomiczny początek z dokładnością do minuty</li>
         <li>17 skórek świątecznych dobieranych automatycznie do święta / pory roku</li>
         <li>Sześć wielkości kart: mały kwadrat, kwadrat, pion i poziom mały, pion i poziom duży; widoki skalują się do karty</li>
         <li>Przy odliczaniu dłuższym niż doba wszystkie widoki pokazują liczbę dni; przypomnienia „1 tydzień” i „1 dzień” przed świętem</li>
       </ul>
+      <ul class="cl-en" lang="en">
+        <li>Countdown to holidays: Poland (10), Europe, the UK, the USA and China (5 each) plus your own occasions (one-off or yearly)</li>
+        <li>Countdown to the next (or a chosen) season – the astronomical start, accurate to the minute</li>
+        <li>17 holiday skins picked automatically for the holiday / season</li>
+        <li>Six card sizes: small square, square, small tall and wide, large tall and wide; views scale to the card</li>
+        <li>For countdowns longer than a day all views show the number of days; “1 week” and “1 day” reminders before a holiday</li>
+      </ul>
     </article>
     <article class="release" id="v0.2.1">
       <div><h2>0.2.1</h2><time datetime="2026-11-16">2026-11-16</time></div>
-      <ul>
+      <ul class="cl-pl" lang="pl">
         <li>Plakietka na ikonie w Docku: liczba aktywnych liczników i czas do najbliższego końca (np. <code>3 · 12:34</code>)</li>
+      </ul>
+      <ul class="cl-en" lang="en">
+        <li>Dock icon badge: the number of active timers and the time to the nearest end (e.g. <code>3 · 12:34</code>)</li>
       </ul>
     </article>
   </div>
