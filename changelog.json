@@ -1,5 +1,23 @@
 [
   {
+    "version": "0.2.13",
+    "date": "2026-11-21",
+    "items": [
+      "Wykres Gantta: każdy nowy element tablicy (licznik, lista, notatnik) od razu trafia na wykres – element bez własnego czasu dostaje jeden dzień pracy",
+      "Wykres Gantta: w wierszu ✎ otwiera edycję czasu, godzin pracy i powiązań, a ✕ usuwa element z wykresu (na tablicy zostaje)",
+      "Wykres Gantta: przycisk + przywraca usunięte elementy; można też przeciągnąć kartę na wykres – jeśli już na nim jest, pojawi się komunikat",
+      "Ustawienia kafelka wykresu: tabela wszystkich elementów – widoczność, kolejność, nazwa, zakres dat, czas pracy, godziny pracy i powiązania w jednym miejscu, a także „Importuj wszystkie” i „Wyczyść wykres”",
+      "macOS: w obrazie instalacyjnym jest instrukcja instalacji (PL/EN)"
+    ],
+    "items_en": [
+      "Gantt chart: every new board item (counter, list, notebook) appears on the chart right away – an item without its own time gets one working day",
+      "Gantt chart: in each row ✎ edits the time, working hours and links, and ✕ removes the item from the chart (it stays on the board)",
+      "Gantt chart: the + button brings removed items back; you can also drag a card onto the chart – if it's already there, you'll see a message",
+      "Chart tile settings: a table of all items – visibility, order, name, date range, work time, working hours and links in one place, plus “Import all” and “Clear chart”",
+      "macOS: the installer image now includes installation instructions (PL/EN)"
+    ]
+  },
+  {
     "version": "0.2.12",
     "date": "2026-11-21",
     "items": [

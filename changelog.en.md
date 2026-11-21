@@ -1,5 +1,13 @@
 # TickDown – changelog
 
+## 0.2.13 – 2026-11-21
+
+- Gantt chart: every new board item (counter, list, notebook) appears on the chart right away – an item without its own time gets one working day
+- Gantt chart: in each row ✎ edits the time, working hours and links, and ✕ removes the item from the chart (it stays on the board)
+- Gantt chart: the + button brings removed items back; you can also drag a card onto the chart – if it's already there, you'll see a message
+- Chart tile settings: a table of all items – visibility, order, name, date range, work time, working hours and links in one place, plus “Import all” and “Clear chart”
+- macOS: the installer image now includes installation instructions (PL/EN)
+
 ## 0.2.12 – 2026-11-21
 
 - Status bar at the bottom of the board: space or group, number of items and the nearest countdown end; hovering slides out the item palette

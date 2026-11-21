@@ -1,5 +1,13 @@
 # TickDown – historia zmian
 
+## 0.2.13 – 2026-11-21
+
+- Wykres Gantta: każdy nowy element tablicy (licznik, lista, notatnik) od razu trafia na wykres – element bez własnego czasu dostaje jeden dzień pracy
+- Wykres Gantta: w wierszu ✎ otwiera edycję czasu, godzin pracy i powiązań, a ✕ usuwa element z wykresu (na tablicy zostaje)
+- Wykres Gantta: przycisk + przywraca usunięte elementy; można też przeciągnąć kartę na wykres – jeśli już na nim jest, pojawi się komunikat
+- Ustawienia kafelka wykresu: tabela wszystkich elementów – widoczność, kolejność, nazwa, zakres dat, czas pracy, godziny pracy i powiązania w jednym miejscu, a także „Importuj wszystkie” i „Wyczyść wykres”
+- macOS: w obrazie instalacyjnym jest instrukcja instalacji (PL/EN)
+
 ## 0.2.12 – 2026-11-21
 
 - Pasek statusu na dole tablicy: przestrzeń lub grupa, liczba elementów i najbliższy koniec odliczania; najechanie wysuwa paletę elementów
