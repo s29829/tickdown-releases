@@ -1,4 +1,4 @@
-// Strona TickDown – język PL/EN, podgląd licznika, pliki do pobrania (najnowsze wydanie z GitHuba),
+// Strona TickDown – język PL/EN, podgląd (zakładki: licznik, projekt z wykresem Gantta, notatki i listy), pliki do pobrania (najnowsze wydanie z GitHuba),
 // „Co nowego” (changelog.json) i głosowanie (zgłoszenia z etykietą „glosowanie” w repo wydań).
 (() => {
   const REPO = 's29829/tickdown-releases';
@@ -21,7 +21,9 @@
       winNote: 'Wersja na Windows 10 i 11 jest w przygotowaniu.', androidNote: 'Wersja na telefony i tablety z Androidem jest w przygotowaniu.',
       wantIt: 'Chcę tę wersję 👍', votes: (n) => n === 1 ? '1 głos' : (n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20)) ? `${n} głosy` : `${n} głosów`,
       noVotes: 'Brak propozycji – zgłoś pierwszą!', votesErr: 'Głosy zobaczysz na GitHubie:', votesLink: 'lista zgłoszeń',
-      free: 'Za darmo', soonPlat: 'wkrótce Windows i Android', more: 'Pełna historia zmian', version: 'Wersja' },
+      free: 'Za darmo', soonPlat: 'wkrótce Windows i Android', more: 'Pełna historia zmian', version: 'Wersja',
+      g: { analysis: 'Analiza', req: 'Wymagania', mock: 'Makiety', build: 'Realizacja', ui: 'Interfejs', logic: 'Logika', tests: 'Testy', launch: 'Wydanie ◆' },
+      progress: (n) => `postęp ${n}%` },
     en: { download: 'Download for macOS', soon: 'coming soon', avail: 'available', none: 'The first release is on its way.',
       latest: 'Latest release', all: 'all releases', err: 'Could not load the file list.', open: 'Open the releases page',
       until: 'until', weekendNow: 'now!', d: 'd', rosetta: 'Runs on Apple Silicon Macs via Rosetta 2.',
@@ -29,7 +31,9 @@
       winNote: 'A version for Windows 10 and 11 is in the works.', androidNote: 'A version for Android phones and tablets is in the works.',
       wantIt: 'I want this 👍', votes: (n) => n === 1 ? '1 vote' : `${n} votes`,
       noVotes: 'No suggestions yet – be the first!', votesErr: 'See the votes on GitHub:', votesLink: 'issue list',
-      free: 'Free', soonPlat: 'Windows and Android coming soon', more: 'Full changelog', version: 'Version' },
+      free: 'Free', soonPlat: 'Windows and Android coming soon', more: 'Full changelog', version: 'Version',
+      g: { analysis: 'Analysis', req: 'Requirements', mock: 'Mockups', build: 'Build', ui: 'Interface', logic: 'Logic', tests: 'Testing', launch: 'Launch ◆' },
+      progress: (n) => `${n}% done` },
   };
   const t = (k) => T[lang][k];
 
@@ -64,6 +68,7 @@
     else { start = at(now, 17); end = at(now, 9); end.setDate(end.getDate() + 1); label = '9:00'; }
     const left = end - now, total = end - start;
     $('demo-time').textContent = hms(left);
+    if ($('board-time')) $('board-time').textContent = hms(left).slice(0, 5);
     $('demo-sub').textContent = `${t('until')} ${label}`;
     $('demo-arc').setAttribute('stroke-dashoffset', String(ARC * (1 - (total - left) / total)));
     const dow = now.getDay();
@@ -75,6 +80,87 @@
     $('demo-ny').textContent = days(new Date(now.getFullYear() + 1, 0, 1) - now);
   }
   setInterval(tick, 1000);
+
+  /* ---------- zakładki podglądu (same się zmieniają, dopóki ktoś nie kliknie) ---------- */
+  const tabs = [...document.querySelectorAll('.demo-tab')];
+  function showDemo(id) {
+    tabs.forEach((b) => b.setAttribute('aria-selected', String(b.dataset.demo === id)));
+    document.querySelectorAll('.demo-panel').forEach((p) => { p.hidden = p.dataset.panel !== id; });
+  }
+  let rotate = tabs.length && !matchMedia('(prefers-reduced-motion: reduce)').matches ? setInterval(() => {
+    const i = tabs.findIndex((b) => b.getAttribute('aria-selected') === 'true');
+    showDemo(tabs[(i + 1) % tabs.length].dataset.demo);
+  }, 7000) : null;
+  const stopRotate = () => { clearInterval(rotate); rotate = null; };
+  tabs.forEach((b) => b.addEventListener('click', () => { stopRotate(); showDemo(b.dataset.demo); }));
+  document.querySelector('.demo')?.addEventListener('pointerdown', stopRotate);
+  const card = $('flashcard');
+  card?.addEventListener('click', () => {
+    card.classList.toggle('flipped');
+    card.textContent = card.classList.contains('flipped') ? card.dataset.back : card.dataset.front;
+  });
+
+  /* ---------- wykres Gantta: 10 dni roboczych od poniedziałku tego tygodnia, linia „teraz” ---------- */
+  // s / e – początek i koniec w dniach roboczych, dep – wiersz poprzednika, stage – etap (podgrupa), ms – kamień milowy
+  const ROWS = [
+    { k: 'analysis', s: 0, e: 2, stage: true },
+    { k: 'req', s: 0, e: 1 },
+    { k: 'mock', s: 1, e: 2, dep: 1 },
+    { k: 'build', s: 2, e: 8, stage: true },
+    { k: 'ui', s: 2, e: 5, dep: 2 },
+    { k: 'logic', s: 3, e: 6.5, dep: 2 },
+    { k: 'tests', s: 6.5, e: 8, dep: 5 },
+    { k: 'launch', s: 8.5, e: 8.5, ms: true, dep: 6 },
+  ];
+  const DAYS = 10;
+  function ganttNow(now) {
+    const dow = now.getDay();
+    if (dow === 0 || dow === 6) return 5; // weekend – po piątku
+    const h = now.getHours() + now.getMinutes() / 60;
+    return dow - 1 + Math.min(1, Math.max(0, (h - 9) / 8));
+  }
+  function renderGantt() {
+    const boxes = document.querySelectorAll('[data-gantt]');
+    if (!boxes.length) return;
+    const now = new Date();
+    const pos = ganttNow(now);
+    const mon = new Date(now); mon.setHours(0, 0, 0, 0);
+    mon.setDate(mon.getDate() - ((now.getDay() + 6) % 7));
+    const loc = lang === 'en' ? 'en-GB' : 'pl-PL';
+    const days = [];
+    for (let i = 0, d = new Date(mon); days.length < DAYS; d.setDate(d.getDate() + 1)) {
+      if (d.getDay() === 0 || d.getDay() === 6) continue;
+      const wd = d.toLocaleDateString(loc, { weekday: 'short' }).replace('.', '');
+      days.push(`<span class="${d.toDateString() === now.toDateString() ? 'today' : ''}">${esc(wd)} ${d.getDate()}</span>`);
+      i++;
+    }
+    const total = ROWS.filter((r) => !r.stage && !r.ms).reduce((a, r) => a + (r.e - r.s), 0);
+    const done = ROWS.filter((r) => !r.stage && !r.ms).reduce((a, r) => a + Math.min(r.e - r.s, Math.max(0, pos - r.s)), 0);
+    document.querySelectorAll('[data-gantt-progress]').forEach((el) => { el.textContent = t('progress')(Math.round((done / total) * 100)); });
+    boxes.forEach((box) => {
+      const row = parseFloat(getComputedStyle(box).getPropertyValue('--row')) || 30;
+      const rows = ROWS.map((r) => {
+        const fill = r.ms ? 0 : Math.min(1, Math.max(0, (pos - r.s) / (r.e - r.s)));
+        const mark = r.ms ? `<span class="g-ms" data-l="${r.s * 10}"></span>`
+          : `<span class="g-bar" data-l="${r.s * 10}" data-w="${(r.e - r.s) * 10}"><i data-w="${Math.round(fill * 100)}"></i></span>`;
+        return `<div class="g-row${r.stage ? ' stage' : ''}"><span class="g-name">${esc(t('g')[r.k])}</span><div class="g-track">${mark}</div></div>`;
+      }).join('');
+      const links = ROWS.map((r, i) => {
+        if (r.dep == null) return '';
+        const p = ROWS[r.dep];
+        const x1 = p.e * 10, y1 = (r.dep + 0.5) * row, x2 = r.s * 10, y2 = (i + 0.5) * row, xm = Math.max(x1, x2) + 1.2;
+        return `<path vector-effect="non-scaling-stroke" d="M${x1} ${y1}H${xm}V${y2}H${x2 + (r.ms ? 0 : 0.4)}"/>`;
+      }).join('');
+      box.innerHTML = `<div class="g-head"><span></span><div class="g-days">${days.join('')}</div></div>${rows}
+        <svg class="g-links" viewBox="0 0 100 ${ROWS.length * row}" preserveAspectRatio="none" height="${ROWS.length * row}">${links}</svg>
+        <span class="g-now" data-now></span>`;
+      // położenie przez CSSOM – atrybut style w HTML blokuje CSP (style-src 'self')
+      box.querySelectorAll('[data-l]').forEach((el) => { el.style.left = `${el.dataset.l}%`; });
+      box.querySelectorAll('[data-w]').forEach((el) => { el.style.width = `${el.dataset.w}%`; });
+      box.querySelector('[data-now]').style.left = `calc(var(--label) + (100% - var(--label)) * ${pos / DAYS})`;
+    });
+  }
+  setInterval(renderGantt, 60 * 1000);
 
   /* ---------- dane ---------- */
   const getJson = (url) => fetch(url, { headers: { Accept: 'application/vnd.github+json' } })
@@ -157,7 +243,7 @@
     }
   }
 
-  function renderAll() { tick(); renderDownloads(); renderNews(); renderVotes(); }
+  function renderAll() { tick(); renderGantt(); renderDownloads(); renderNews(); renderVotes(); }
 
   if ($('platforms')) {
     // najpierw API GitHuba; w razie błędu (np. limit zapytań) – release.json zapisany przy budowaniu strony

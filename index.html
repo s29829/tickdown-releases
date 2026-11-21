@@ -3,22 +3,24 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>TickDown – odliczanie czasu na Maca</title>
-<meta name="description" content="TickDown – wiele liczników naraz: do godziny, minutnik, praca i weekend, święta, leki, listy zakupów. Na macOS, wkrótce Windows i Android.">
+<title>TickDown – czas, zadania i projekty na jednej tablicy</title>
+<meta name="description" content="TickDown – tablica na liczniki, listy, notatki, kalendarz i projekty z wykresem Gantta. Odliczanie do godziny, końca pracy, świąt i kolejnej dawki leków. Na macOS, wkrótce Windows i Android.">
 <meta property="og:title" content="TickDown">
-<meta property="og:description" content="Odliczanie do godziny, końca pracy, weekendu, świąt i kolejnej dawki leków.">
+<meta property="og:description" content="Liczniki, listy, notatki, kalendarz i projekty z wykresem Gantta – na jednej tablicy.">
 <meta property="og:image" content="icon-256.png">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="icon-256.png">
-<link rel="stylesheet" href="site.css?v=14efd879bc">
-<script src="site.js?v=0d95f28084" defer></script>
+<link rel="stylesheet" href="site.css?v=f9acdcfd13">
+<script src="site.js?v=83010ff092" defer></script>
 </head>
 <body>
 <header class="top">
   <div class="wrap">
     <a class="brand" href="./"><img src="icon.svg" alt="">TickDown</a>
     <nav class="links">
+      <a class="opt" href="#tablica" data-en="Board">Tablica</a>
       <a class="opt" href="#funkcje" data-en="Features">Funkcje</a>
+      <a class="opt" href="#projekty" data-en="Projects">Projekty</a>
       <a class="opt" href="#pobierz" data-en="Download">Pobierz</a>
       <a class="opt" href="changelog.html" data-en="Changelog">Zmiany</a>
       <a class="opt" href="#glosuj" data-en="Vote">Głosuj</a>
@@ -31,45 +33,115 @@
 <section class="hero">
   <div class="wrap">
     <div>
-      <h1 data-en="Count down to <em>what matters</em>.">Odliczaj do tego, <em>co ważne</em>.</h1>
-      <p class="lead" data-en="TickDown keeps many timers at once: until 5 pm, the end of the work week, the holidays, your next medication dose or a shopping reminder. Always visible in the menu bar, the Dock and a floating mini window.">
-        TickDown prowadzi wiele liczników naraz: do 17:00, do końca tygodnia pracy, do świąt, do kolejnej dawki leków
-        albo przypomnienia o zakupach. Zawsze pod ręką w pasku menu, w Docku i w małym oknie na wierzchu.</p>
+      <h1 data-en="Time, tasks and projects – <em>on one board</em>.">Czas, zadania i projekty – <em>na jednej tablicy</em>.</h1>
+      <p class="lead" data-en="TickDown is a board for timers, lists, notes, a calendar and projects with a Gantt chart. Countdowns to 5 pm, the weekend or your next medication dose are always at hand – in the menu bar, the Dock and a small window on top.">
+        TickDown to tablica na liczniki, listy, notatki, kalendarz i projekty z wykresem Gantta. Odliczanie do 17:00,
+        weekendu czy kolejnej dawki leków masz zawsze pod ręką – w pasku menu, w Docku i w małym oknie na wierzchu.</p>
       <div class="cta">
         <a class="btn primary" id="hero-dl" href="#pobierz">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v12m0 0-5-5m5 5 5-5M5 20h14"/></svg>
           <span id="hero-dl-text" data-en="Download for macOS">Pobierz na macOS</span>
         </a>
-        <a class="btn ghost" href="#funkcje" data-en="See features">Zobacz funkcje</a>
+        <a class="btn ghost" href="#tablica" data-en="See what it can do">Zobacz, co potrafi</a>
       </div>
       <div class="hint num" id="hero-hint" data-en="Free · macOS 11+ · Windows and Android coming soon">Za darmo · macOS 11+ · wkrótce Windows i Android</div>
     </div>
 
-    <div class="demo" aria-label="Podgląd licznika">
-      <div class="demo-head">
-        <span class="demo-title" data-en="Work">Praca</span>
-        <span class="demo-sub num" id="demo-sub">do 17:00</span>
+    <div class="demo" aria-label="Podgląd TickDown">
+      <div class="demo-tabs" role="tablist">
+        <button type="button" role="tab" class="demo-tab" data-demo="timer" aria-selected="true" data-en="Timer">Licznik</button>
+        <button type="button" role="tab" class="demo-tab" data-demo="project" aria-selected="false" data-en="Project">Projekt</button>
+        <button type="button" role="tab" class="demo-tab" data-demo="notes" aria-selected="false" data-en="Notes &amp; lists">Notatki i listy</button>
       </div>
-      <div class="ring">
-        <svg viewBox="0 0 120 120">
-          <circle cx="60" cy="60" r="52" fill="none" stroke="var(--track)" stroke-width="10"/>
-          <circle id="demo-arc" cx="60" cy="60" r="52" fill="none" stroke="var(--accent)" stroke-width="10"
-                  stroke-linecap="round" stroke-dasharray="326.7" stroke-dashoffset="326.7"/>
-        </svg>
-        <div class="t"><b class="num" id="demo-time">--:--:--</b><span data-en="left">zostało</span></div>
+
+      <div class="demo-panel" data-panel="timer">
+        <div class="demo-head">
+          <span class="demo-title" data-en="Work">Praca</span>
+          <span class="demo-sub num" id="demo-sub">do 17:00</span>
+        </div>
+        <div class="ring">
+          <svg viewBox="0 0 120 120">
+            <circle cx="60" cy="60" r="52" fill="none" stroke="var(--track)" stroke-width="10"/>
+            <circle id="demo-arc" cx="60" cy="60" r="52" fill="none" stroke="var(--accent)" stroke-width="10"
+                    stroke-linecap="round" stroke-dasharray="326.7" stroke-dashoffset="326.7"/>
+          </svg>
+          <div class="t"><b class="num" id="demo-time">--:--:--</b><span data-en="left">zostało</span></div>
+        </div>
+        <div class="chips">
+          <div class="chip"><small>Weekend</small><b class="num" id="demo-weekend">–</b></div>
+          <div class="chip"><small data-en="Christmas">Wigilia</small><b class="num" id="demo-xmas">–</b></div>
+          <div class="chip"><small data-en="New Year">Nowy Rok</small><b class="num" id="demo-ny">–</b></div>
+        </div>
       </div>
-      <div class="chips">
-        <div class="chip"><small>Weekend</small><b class="num" id="demo-weekend">–</b></div>
-        <div class="chip"><small data-en="Christmas">Wigilia</small><b class="num" id="demo-xmas">–</b></div>
-        <div class="chip"><small data-en="New Year">Nowy Rok</small><b class="num" id="demo-ny">–</b></div>
+
+      <div class="demo-panel" data-panel="project" hidden>
+        <div class="demo-head">
+          <span class="demo-title" data-en="Website project">Projekt „Strona”</span>
+          <span class="demo-sub num" data-gantt-progress></span>
+        </div>
+        <div class="gantt" data-gantt="small"></div>
+      </div>
+
+      <div class="demo-panel" data-panel="notes" hidden>
+        <div class="notes-demo">
+          <div class="sticky" data-en="Call mum ☎<br>Pick up the parcel<br>Book the dentist">Zadzwoń do mamy ☎<br>Odbierz paczkę<br>Umów dentystę</div>
+          <div class="mini-card">
+            <h4 data-en="🛒 Shopping">🛒 Zakupy</h4>
+            <label class="chk"><input type="checkbox" checked> <span data-en="2 kg potatoes">2 kg ziemniaki</span></label>
+            <label class="chk"><input type="checkbox"> <span data-en="milk">mleko</span></label>
+            <label class="chk"><input type="checkbox"> <span data-en="6 eggs">6 jajek</span></label>
+            <label class="chk"><input type="checkbox"> <span data-en="bread">chleb</span></label>
+          </div>
+          <div class="mini-card md">
+            <h4 data-en="📝 Meeting">📝 Spotkanie</h4>
+            <p data-en="<b>Agenda:</b> budget, schedule">Plan: <b>budżet</b>, harmonogram</p>
+            <label class="chk"><input type="checkbox" checked> <span data-en="send the summary">wysłać podsumowanie</span></label>
+            <label class="chk"><input type="checkbox"> <span data-en="update the plan">zaktualizować plan</span></label>
+          </div>
+          <div class="mini-card flash">
+            <small data-en="Flashcard · click to flip">Fiszka · kliknij, by obrócić</small>
+            <button type="button" class="flashcard" id="flashcard" data-front="der Zug" data-back="pociąg · train">der Zug</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="funkcje" class="alt">
+<section id="tablica" class="alt">
   <div class="wrap">
-    <h2 data-en="One app, many kinds of countdowns">Jedna aplikacja, wiele rodzajów odliczania</h2>
+    <h2 data-en="Everything on one board">Wszystko na jednej tablicy</h2>
+    <p class="sub" data-en="Arrange timers, lists, notes, a calendar and projects however you like. Drag cards anywhere, stretch them by the corner, drop new ones from the palette at the bottom.">
+      Układaj liczniki, listy, notatki, kalendarz i projekty tak, jak Ci wygodnie. Przeciągaj karty w dowolne miejsce,
+      rozciągaj je za róg, nowe upuszczaj z palety na dole okna.</p>
+    <div class="board" aria-hidden="true">
+      <div class="tile t-wl"><span class="tl" data-en="Work">Praca</span><div class="tile-ring"><b class="num" id="board-time">--:--</b></div><small data-en="until 5 pm">do 17:00</small></div>
+      <div class="tile t-tl"><span class="tl" data-en="🛒 Shopping">🛒 Zakupy</span>
+        <ul class="tile-list"><li class="done" data-en="potatoes">ziemniaki</li><li data-en="milk">mleko</li><li data-en="eggs">jajka</li><li data-en="bread">chleb</li><li data-en="apples">jabłka</li><li class="done" data-en="coffee">kawa</li></ul></div>
+      <div class="tile t-ws"><span class="tl" data-en="📊 Project">📊 Projekt</span><div class="tile-gantt"><i></i><i></i><i></i></div></div>
+      <div class="tile t-ws"><span class="tl" data-en="📅 Calendar">📅 Kalendarz</span><div class="tile-cal"><i></i><i></i><i class="on"></i><i></i><i></i><i></i><i class="on"></i></div></div>
+      <div class="tile t-s sticky-tile" data-en="Call mum ☎">Zadzwoń do mamy ☎</div>
+      <div class="tile t-s"><span class="tl">Pomodoro</span><b class="num big">25:00</b></div>
+      <div class="tile t-s"><span class="tl" data-en="💊 Meds">💊 Leki</span><b class="num big">2h</b></div>
+      <div class="tile t-s group-tile"><span class="tl" data-en="📁 Home">📁 Dom</span><div class="tile-mini"><i></i><i></i><i></i><i></i></div></div>
+    </div>
+    <div class="spacer"></div>
+    <div class="feat2">
+      <div class="card"><h3 data-en="Spaces">Przestrzenie</h3>
+        <p data-en="Separate boards for work, school or home – each with its own look. The home screen shows them all with a preview.">Osobne tablice na pracę, szkołę czy dom – każda z własnym wyglądem. Ekran główny pokazuje je wszystkie z podglądem.</p></div>
+      <div class="card"><h3 data-en="Groups">Grupy</h3>
+        <p data-en="A group tile is a board inside the board. Drop cards into it, nest groups, find your way with the path and the sidebar tree.">Kafelek grupy to tablica w tablicy. Wrzucaj do niej karty, zagnieżdżaj grupy, poruszaj się ścieżką i drzewem w panelu bocznym.</p></div>
+      <div class="card"><h3 data-en="Starter sets">Zestawy startowe</h3>
+        <p data-en="Student, office, remote work, parent, senior, sport… – a ready board with matching cards, style and colours. Change it before you start.">Uczeń, biuro, praca zdalna, rodzic, senior, sport… – gotowa tablica z dopasowanymi kartami, stylem i kolorami. Zmienisz ją przed startem.</p></div>
+      <div class="card"><h3 data-en="Statistics">Statystyki</h3>
+        <p data-en="A tile with the state of the board or a group: what is running, what is done, what is overdue.">Kafelek ze stanem tablicy lub grupy: co trwa, co zrobione, co po terminie.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="funkcje">
+  <div class="wrap">
+    <h2 data-en="Every kind of countdown">Każdy rodzaj odliczania</h2>
     <p class="sub" data-en="Add as many timers as you need. Each has its own title, icon, view, size and skin.">
       Dodaj tyle liczników, ile potrzebujesz. Każdy ma własny tytuł, ikonę, widok, wielkość i skórkę.</p>
     <div class="grid">
@@ -86,27 +158,52 @@
       <div class="card"><div class="ic">🎄</div><h3 data-en="Holidays and seasons">Święta i pory roku</h3>
         <p data-en="Polish, EU, UK, US and Chinese holidays, your own dates, the start of each season. Matching skins pick themselves.">Święta PL, EU, UK, USA i chińskie, własne daty, początek pór roku. Pasujące skórki dobierają się same.</p></div>
       <div class="card"><div class="ic">💊</div><h3 data-en="Medication">Leki</h3>
-        <p data-en="Pick how many times a day – the hours are suggested for you. The same set of medicines at every time or a separate one for each; an alarm with confirmation and a history.">Wybierz, ile razy dziennie – godziny zaproponują się same. Ten sam zestaw leków o każdej godzinie albo osobny dla każdej; alarm z potwierdzeniem i historią.</p></div>
-      <div class="card"><div class="ic">🛒</div><h3 data-en="To-do and shopping lists">Listy zadań i zakupów</h3>
-        <p data-en="Lists with a reminder; type “2 kg potatoes” and quantity and unit fill themselves in.">Listy z przypomnieniem; wpisz „2 kg ziemniaki”, a ilość i jednostka uzupełnią się same.</p></div>
-    </div>
-    <div class="spacer"></div>
-    <div class="feat2">
-      <div class="card"><h3 data-en="New counter in two steps">Nowy licznik w dwóch krokach</h3>
-        <ul>
-          <li data-en="pick a type from the tiles, the name is optional">wybierz rodzaj z kafelków, nazwa jest opcjonalna</li>
-          <li data-en="ready-made presets: wake up, lunch, bedtime, Pomodoro, 9–5…">gotowe schematy: pobudka, lunch, pora snu, Pomodoro, praca 8–16…</li>
-          <li data-en="the nearest holidays and every season with a date">najbliższe święta i każda pora roku z datą</li>
-          <li data-en="settings come pre-filled – just click Create">ustawienia od razu wypełnione – wystarczy „Utwórz”</li>
-        </ul></div>
-      <div class="card"><h3 data-en="Sidebar">Panel boczny</h3>
-        <ul>
-          <li data-en="separate New counter and New list buttons">osobne przyciski „Nowy licznik” i „Nowa lista”</li>
-          <li data-en="icons with labels or icons only">ikony z opisem albo same ikony</li>
-        </ul></div>
+        <p data-en="Pick how many times a day – the hours are suggested for you. An alarm with confirmation and a history; a missing medicine goes straight to the shopping list.">Wybierz, ile razy dziennie – godziny zaproponują się same. Alarm z potwierdzeniem i historią; brakujący lek trafi od razu na listę zakupów.</p></div>
+      <div class="card"><div class="ic">⚡</div><h3 data-en="Ready presets">Gotowe schematy</h3>
+        <p data-en="Wake up, lunch, bedtime, Pomodoro, 9–5, the nearest holidays – settings come pre-filled.">Pobudka, lunch, pora snu, Pomodoro, praca 8–16, najbliższe święta – ustawienia od razu wypełnione.</p></div>
     </div>
 
     <div class="spacer"></div>
+    <h2 data-en="Lists, notes and a calendar">Listy, notatki i kalendarz</h2>
+    <p class="sub" data-en="Not everything is a countdown. Write, tick off and plan right on the tiles – without opening any windows.">Nie wszystko jest odliczaniem. Pisz, odhaczaj i planuj wprost na kafelkach – bez otwierania okien.</p>
+    <div class="grid">
+      <div class="card"><div class="ic">✅</div><h3 data-en="To-do and shopping lists">Listy zadań i zakupów</h3>
+        <p data-en="Tick items off on the tile, add new ones at the bottom – type “2 kg potatoes” and quantity and unit fill themselves in. Optional reminder.">Odhaczaj pozycje na kafelku, dopisuj nowe na dole – „2 kg ziemniaki” samo uzupełni ilość i jednostkę. Opcjonalne przypomnienie.</p></div>
+      <div class="card"><div class="ic">🗒️</div><h3 data-en="Sticky notes">Karteczki post-it</h3>
+        <p data-en="Handwritten-style notes in paper colours, plain text or Markdown with formatting, tasks and links.">Notatki pismem odręcznym w kolorach papieru, czysty tekst albo Markdown z formatowaniem, zadaniami i linkami.</p></div>
+      <div class="card"><div class="ic">🃏</div><h3 data-en="Flashcards and phrases">Fiszki i hasła</h3>
+        <p data-en="Flashcards flip on click; phrases rotate every few seconds – handy for learning and motivation.">Fiszki obracane kliknięciem; hasła zmieniające się co kilka sekund – do nauki i motywacji.</p></div>
+      <div class="card"><div class="ic">📅</div><h3 data-en="Calendar">Kalendarz</h3>
+        <p data-en="Month, week and day views with reminders and repeating events; deadlines of your timers and lists show up too. Optional Google Calendar sync.">Widok miesiąca, tygodnia i dnia z przypomnieniami i powtórzeniami; widać też terminy liczników i list. Opcjonalnie połączenie z Kalendarzem Google.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="projekty" class="alt">
+  <div class="wrap">
+    <h2 data-en="Project management with a Gantt chart">Zarządzanie projektami z wykresem Gantta</h2>
+    <p class="sub" data-en="A group or a whole space can become a project with a timeline. Its tasks are the cards you already have – timers, lists, notes and subgroups.">
+      Grupa albo cała przestrzeń może stać się projektem z osią czasu. Zadaniami są karty, które już masz – liczniki, listy, notatki i podgrupy.</p>
+    <div class="proj">
+      <div class="card gantt-card">
+        <div class="demo-head">
+          <span class="demo-title" data-en="Website project">Projekt „Strona”</span>
+          <span class="demo-sub num" data-gantt-progress></span>
+        </div>
+        <div class="gantt" data-gantt="big"></div>
+      </div>
+      <ul class="proj-points">
+        <li><b data-en="Drag with the mouse">Przeciągasz myszą</b><span data-en="Move bars, stretch their start and end, draw a new range on an empty track.">Przesuwasz paski, rozciągasz początek i koniec, rysujesz nowy zakres na pustym torze.</span></li>
+        <li><b data-en="Dependencies">Zależności</b><span data-en="Link tasks with a dot at the end of a bar. Hard links move the following tasks when a predecessor slips.">Łączysz zadania kropką na końcu paska. Twarde powiązania przesuwają kolejne zadania, gdy poprzednik się opóźni.</span></li>
+        <li><b data-en="Working hours">Godziny pracy</b><span data-en="The schedule follows your working days and hours – weekends and nights are skipped.">Harmonogram uwzględnia dni i godziny pracy – weekendy i noce są pomijane.</span></li>
+        <li><b data-en="Stages and milestones">Etapy i kamienie milowe</b><span data-en="Subgroups become stages; ready project templates set up a timeline, task list and stages in one click.">Podgrupy stają się etapami; gotowe projekty w oknie nowej przestrzeni tworzą oś czasu, listę zadań i etapy jednym kliknięciem.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="wyglad">
+  <div class="wrap">
     <h2 data-en="Looks the way you like">Wygląda tak, jak lubisz</h2>
     <p class="sub" data-en="From a minimal ring to a flip clock – and your own skins made in any graphics program.">Od minimalnego pierścienia po zegar klapkowy – i własne skórki z dowolnego programu graficznego.</p>
     <div class="feat2">
@@ -119,25 +216,25 @@
         <ul>
           <li data-en="5 app styles and 15 colour themes">5 stylów aplikacji i 15 motywów kolorystycznych</li>
           <li data-en="30+ built-in skins, your own in SVG/PNG + CSS">ponad 30 skórek, własne z SVG/PNG + CSS</li>
-          <li data-en="22 clock fonts">22 czcionki zegara</li>
+          <li data-en="hover over a card for 2 s to switch its skin">zatrzymaj kursor na karcie 2 s, by zmienić skórkę</li>
         </ul></div>
       <div class="card"><h3 data-en="Always in view">Zawsze na widoku</h3>
         <ul>
-          <li data-en="mini window on top (floating, list or strip)">okno mini zawsze na wierzchu (floating, lista lub pasek)</li>
+          <li data-en="mini window on top – tucks into a tab at the screen edge">okno mini na wierzchu – chowa się w zakładkę przy krawędzi ekranu</li>
           <li data-en="time left in the menu bar">pozostały czas w pasku menu</li>
           <li data-en="live Dock icon: stopwatch or digits">ikona w Docku na żywo: stoper albo cyfry</li>
         </ul></div>
-      <div class="card"><h3 data-en="Small and private">Lekka i prywatna</h3>
+      <div class="card"><h3 data-en="Small, private, up to date">Lekka, prywatna, aktualna</h3>
         <ul>
           <li data-en="a few MB, native app">kilka MB, natywna aplikacja</li>
           <li data-en="no account, no ads, data stays on your Mac">bez konta i reklam, dane tylko na Twoim Macu</li>
-          <li data-en="Polish and English interface">interfejs po polsku i angielsku</li>
+          <li data-en="tells you when a new version is out">sama powie, gdy wyjdzie nowa wersja</li>
         </ul></div>
     </div>
   </div>
 </section>
 
-<section id="pobierz">
+<section id="pobierz" class="alt">
   <div class="wrap">
     <h2 data-en="Download">Pobierz</h2>
     <p class="sub" data-en="TickDown is available for macOS 11 Big Sur and newer. Windows and Android versions are on the way.">TickDown jest dostępny na macOS 11 Big Sur i nowsze. Wersje na Windows i Androida są w drodze.</p>
@@ -160,7 +257,7 @@
   </div>
 </section>
 
-<section id="nowosci" class="alt">
+<section id="nowosci">
   <div class="wrap">
     <h2 data-en="What’s new">Co nowego</h2>
     <div class="card news" id="news">
@@ -169,7 +266,7 @@
   </div>
 </section>
 
-<section id="glosuj">
+<section id="glosuj" class="alt">
   <div class="wrap">
     <h2 data-en="What are you waiting for?">Na co czekasz?</h2>
     <p class="sub" data-en="Vote with a 👍 on GitHub – the most wanted platforms and features get built first. Voting needs a free GitHub account.">

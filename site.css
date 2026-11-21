@@ -146,3 +146,105 @@ footer a { color: var(--muted); }
 .release ul { margin: 0; padding-left: 18px; }
 .release li { margin: 3px 0; }
 .release .badge { margin-top: 6px; display: inline-block; text-decoration: none; }
+
+/* podgląd w nagłówku: zakładki Licznik / Projekt / Notatki i listy */
+.demo { display: flex; flex-direction: column; min-height: 540px; }
+.demo-tabs { display: flex; gap: 4px; padding: 4px; margin: -8px -8px 18px; background: var(--bg2); border-radius: 14px; }
+.demo-tab { flex: 1; border: 0; background: none; color: var(--muted); font: inherit; font-size: 14px; font-weight: 600;
+  padding: 8px 6px; border-radius: 10px; cursor: pointer; white-space: nowrap; }
+.demo-tab:hover { color: var(--fg); }
+.demo-tab[aria-selected="true"] { background: var(--card); color: var(--fg); box-shadow: 0 2px 8px -4px rgba(0,0,0,.4); }
+.demo-panel { flex: 1; display: flex; flex-direction: column; animation: fade-in .3s ease-out; }
+.demo-panel[hidden] { display: none; }
+@keyframes fade-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+@media (max-width: 420px) { .demo { padding: 20px; min-height: 0; } .demo-tab { font-size: 13px; } }
+
+/* wykres Gantta (podgląd) */
+.gantt { --row: 30px; --label: 104px; position: relative; font-size: 13px; margin-top: 6px; }
+.gantt[data-gantt="big"] { --row: 36px; --label: 140px; font-size: 14px; }
+.g-head, .g-row { display: grid; grid-template-columns: var(--label) 1fr; align-items: center; }
+.g-head { color: var(--muted); font-size: 11px; height: 26px; }
+.g-days { display: grid; grid-template-columns: repeat(10, 1fr); height: 100%; }
+.g-days span { display: grid; place-items: center; border-left: 1px solid var(--line); white-space: nowrap; overflow: hidden; }
+.g-days span.today { color: var(--accent); font-weight: 700; }
+.g-row { height: var(--row); }
+.g-name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding-right: 8px; }
+.g-row.stage .g-name { font-weight: 700; }
+.g-row:not(.stage) .g-name { padding-left: 12px; color: var(--muted); }
+.g-track { position: relative; height: 100%; background-image: linear-gradient(to right, var(--line) 1px, transparent 1px);
+  background-size: 10% 100%; }
+.g-bar { position: absolute; top: 22%; height: 56%; border-radius: 6px; background: color-mix(in srgb, var(--accent) 30%, var(--track)); overflow: hidden; }
+.g-bar i { display: block; height: 100%; background: var(--accent); }
+.g-row.stage .g-bar { top: 36%; height: 28%; background: color-mix(in srgb, var(--fg) 25%, var(--track)); border-radius: 3px; }
+.g-row.stage .g-bar i { background: var(--fg); opacity: .7; }
+.g-ms { position: absolute; top: 50%; width: 14px; height: 14px; background: var(--accent); transform: translate(-50%, -50%) rotate(45deg); border-radius: 2px; }
+.g-links { position: absolute; left: var(--label); width: calc(100% - var(--label)); top: 26px; pointer-events: none; overflow: visible; }
+.g-links path { fill: none; stroke: var(--muted); stroke-width: 1.5; opacity: .7; }
+.g-now { position: absolute; top: 20px; bottom: 0; width: 2px; background: var(--accent); pointer-events: none; }
+.g-now::before { content: ""; position: absolute; top: 0; left: -4px; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); }
+@media (max-width: 420px) { .gantt { --label: 84px; } .g-days span:nth-child(even) { color: transparent; } }
+
+/* notatki i listy (podgląd) */
+.notes-demo { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.sticky { background: #ffe680; color: #3b3320; padding: 16px; border-radius: 4px 4px 16px 4px; transform: rotate(-2deg);
+  box-shadow: 0 10px 20px -10px rgba(0,0,0,.5); font: 22px/1.35 "Bradley Hand", "Segoe Print", "Comic Sans MS", cursive; }
+.mini-card { background: var(--bg2); border-radius: 14px; padding: 12px 14px; display: flex; flex-direction: column; gap: 6px; }
+.mini-card h4 { margin: 0 0 2px; font-size: 15px; }
+.mini-card p { margin: 0; font-size: 14px; color: var(--muted); }
+.chk { display: flex; align-items: center; gap: 8px; font-size: 14px; cursor: pointer; }
+.chk input { accent-color: var(--accent); width: 16px; height: 16px; margin: 0; }
+.chk input:checked + span { text-decoration: line-through; color: var(--muted); }
+.flash { justify-content: center; align-items: center; text-align: center; }
+.flash small { color: var(--muted); font-size: 12px; }
+.flashcard { width: 100%; flex: 1; min-height: 70px; border: 1px solid var(--line); background: var(--card); color: var(--fg); border-radius: 12px;
+  font: 600 20px/1.2 inherit; font-family: inherit; cursor: pointer; transition: transform .35s; }
+.flashcard.flipped { transform: rotateX(360deg); color: var(--accent); }
+@media (max-width: 420px) { .notes-demo { grid-template-columns: 1fr; } .sticky { font-size: 19px; } }
+
+/* tablica (makieta 6×4) */
+.board { display: grid; grid-template-columns: repeat(6, 1fr); grid-template-rows: repeat(4, minmax(92px, auto)); gap: 12px;
+  grid-auto-flow: dense; padding: 16px; background: var(--bg); border: 1px solid var(--line); border-radius: 24px;
+  background-image: radial-gradient(circle, var(--line) 1px, transparent 1.5px); background-size: 24px 24px; }
+.tile { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 12px 14px; display: flex; flex-direction: column;
+  gap: 6px; min-width: 0; overflow: hidden; }
+.tile .tl { font-weight: 600; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tile small { color: var(--muted); font-size: 13px; }
+.tile .big { font-size: clamp(20px, 2.6vw, 30px); margin: auto 0; }
+.t-wl { grid-column: span 4; grid-row: span 2; align-items: center; justify-content: center; }
+.t-wl .tl { align-self: flex-start; }
+.t-tl { grid-column: span 2; grid-row: span 4; }
+.t-ws { grid-column: span 2; }
+.t-s { grid-column: span 1; }
+.tile-ring { width: min(150px, 60%); aspect-ratio: 1; border-radius: 50%; display: grid; place-items: center;
+  background: conic-gradient(var(--accent) 0 64%, var(--track) 64% 100%); position: relative; }
+.tile-ring::before { content: ""; position: absolute; inset: 11px; border-radius: 50%; background: var(--card); }
+.tile-ring b { position: relative; font-size: clamp(20px, 3vw, 32px); }
+.tile-list { list-style: none; margin: 4px 0 0; padding: 0; display: flex; flex-direction: column; gap: 8px; font-size: 15px; }
+.tile-list li::before { content: "☐ "; color: var(--muted); }
+.tile-list li.done { color: var(--muted); text-decoration: line-through; }
+.tile-list li.done::before { content: "☑ "; color: var(--accent); }
+.tile-gantt { display: flex; flex-direction: column; gap: 6px; margin-top: 4px; }
+.tile-gantt i { height: 8px; border-radius: 4px; background: var(--accent); }
+.tile-gantt i:nth-child(1) { width: 40%; }
+.tile-gantt i:nth-child(2) { width: 45%; margin-left: 30%; opacity: .7; }
+.tile-gantt i:nth-child(3) { width: 30%; margin-left: 70%; opacity: .45; }
+.tile-cal { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; margin-top: 4px; }
+.tile-cal i { aspect-ratio: 1; max-height: 22px; border-radius: 5px; background: var(--bg2); }
+.tile-cal i.on { background: var(--accent); }
+.sticky-tile { background: #ffe680; color: #3b3320; border: 0; font: 17px/1.25 "Bradley Hand", "Segoe Print", "Comic Sans MS", cursive; transform: rotate(-1.5deg); }
+.group-tile .tile-mini { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; flex: 1; }
+.group-tile .tile-mini i { background: var(--bg2); border-radius: 5px; min-height: 12px; }
+@media (max-width: 720px) {
+  .board { grid-template-columns: repeat(2, 1fr); grid-template-rows: none; grid-auto-rows: minmax(84px, auto); padding: 10px; gap: 10px; }
+  .t-wl, .t-tl, .t-ws { grid-column: span 2; grid-row: span 1; }
+  .t-wl { grid-row: span 2; }
+  .t-tl { grid-row: span 2; }
+}
+
+/* projekty */
+.proj { display: grid; grid-template-columns: 1.5fr 1fr; gap: 28px; align-items: start; }
+@media (max-width: 860px) { .proj { grid-template-columns: 1fr; } }
+.gantt-card { padding: 22px 22px 18px; overflow: hidden; }
+.proj-points { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 18px; }
+.proj-points li { display: flex; flex-direction: column; gap: 2px; padding-left: 16px; border-left: 3px solid var(--accent); }
+.proj-points span { color: var(--muted); font-size: 15px; }

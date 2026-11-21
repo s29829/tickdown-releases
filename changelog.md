@@ -1,5 +1,23 @@
 # TickDown – historia zmian
 
+## 0.2.11 – 2026-11-21
+
+- Tablica z dowolnym układem: przeciągnij kartę za jej wolny fragment na dowolne pole – sąsiednie karty same robią miejsce, a puste pola mogą zostać; Esc anuluje przeciąganie
+- Wielkość karty zmienisz, ciągnąc za prawy dolny róg – karta przyciąga się do dostępnych rozmiarów
+- Paleta na dole okna: ikony liczników, list i notatników – kliknij, żeby dodać element w pierwszym wolnym polu, albo przytrzymaj i upuść w wybranym miejscu tablicy
+- Notatniki: karteczka post-it (pismo odręczne, kolor papieru), czysty tekst, Markdown (pogrubienie, listy, zadania do odhaczania, bezpieczne linki – edycja graficzna albo w kodzie), hasła przewijane i fiszki obracane kliknięciem – wszystko pisane wprost na kafelku
+- Grupy: kafelek grupy to kolejna tablica na tablicy – wrzucaj do niej liczniki, listy i notatki, zagnieżdżaj grupy; ścieżka nad tablicą i drzewo w panelu bocznym ułatwiają poruszanie się
+- Wykresy Gantta: grupa albo cała przestrzeń może być projektem z osią czasu – paski zadań przesuniesz i rozciągniesz myszą, połączysz zadania zależnościami (twarde przesuwają kolejne zadania), uwzględniane są godziny pracy; gotowe projekty w oknie nowej przestrzeni
+- Statystyki: kafelek ze stanem tablicy lub grupy – każda nowa przestrzeń dostaje go automatycznie
+- Ekran główny: przegląd wszystkich przestrzeni z podglądem tablic i statystykami albo start od razu w wybranej przestrzeni
+- Szybka zmiana skórki: zatrzymaj kursor na karcie na 2 sekundy – pojawią się miniaturki skórek, najechanie pokazuje podgląd, kliknięcie zapisuje
+- Okno mini: przesuwane bez ramki „dopasuj do połowy ekranu”, zatrzymuje się na krawędzi ekranu, a dociśnięte do lewej lub prawej krawędzi chowa się jako mała zakładka z czasem – kliknięcie ją rozwija
+- Pasek menu: liczniki w menu ikonki pogrupowane według przestrzeni (przy wielu licznikach – podmenu przestrzeni); notatniki i grupy się tam nie pojawiają
+- Zestawy startowe: przed utworzeniem tablicy możesz zmienić jej skład – wielkość kart, ustawienia elementów, duplikaty, usuwanie i dodawanie nowych
+- Kalendarz: kafelek z widokiem miesiąca, tygodnia i dnia – wydarzenia z przypomnieniami i powtórzeniami, na kalendarzu widać też terminy liczników i list; opcjonalnie połączenie z Kalendarzem Google
+- Aktualizacje: TickDown sam sprawdza, czy jest nowa wersja (codziennie, co tydzień albo tylko ręcznie – Ustawienia → Ogólne → Aktualizacje) i w rogu okna proponuje jej pobranie; wybraną wersję możesz pominąć
+- Nowa strona TickDown: tablica, listy, notatki, kalendarz i zarządzanie projektami z wykresem Gantta – z interaktywnym podglądem
+
 ## 0.2.10 – 2026-11-20
 
 - Zestawy startowe przy pierwszym uruchomieniu: Uczeń, Student, Praca w biurze, Praca zdalna, Millenials, Rodzic, Senior, Sport i zdrowie – gotowe liczniki i listy z dopasowanym stylem, czcionką i skórkami

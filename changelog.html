@@ -7,8 +7,8 @@
 <meta name="description" content="Historia zmian aplikacji TickDown – nowe funkcje i poprawki w kolejnych wersjach.">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="alternate" type="text/markdown" href="changelog.md">
-<link rel="stylesheet" href="site.css?v=14efd879bc">
-<script src="site.js?v=0d95f28084" defer></script>
+<link rel="stylesheet" href="site.css?v=f9acdcfd13">
+<script src="site.js?v=83010ff092" defer></script>
 </head>
 <body>
 <header class="top">
@@ -16,6 +16,7 @@
     <a class="brand" href="./"><img src="icon.svg" alt="">TickDown</a>
     <nav class="links">
       <a class="opt" href="./#funkcje" data-en="Features">Funkcje</a>
+      <a class="opt" href="./#projekty" data-en="Projects">Projekty</a>
       <a class="opt" href="./#pobierz" data-en="Download">Pobierz</a>
       <a class="opt" href="./#glosuj" data-en="Vote">Głosuj</a>
       <button class="lang" id="lang" type="button">EN</button>
@@ -27,8 +28,28 @@
     <h1 data-en="Changelog">Historia zmian</h1>
     <p class="sub" data-en="New features and fixes in each version (descriptions in Polish). Also as <a href=&quot;changelog.md&quot;>Markdown</a> and <a href=&quot;changelog.json&quot;>JSON</a>.">
       Nowe funkcje i poprawki w kolejnych wersjach. Także jako <a href="changelog.md">Markdown</a> i <a href="changelog.json">JSON</a>.</p>
+    <article class="release" id="v0.2.11">
+      <div><h2>0.2.11</h2><time datetime="2026-11-21">2026-11-21</time><a class="badge ok" href="https://github.com/s29829/tickdown-releases/releases/tag/v0.2.11">macOS ↓</a></div>
+      <ul>
+        <li>Tablica z dowolnym układem: przeciągnij kartę za jej wolny fragment na dowolne pole – sąsiednie karty same robią miejsce, a puste pola mogą zostać; Esc anuluje przeciąganie</li>
+        <li>Wielkość karty zmienisz, ciągnąc za prawy dolny róg – karta przyciąga się do dostępnych rozmiarów</li>
+        <li>Paleta na dole okna: ikony liczników, list i notatników – kliknij, żeby dodać element w pierwszym wolnym polu, albo przytrzymaj i upuść w wybranym miejscu tablicy</li>
+        <li>Notatniki: karteczka post-it (pismo odręczne, kolor papieru), czysty tekst, Markdown (pogrubienie, listy, zadania do odhaczania, bezpieczne linki – edycja graficzna albo w kodzie), hasła przewijane i fiszki obracane kliknięciem – wszystko pisane wprost na kafelku</li>
+        <li>Grupy: kafelek grupy to kolejna tablica na tablicy – wrzucaj do niej liczniki, listy i notatki, zagnieżdżaj grupy; ścieżka nad tablicą i drzewo w panelu bocznym ułatwiają poruszanie się</li>
+        <li>Wykresy Gantta: grupa albo cała przestrzeń może być projektem z osią czasu – paski zadań przesuniesz i rozciągniesz myszą, połączysz zadania zależnościami (twarde przesuwają kolejne zadania), uwzględniane są godziny pracy; gotowe projekty w oknie nowej przestrzeni</li>
+        <li>Statystyki: kafelek ze stanem tablicy lub grupy – każda nowa przestrzeń dostaje go automatycznie</li>
+        <li>Ekran główny: przegląd wszystkich przestrzeni z podglądem tablic i statystykami albo start od razu w wybranej przestrzeni</li>
+        <li>Szybka zmiana skórki: zatrzymaj kursor na karcie na 2 sekundy – pojawią się miniaturki skórek, najechanie pokazuje podgląd, kliknięcie zapisuje</li>
+        <li>Okno mini: przesuwane bez ramki „dopasuj do połowy ekranu”, zatrzymuje się na krawędzi ekranu, a dociśnięte do lewej lub prawej krawędzi chowa się jako mała zakładka z czasem – kliknięcie ją rozwija</li>
+        <li>Pasek menu: liczniki w menu ikonki pogrupowane według przestrzeni (przy wielu licznikach – podmenu przestrzeni); notatniki i grupy się tam nie pojawiają</li>
+        <li>Zestawy startowe: przed utworzeniem tablicy możesz zmienić jej skład – wielkość kart, ustawienia elementów, duplikaty, usuwanie i dodawanie nowych</li>
+        <li>Kalendarz: kafelek z widokiem miesiąca, tygodnia i dnia – wydarzenia z przypomnieniami i powtórzeniami, na kalendarzu widać też terminy liczników i list; opcjonalnie połączenie z Kalendarzem Google</li>
+        <li>Aktualizacje: TickDown sam sprawdza, czy jest nowa wersja (codziennie, co tydzień albo tylko ręcznie – Ustawienia → Ogólne → Aktualizacje) i w rogu okna proponuje jej pobranie; wybraną wersję możesz pominąć</li>
+        <li>Nowa strona TickDown: tablica, listy, notatki, kalendarz i zarządzanie projektami z wykresem Gantta – z interaktywnym podglądem</li>
+      </ul>
+    </article>
     <article class="release" id="v0.2.10">
-      <div><h2>0.2.10</h2><time datetime="2026-11-20">2026-11-20</time></div>
+      <div><h2>0.2.10</h2><time datetime="2026-11-20">2026-11-20</time><a class="badge ok" href="https://github.com/s29829/tickdown-releases/releases/tag/v0.2.10">macOS ↓</a></div>
       <ul>
         <li>Zestawy startowe przy pierwszym uruchomieniu: Uczeń, Student, Praca w biurze, Praca zdalna, Millenials, Rodzic, Senior, Sport i zdrowie – gotowe liczniki i listy z dopasowanym stylem, czcionką i skórkami</li>
         <li>Po wybraniu zestawu: podgląd tablicy, wybór stylu aplikacji i miniaturki schematów kolorystycznych (polecane dla zestawu na początku) – zmiany widać od razu</li>
