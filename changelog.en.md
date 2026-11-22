@@ -1,5 +1,14 @@
 # TickDown – changelog
 
+## 0.2.14 – 2026-11-22
+
+- Learning: the “Course” tile plans study sessions (a path topic by topic, reviews), reminds you when it’s lesson time and shows progress; a lesson opens in its own window with the materials
+- Learning: new practice notebooks – multiple-choice quizzes with explanations, gap-fill sentences and matching pairs; your last and best score are kept
+- Learning: 13 ready courses (English B1 and B2, Python, SQL, Git, Scrum, PRINCE2, UML, statistics…), your own packs from a JSON / ZIP file or a web address, and an AI prompt that prepares a course on any topic
+- Tiles: rest the pointer on a card’s name (on touch – tap it) to change its type (clock view, note or list kind), proportions, skin and dominant colour
+- Tiles: every kind has its own allowed proportions and default size (e.g. round clock – square, digital – wide rectangle, calendar also 6×2); Settings → Tiles lets you narrow them and change the default
+- Right-click menu on a card: copy and paste box, copy and paste content (including text from other apps into notes and lists), edit, delete and move to another space or group
+
 ## 0.2.13 – 2026-11-21
 
 - Gantt chart: every new board item (counter, list, notebook) appears on the chart right away – an item without its own time gets one working day

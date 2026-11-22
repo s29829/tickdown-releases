@@ -1,5 +1,14 @@
 # TickDown – historia zmian
 
+## 0.2.14 – 2026-11-22
+
+- Nauka: kafelek „Kurs” planuje sesje (ścieżka temat po temacie, powtórki), przypomina o porze lekcji i pokazuje postęp; lekcja otwiera się w osobnym oknie z materiałami
+- Nauka: nowe notatniki do ćwiczeń – test z odpowiedziami do wyboru i wyjaśnieniem, zdania z lukami oraz dopasowywanie par; wynik i najlepszy rezultat są zapamiętywane
+- Nauka: 13 gotowych kursów (angielski B1 i B2, Python, SQL, Git, Scrum, PRINCE2, UML, statystyka…), własne paczki z pliku JSON / ZIP lub z adresu oraz prompt dla AI, który przygotuje kurs na dowolny temat
+- Kafelki: zatrzymaj kursor na nazwie karty (na dotyku – stuknij), by zmienić typ (widok zegara, rodzaj notatki lub listy), proporcje, skórkę i kolor dominujący
+- Kafelki: każdy rodzaj ma swoje dozwolone proporcje i wielkość domyślną (np. zegar okrągły – kwadrat, cyfrowy – poziomy prostokąt, kalendarz także 6×2); w Ustawieniach → Kafelki można je zawęzić i zmienić domyślną
+- Menu pod prawym przyciskiem myszy na karcie: kopiuj i wklej box, kopiuj i wklej zawartość (także tekst z innych programów do notatek i list), edytuj, usuń i przenieś do innej przestrzeni lub grupy
+
 ## 0.2.13 – 2026-11-21
 
 - Wykres Gantta: każdy nowy element tablicy (licznik, lista, notatnik) od razu trafia na wykres – element bez własnego czasu dostaje jeden dzień pracy

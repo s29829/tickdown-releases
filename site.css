@@ -233,6 +233,25 @@ html[lang="en"] .release ul.cl-en { display: block; }
 .flashcard.flipped { transform: rotateX(360deg); color: var(--accent); }
 @media (max-width: 420px) { .notes-demo { grid-template-columns: 1fr; } .sticky { font-size: 19px; } }
 
+/* nauka (podgląd): kurs, test, luki, pary, paczki */
+.learn-progress { height: 6px; border-radius: 99px; background: var(--track); margin: 4px 0 12px; overflow: hidden; }
+.learn-progress i { display: block; width: 34%; height: 100%; background: var(--accent); border-radius: inherit; }
+.learn-demo { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-content: start; }
+.learn-demo small { color: var(--muted); font-size: 12px; }
+.learn-demo .quiz { grid-column: 1 / -1; }
+.quiz-opts { display: flex; flex-wrap: wrap; gap: 8px; }
+.quiz-opt { border: 1px solid var(--line); background: var(--card); color: var(--fg); font: inherit; font-size: 14px; padding: 6px 14px; border-radius: 99px; cursor: pointer; }
+.quiz-opt:hover { border-color: var(--accent); }
+.quiz-opt.ok { border-color: #2fbf71; background: color-mix(in srgb, #2fbf71 22%, var(--card)); }
+.quiz-opt.bad { border-color: #e5484d; background: color-mix(in srgb, #e5484d 18%, var(--card)); }
+.quiz-note { font-size: 13px; opacity: 0; transition: opacity .3s; }
+.quiz.answered .quiz-note { opacity: 1; }
+.cloze b { color: var(--accent); border-bottom: 2px solid var(--accent); padding: 0 3px; font-weight: 600; }
+.pairs { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 8px; font-size: 13px; }
+.packs-row { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 6px; }
+.packs-row > span { font-size: 12px; padding: 4px 10px; border-radius: 99px; background: var(--bg2); color: var(--muted); }
+@media (max-width: 420px) { .learn-demo { grid-template-columns: 1fr; } }
+
 /* tablica (makieta 6×4) */
 .board { display: grid; grid-template-columns: repeat(6, 1fr); grid-template-rows: repeat(4, minmax(92px, auto)); gap: 12px;
   grid-auto-flow: dense; padding: 16px; background: var(--bg); border: 1px solid var(--line); border-radius: 24px;

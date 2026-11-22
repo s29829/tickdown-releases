@@ -98,7 +98,7 @@
   }
   setInterval(tick, 1000);
 
-  /* ---------- slider podglądu: notatki → projekt → licznik (sam się przesuwa, dopóki ktoś nie kliknie) ---------- */
+  /* ---------- slider podglądu: notatki → projekt → nauka → licznik (sam się przesuwa, dopóki ktoś nie kliknie) ---------- */
   const tabs = [...document.querySelectorAll('.demo-tab')];
   const panels = [...document.querySelectorAll('.demo-panel')];
   const dots = [...document.querySelectorAll('#demo-dots i')];
@@ -138,6 +138,17 @@
   card?.addEventListener('click', () => {
     card.classList.toggle('flipped');
     card.textContent = card.classList.contains('flipped') ? card.dataset.back : card.dataset.front;
+  });
+
+  // nauka: pytanie testowe – kliknięcie zaznacza odpowiedź (dobra / zła) i pokazuje wyjaśnienie
+  const quiz = $('quiz');
+  quiz?.addEventListener('click', (e) => {
+    const b = e.target.closest('.quiz-opt');
+    if (!b) return;
+    quiz.querySelectorAll('.quiz-opt').forEach((o) => o.classList.remove('ok', 'bad'));
+    b.classList.add(b.dataset.ok === '1' ? 'ok' : 'bad');
+    if (b.dataset.ok !== '1') quiz.querySelector('[data-ok="1"]').classList.add('ok');
+    quiz.classList.add('answered');
   });
 
   /* ---------- wykres Gantta: 10 dni roboczych od poniedziałku tego tygodnia, linia „teraz” ---------- */

@@ -1,5 +1,25 @@
 [
   {
+    "version": "0.2.14",
+    "date": "2026-11-22",
+    "items": [
+      "Nauka: kafelek „Kurs” planuje sesje (ścieżka temat po temacie, powtórki), przypomina o porze lekcji i pokazuje postęp; lekcja otwiera się w osobnym oknie z materiałami",
+      "Nauka: nowe notatniki do ćwiczeń – test z odpowiedziami do wyboru i wyjaśnieniem, zdania z lukami oraz dopasowywanie par; wynik i najlepszy rezultat są zapamiętywane",
+      "Nauka: 13 gotowych kursów (angielski B1 i B2, Python, SQL, Git, Scrum, PRINCE2, UML, statystyka…), własne paczki z pliku JSON / ZIP lub z adresu oraz prompt dla AI, który przygotuje kurs na dowolny temat",
+      "Kafelki: zatrzymaj kursor na nazwie karty (na dotyku – stuknij), by zmienić typ (widok zegara, rodzaj notatki lub listy), proporcje, skórkę i kolor dominujący",
+      "Kafelki: każdy rodzaj ma swoje dozwolone proporcje i wielkość domyślną (np. zegar okrągły – kwadrat, cyfrowy – poziomy prostokąt, kalendarz także 6×2); w Ustawieniach → Kafelki można je zawęzić i zmienić domyślną",
+      "Menu pod prawym przyciskiem myszy na karcie: kopiuj i wklej box, kopiuj i wklej zawartość (także tekst z innych programów do notatek i list), edytuj, usuń i przenieś do innej przestrzeni lub grupy"
+    ],
+    "items_en": [
+      "Learning: the “Course” tile plans study sessions (a path topic by topic, reviews), reminds you when it’s lesson time and shows progress; a lesson opens in its own window with the materials",
+      "Learning: new practice notebooks – multiple-choice quizzes with explanations, gap-fill sentences and matching pairs; your last and best score are kept",
+      "Learning: 13 ready courses (English B1 and B2, Python, SQL, Git, Scrum, PRINCE2, UML, statistics…), your own packs from a JSON / ZIP file or a web address, and an AI prompt that prepares a course on any topic",
+      "Tiles: rest the pointer on a card’s name (on touch – tap it) to change its type (clock view, note or list kind), proportions, skin and dominant colour",
+      "Tiles: every kind has its own allowed proportions and default size (e.g. round clock – square, digital – wide rectangle, calendar also 6×2); Settings → Tiles lets you narrow them and change the default",
+      "Right-click menu on a card: copy and paste box, copy and paste content (including text from other apps into notes and lists), edit, delete and move to another space or group"
+    ]
+  },
+  {
     "version": "0.2.13",
     "date": "2026-11-21",
     "items": [

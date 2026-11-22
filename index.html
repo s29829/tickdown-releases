@@ -10,8 +10,8 @@
 <meta property="og:image" content="icon-256.png">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="icon-256.png">
-<link rel="stylesheet" href="site.css?v=4a2692028a">
-<script src="site.js?v=7865c42424" defer></script>
+<link rel="stylesheet" href="site.css?v=eb7f2ac371">
+<script src="site.js?v=0c40ab5b87" defer></script>
 </head>
 <body>
 <header class="top">
@@ -27,6 +27,7 @@
       <a class="opt" href="#tablica" data-en="Board">Tablica</a>
       <a class="opt" href="#funkcje" data-en="Features">Funkcje</a>
       <a class="opt" href="#projekty" data-en="Projects">Projekty</a>
+      <a class="opt" href="#nauka" data-en="Learning">Nauka</a>
       <a class="opt" href="#pobierz" data-en="Download">Pobierz</a>
       <a class="opt" href="changelog.html" data-en="Changelog">Zmiany</a>
       <a class="opt" href="#glosuj" data-en="Vote">Głosuj</a>
@@ -57,6 +58,7 @@
       <div class="demo-tabs" role="tablist">
         <button type="button" role="tab" class="demo-tab" data-demo="notes" aria-selected="true" data-en="Notes &amp; lists">Notatki i listy</button>
         <button type="button" role="tab" class="demo-tab" data-demo="project" aria-selected="false" data-en="Project">Projekt</button>
+        <button type="button" role="tab" class="demo-tab" data-demo="learn" aria-selected="false" data-en="Learning">Nauka</button>
         <button type="button" role="tab" class="demo-tab" data-demo="timer" aria-selected="false" data-en="Timer">Licznik</button>
       </div>
 
@@ -92,6 +94,37 @@
         <div class="gantt" data-gantt="small"></div>
       </div>
 
+      <div class="demo-panel" role="tabpanel" data-panel="learn">
+        <div class="demo-head">
+          <span class="demo-title" data-en="🎓 Course: English B1">🎓 Kurs: Angielski B1</span>
+          <span class="demo-sub num" data-en="lesson 4 / 10 · today 6 pm">lekcja 4 / 10 · dziś 18:00</span>
+        </div>
+        <div class="learn-progress" aria-hidden="true"><i></i></div>
+        <div class="learn-demo">
+          <div class="mini-card quiz" id="quiz">
+            <small data-en="Quiz · pick an answer">Test · wybierz odpowiedź</small>
+            <h4 data-en="She ___ here since 2020.">She ___ here since 2020.</h4>
+            <div class="quiz-opts">
+              <button type="button" class="quiz-opt" data-ok="0">is</button>
+              <button type="button" class="quiz-opt" data-ok="1">has been</button>
+              <button type="button" class="quiz-opt" data-ok="0">was</button>
+            </div>
+            <p class="quiz-note" id="quiz-note" data-en="Present perfect – an action that started in the past and still lasts.">Present perfect – czynność trwa od przeszłości do teraz.</p>
+          </div>
+          <div class="mini-card">
+            <small data-en="Gaps">Luki</small>
+            <p class="cloze">If I <b>had</b> more time, I <b>would</b> travel.</p>
+          </div>
+          <div class="mini-card">
+            <small data-en="Pairs">Pary</small>
+            <div class="pairs"><span>a · der Zug</span><span>2 · pociąg</span><span>b · die Uhr</span><span>1 · zegar</span></div>
+          </div>
+          <div class="packs-row">
+            <span>🇬🇧 B1</span><span>🇬🇧 B2</span><span>🐍 Python</span><span>🗄️ SQL</span><span>🌿 Git</span><span>🔄 Scrum</span><span>📊 <span data-en="Statistics">Statystyka</span></span>
+          </div>
+        </div>
+      </div>
+
       <div class="demo-panel" role="tabpanel" data-panel="timer">
         <div class="demo-head">
           <span class="demo-title" data-en="Work">Praca</span>
@@ -116,7 +149,7 @@
 
       <div class="demo-nav">
         <button type="button" class="demo-arrow" data-step="-1" aria-label="Poprzedni">‹</button>
-        <div class="demo-dots" id="demo-dots"><i class="on"></i><i></i><i></i></div>
+        <div class="demo-dots" id="demo-dots"><i class="on"></i><i></i><i></i><i></i></div>
         <button type="button" class="demo-arrow" data-step="1" aria-label="Następny">›</button>
       </div>
     </div>
@@ -231,7 +264,8 @@
         <ul>
           <li data-en="5 app styles and 15 colour themes">5 stylów aplikacji i 15 motywów kolorystycznych</li>
           <li data-en="30+ built-in skins, your own in SVG/PNG + CSS">ponad 30 skórek, własne z SVG/PNG + CSS</li>
-          <li data-en="hover over a card for 2 s to switch its skin">zatrzymaj kursor na karcie 2 s, by zmienić skórkę</li>
+          <li data-en="rest the pointer on a card’s name: type, proportions, skin and colour">zatrzymaj kursor na nazwie karty: typ, proporcje, skórka i kolor</li>
+          <li data-en="right-click a card to copy, paste or move it">prawy przycisk na karcie – kopiuj, wklej, przenieś</li>
         </ul></div>
       <div class="card"><h3 data-en="Always in view">Zawsze na widoku</h3>
         <ul>
@@ -249,7 +283,29 @@
   </div>
 </section>
 
-<section id="pobierz" class="alt">
+<section id="nauka" class="alt">
+  <div class="wrap">
+    <h2 data-en="Learning on the board">Nauka na tablicy</h2>
+    <p class="sub" data-en="Learn a little every day. A course plans the sessions, reminds you when it’s lesson time and keeps track of progress – the exercises live right on the tiles.">
+      Ucz się po trochu, codziennie. Kurs planuje sesje, przypomina o porze lekcji i pilnuje postępów – a ćwiczenia rozwiązujesz wprost na kafelkach.</p>
+    <div class="grid">
+      <div class="card"><div class="ic">🎓</div><h3 data-en="Courses with a plan">Kursy z planem</h3>
+        <p data-en="A study path topic by topic: theory and vocabulary, exercises, a review every few sessions. Lesson time with a notification, 1–3 sessions a day, progress on the tile.">Ścieżka temat po temacie: teoria i słówka, ćwiczenia, co kilka sesji powtórka. Pora lekcji z powiadomieniem, 1–3 sesje dziennie, postęp na kafelku.</p></div>
+      <div class="card"><div class="ic">❓</div><h3 data-en="Quizzes">Testy</h3>
+        <p data-en="Multiple-choice questions with an explanation of the right answer. Your last and best score are kept.">Pytania z odpowiedziami do wyboru i wyjaśnieniem poprawnej. Zapamiętuje ostatni i najlepszy wynik.</p></div>
+      <div class="card"><div class="ic">✏️</div><h3 data-en="Gaps and pairs">Luki i pary</h3>
+        <p data-en="Fill in the gaps in sentences (several correct answers allowed, with hints) and match a, b, c to 1, 2, 3.">Uzupełniaj luki w zdaniach (kilka poprawnych odpowiedzi, podpowiedzi) i dopasowuj pary a, b, c ↔ 1, 2, 3.</p></div>
+      <div class="card"><div class="ic">📦</div><h3 data-en="13 ready courses">13 gotowych kursów</h3>
+        <p data-en="English B1 and B2, Python for data and machine learning, SQL, Git, Scrum, PRINCE2, UML, statistics… – each with its own look.">Angielski B1 i B2, Python do analizy danych i uczenia maszynowego, SQL, Git, Scrum, PRINCE2, UML, statystyka… – każdy z własnym wyglądem.</p></div>
+      <div class="card"><div class="ic">📥</div><h3 data-en="Your own packs">Własne paczki</h3>
+        <p data-en="Load a pack from a JSON or ZIP file or from a web address – into a new space or a group on the board.">Wczytaj paczkę z pliku JSON lub ZIP albo z adresu w sieci – do nowej przestrzeni albo grupy na tablicy.</p></div>
+      <div class="card"><div class="ic">🤖</div><h3 data-en="Packs made by AI">Paczki od AI</h3>
+        <p data-en="TickDown prepares a prompt for ChatGPT, Claude or Gemini – paste the answer and you have a course on any topic.">TickDown przygotuje prompt dla ChatGPT, Claude czy Gemini – wklejasz odpowiedź i masz kurs na dowolny temat.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="pobierz">
   <div class="wrap">
     <h2 data-en="Download">Pobierz</h2>
     <p class="sub" data-en="TickDown is available for macOS 11 Big Sur and newer. Windows and Android versions are on the way.">TickDown jest dostępny na macOS 11 Big Sur i nowsze. Wersje na Windows i Androida są w drodze.</p>
@@ -272,7 +328,7 @@
   </div>
 </section>
 
-<section id="nowosci">
+<section id="nowosci" class="alt">
   <div class="wrap">
     <h2 data-en="What’s new">Co nowego</h2>
     <div class="card news" id="news">
@@ -281,7 +337,7 @@
   </div>
 </section>
 
-<section id="glosuj" class="alt">
+<section id="glosuj">
   <div class="wrap">
     <h2 data-en="What are you waiting for?">Na co czekasz?</h2>
     <p class="sub" data-en="Vote with a 👍 on GitHub – the most wanted platforms and features get built first. Voting needs a free GitHub account.">
