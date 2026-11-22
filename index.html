@@ -10,7 +10,7 @@
 <meta property="og:image" content="icon-256.png">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="icon-256.png">
-<link rel="stylesheet" href="site.css?v=eb7f2ac371">
+<link rel="stylesheet" href="site.css?v=b08efbebc6">
 <script src="site.js?v=0c40ab5b87" defer></script>
 </head>
 <body>
@@ -302,6 +302,34 @@
       <div class="card"><div class="ic">🤖</div><h3 data-en="Packs made by AI">Paczki od AI</h3>
         <p data-en="TickDown prepares a prompt for ChatGPT, Claude or Gemini – paste the answer and you have a course on any topic.">TickDown przygotuje prompt dla ChatGPT, Claude czy Gemini – wklejasz odpowiedź i masz kurs na dowolny temat.</p></div>
     </div>
+    <details class="install">
+      <summary data-en="How to create a course with an AI prompt">Jak stworzyć kurs za pomocą promptu dla AI</summary>
+      <div data-en="<p>An AI model (ChatGPT, Claude, Gemini…) can prepare a course on any topic for you. TickDown writes a ready prompt with the format description – you just copy and paste.</p>
+        <ol>
+          <li>Click <b>Learning</b> in the sidebar – the <b>Learning packs</b> window opens.</li>
+          <li>Click <b>✨ AI prompt</b>.</li>
+          <li>Type <b>what you want to learn</b> (e.g. “Spanish A2”, “Docker”), optionally the level, the language of the materials and of the explanations.</li>
+          <li>Set the scope: number of topics, cards, questions, gaps and pairs per topic, areas (e.g. cheat sheets, phrase of the day) and study days. Add things like “office-work examples” under <b>Additional requirements</b>. The prompt updates as you type.</li>
+          <li>Click <b>Copy prompt</b> and paste it into the AI model of your choice.</li>
+          <li>Copy the model’s whole answer (JSON – text around it or a <code>```json</code> block is fine).</li>
+          <li>Back in TickDown click <b>Done – paste the answer</b>, paste the text into <b>Paste JSON</b> and click <b>Load the pasted text</b>.</li>
+          <li>Choose whether the course becomes a <b>new space</b> or a <b>group on the current board</b>, and click <b>Create</b>.</li>
+        </ol>
+        <p>Done: a calendar with the study plan, a course with lessons, flashcards, quizzes, gaps and pairs appear on the board. For large courses (many topics) use a model with long answers or generate the pack in several parts. A saved pack (<code>.json</code> or <code>.zip</code>) can also be loaded from a file or a web address.</p>">
+        <p>Kurs na dowolny temat przygotuje za Ciebie model AI (ChatGPT, Claude, Gemini…). TickDown pisze dla niego gotowe polecenie z opisem formatu – Ty tylko kopiujesz i wklejasz.</p>
+        <ol>
+          <li>W panelu bocznym kliknij <b>Nauka</b> – otworzy się okno <b>Paczki nauki</b>.</li>
+          <li>Kliknij <b>✨ Prompt dla AI</b>.</li>
+          <li>Wpisz, <b>czego chcesz się uczyć</b> (np. „hiszpański A2”, „Docker”), opcjonalnie poziom, język materiałów i język wyjaśnień.</li>
+          <li>Ustaw zakres: liczbę tematów, fiszek, pytań, luk i par na temat, obszary (np. ściągi, zwrot dnia) oraz dni nauki. W polu <b>Dodatkowe wymagania</b> dopisz np. „przykłady z pracy biurowej”. Prompt aktualizuje się na bieżąco.</li>
+          <li>Kliknij <b>Kopiuj prompt</b> i wklej go w oknie wybranego modelu AI.</li>
+          <li>Skopiuj całą odpowiedź modelu (JSON – może być z tekstem dookoła albo w bloku <code>```json</code>).</li>
+          <li>Wróć do TickDown, kliknij <b>Gotowe – wklejam odpowiedź</b>, wklej tekst w pole <b>Wklej JSON</b> i kliknij <b>Wczytaj wklejony tekst</b>.</li>
+          <li>Wybierz, czy kurs ma powstać jako <b>nowa przestrzeń</b>, czy <b>grupa na bieżącej tablicy</b>, i kliknij <b>Utwórz</b>.</li>
+        </ol>
+        <p>Gotowe: na tablicy pojawi się kalendarz z planem nauki, kurs z lekcjami, fiszki, testy, luki i pary. Przy dużych kursach (wiele tematów) użyj modelu z długą odpowiedzią albo wygeneruj paczkę w kilku częściach. Zapisaną paczkę (<code>.json</code> lub <code>.zip</code>) możesz też wczytać z pliku albo z adresu w sieci.</p>
+      </div>
+    </details>
   </div>
 </section>
 
@@ -313,16 +341,55 @@
     <div class="relinfo num" id="relinfo"></div>
 
     <details class="install">
-      <summary data-en="macOS: “app can’t be opened” / “unidentified developer”">macOS: „nie można otworzyć aplikacji” / „nieznany deweloper”</summary>
-      <div data-en="<p>TickDown is not yet signed with an Apple Developer certificate, so on first launch macOS blocks it. Do this once:</p><ol><li>Open the <code>.dmg</code> and drag <b>TickDown</b> to <b>Applications</b>.</li><li>In Applications, <b>right-click</b> TickDown → <b>Open</b> → <b>Open</b>.</li><li>On macOS 15+: System Settings → Privacy &amp; Security → <b>Open Anyway</b>.</li></ol><p>If macOS says the app is “damaged”, run in Terminal:</p><pre><code>xattr -cr /Applications/TickDown.app</code></pre>">
-        <p>TickDown nie jest jeszcze podpisany certyfikatem Apple Developer, więc przy pierwszym uruchomieniu macOS go blokuje. Wystarczy raz:</p>
+      <summary data-en="How to open TickDown on a Mac (unverified developer)">Jak uruchomić TickDown na Macu (niezweryfikowany deweloper)</summary>
+      <div data-en="<p>TickDown is not yet signed with an Apple Developer certificate or notarized by Apple, so macOS blocks it on first launch. You only do this once – afterwards the app opens normally.</p>
+        <h4>1. Install</h4>
         <ol>
-          <li>Otwórz plik <code>.dmg</code> i przeciągnij <b>TickDown</b> do <b>Aplikacji</b>.</li>
-          <li>W Aplikacjach kliknij TickDown <b>prawym przyciskiem</b> → <b>Otwórz</b> → <b>Otwórz</b>.</li>
-          <li>Na macOS 15+: Ustawienia systemowe → Prywatność i ochrona → <b>Otwórz mimo to</b>.</li>
+          <li>Download the <code>.dmg</code> file and double-click it.</li>
+          <li>Drag the <b>TickDown</b> icon onto the <b>Applications</b> folder.</li>
+          <li>Eject the TickDown disk (the ⏏ icon in Finder).</li>
         </ol>
-        <p>Jeśli macOS twierdzi, że aplikacja jest „uszkodzona”, wpisz w Terminalu:</p>
+        <h4>2. macOS 15 Sequoia and newer</h4>
+        <ol>
+          <li>Open TickDown from Applications – a message says it can’t be verified. Click <b>Done</b>.</li>
+          <li>Open <b>System Settings → Privacy &amp; Security</b> and scroll to the <b>Security</b> section.</li>
+          <li>Next to the TickDown message click <b>Open Anyway</b> and confirm with your password or Touch ID.</li>
+          <li>In the next dialog click <b>Open Anyway</b>.</li>
+        </ol>
+        <h4>3. macOS 11–14</h4>
+        <ol>
+          <li>In Applications, <b>right-click</b> (or Control-click) TickDown → <b>Open</b>.</li>
+          <li>In the warning dialog click <b>Open</b> again.</li>
+        </ol>
+        <h4>4. “The app is damaged and can’t be opened”</h4>
+        <p>It’s the same mechanism (the quarantine attribute added to downloaded files). Open <b>Terminal</b> and run:</p>
         <pre><code>xattr -cr /Applications/TickDown.app</code></pre>
+        <p>Then launch TickDown again. The command only removes the “downloaded from the internet” flag from this one app.</p>
+        <p class=&quot;small&quot;>After updating to a new version you may need to approve it again. Only download the app from this site or from the <a href=&quot;https://github.com/s29829/tickdown-releases/releases&quot;>GitHub releases</a>.</p>">
+        <p>TickDown nie jest jeszcze podpisany certyfikatem Apple Developer ani poświadczony przez Apple (notaryzacja), dlatego macOS przy pierwszym uruchomieniu go blokuje. To jednorazowa czynność – później aplikacja otwiera się normalnie.</p>
+        <h4>1. Instalacja</h4>
+        <ol>
+          <li>Pobierz plik <code>.dmg</code> i otwórz go dwuklikiem.</li>
+          <li>Przeciągnij ikonę <b>TickDown</b> na folder <b>Aplikacje</b>.</li>
+          <li>Wysuń dysk TickDown (ikona ⏏ w Finderze).</li>
+        </ol>
+        <h4>2. macOS 15 Sequoia i nowsze</h4>
+        <ol>
+          <li>Otwórz TickDown z Aplikacji – pojawi się komunikat, że nie można go zweryfikować. Kliknij <b>Gotowe</b>.</li>
+          <li>Otwórz <b>Ustawienia systemowe → Prywatność i ochrona</b> i przewiń do sekcji <b>Ochrona</b>.</li>
+          <li>Przy komunikacie o TickDown kliknij <b>Otwórz mimo to</b> i potwierdź hasłem lub Touch ID.</li>
+          <li>W kolejnym okienku kliknij <b>Otwórz mimo to</b>.</li>
+        </ol>
+        <h4>3. macOS 11–14</h4>
+        <ol>
+          <li>W Aplikacjach kliknij TickDown <b>prawym przyciskiem</b> (lub z klawiszem Control) → <b>Otwórz</b>.</li>
+          <li>W okienku z ostrzeżeniem kliknij ponownie <b>Otwórz</b>.</li>
+        </ol>
+        <h4>4. „Aplikacja jest uszkodzona i nie można jej otworzyć”</h4>
+        <p>To ten sam mechanizm (atrybut kwarantanny dodawany do pobranych plików). Otwórz <b>Terminal</b> i wpisz:</p>
+        <pre><code>xattr -cr /Applications/TickDown.app</code></pre>
+        <p>Potem uruchom TickDown jeszcze raz. Polecenie usuwa tylko oznaczenie „pobrane z internetu” z tej jednej aplikacji.</p>
+        <p class="small">Po aktualizacji do nowej wersji może być potrzebne ponowne zatwierdzenie. Aplikację pobieraj tylko z tej strony lub z <a href="https://github.com/s29829/tickdown-releases/releases">wydań na GitHubie</a>.</p>
       </div>
     </details>
   </div>
