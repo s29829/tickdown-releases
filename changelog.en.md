@@ -1,5 +1,9 @@
 # TickDown – changelog
 
+## 0.2.16 – 2026-11-22
+
+- Fixed loading of built-in learning packs and courses in the launcher (“Could not load the pack” message)
+
 ## 0.2.15 – 2026-11-22
 
 - Space tabs above the board: several spaces open at once, switch with Cmd/Ctrl+1…9 and Ctrl+Tab, remembered after restart (option in Settings); the palette icon on a tab changes the space’s look

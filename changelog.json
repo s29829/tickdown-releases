@@ -1,5 +1,15 @@
 [
   {
+    "version": "0.2.16",
+    "date": "2026-11-22",
+    "items": [
+      "Naprawiono wczytywanie wbudowanych paczek nauki i kursów w launcherze (komunikat „Nie udało się wczytać paczki”)"
+    ],
+    "items_en": [
+      "Fixed loading of built-in learning packs and courses in the launcher (“Could not load the pack” message)"
+    ]
+  },
+  {
     "version": "0.2.15",
     "date": "2026-11-22",
     "items": [

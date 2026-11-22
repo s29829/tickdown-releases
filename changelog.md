@@ -1,5 +1,9 @@
 # TickDown – historia zmian
 
+## 0.2.16 – 2026-11-22
+
+- Naprawiono wczytywanie wbudowanych paczek nauki i kursów w launcherze (komunikat „Nie udało się wczytać paczki”)
+
 ## 0.2.15 – 2026-11-22
 
 - Zakładki przestrzeni nad tablicą: kilka przestrzeni otwartych naraz, przełączanie Cmd/Ctrl+1…9 i Ctrl+Tab, zapamiętywane po ponownym uruchomieniu (opcja w Ustawieniach); ikonka palety na zakładce zmienia wygląd przestrzeni
