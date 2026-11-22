@@ -1,5 +1,37 @@
 [
   {
+    "version": "0.2.17",
+    "date": "2026-11-22",
+    "items": [
+      "Nowy kafelek „Wydarzenie” – spotkanie, rozmowa, termin, urodziny, impreza, podróż, wizyta, sport, egzamin – z dużą ilustracją typu, datą, odliczaniem i alarmem",
+      "Kafelek przeciągnięty na kalendarz otwiera okno wydarzenia z alarmem w dniu, nad którym go upuszczono (kalendarz nie odsuwa się przy przeciąganiu); notatki i listy można też przypomnieć „za chwilę”, bez wpisu w kalendarzu",
+      "Wydarzenia całodniowe mogą przypominać „w dniu o 9:00” albo dzień wcześniej",
+      "Kalendarz wszystkich przestrzeni na ekranie głównym i przycisk „Kalendarz” w panelu bocznym",
+      "Ikonka warstw przy nazwie kalendarza: włączasz i wyłączasz wydarzenia, liczniki i listy, a w projekcie Gantta także kamienie milowe, etapy, początki, końce i przedziały zadań",
+      "Jeden kolor dla każdego elementu: kolor ustawiony na kafelku albo na wykresie Gantta widać też na pasku i ikonie wykresu, w kalendarzu i w powiązanych wydarzeniach",
+      "Nowe ikony rodzajów kafelków w stylu Material w całej aplikacji – do wyboru kolorowe albo proste (Ustawienia → Wygląd)",
+      "Wydarzenia zapisane w Kalendarzu Google są tam zwykłymi wydarzeniami, a TickDown pamięta, do której przestrzeni należą",
+      "Okno mini pokazuje jedną przestrzeń – przełącznik przestrzeni na górze w każdym układzie; ikonka po nazwie przestrzeni otwiera jej konfigurator: moduł główny i widoczne miniaturki",
+      "Okno mini z modułem głównym zawsze coś pokazuje: najbliższe odliczanie, a gdy nic nie odlicza – zegar; pod spodem do 6 miniaturek, w liście i pasku do 9",
+      "Kurs nauki w oknie mini: postęp ścieżki, bieżąca sesja, ▶ otwiera lekcję, ■ zatrzymuje kurs",
+      "Projekt Gantta w oknie mini: ile zostało do końca projektu, upływ czasu, bieżący i następny etap"
+    ],
+    "items_en": [
+      "New “Event” tile – meeting, call, deadline, birthday, party, trip, appointment, sport, exam – with a large illustration of its type, date, countdown and alarm",
+      "A tile dropped on a calendar opens the event window with an alarm on the day it was dropped on (the calendar no longer moves aside while dragging); notes and lists can also remind you “in a moment”, without a calendar entry",
+      "All-day events can remind you “on the day at 9:00” or the day before",
+      "A calendar of all spaces on the home screen and a “Calendar” button in the sidebar",
+      "Layers icon next to a calendar’s name: turn events, timers and lists on or off, and in a Gantt project also milestones, stages, starts, ends and task ranges",
+      "One colour per item: the colour set on a tile or on the Gantt chart also shows on the chart bar and icon, in the calendar and in linked events",
+      "New Material-style tile type icons throughout the app – colourful or simple (Settings → Appearance)",
+      "Events saved to Google Calendar are regular events there, and TickDown remembers which space they belong to",
+      "The mini window shows one space – a space switcher at the top in every layout; the icon after a space name opens its configurator: main module and visible thumbnails",
+      "The mini window’s main module always shows something: the nearest countdown, or the clock when nothing is counting; up to 6 thumbnails below it, up to 9 in the list and strip",
+      "Learning course in the mini window: path progress, current session, ▶ opens the lesson, ■ stops the course",
+      "Gantt project in the mini window: time left until the project ends, elapsed time, current and next stage"
+    ]
+  },
+  {
     "version": "0.2.16",
     "date": "2026-11-22",
     "items": [

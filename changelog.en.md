@@ -1,5 +1,20 @@
 # TickDown – changelog
 
+## 0.2.17 – 2026-11-22
+
+- New “Event” tile – meeting, call, deadline, birthday, party, trip, appointment, sport, exam – with a large illustration of its type, date, countdown and alarm
+- A tile dropped on a calendar opens the event window with an alarm on the day it was dropped on (the calendar no longer moves aside while dragging); notes and lists can also remind you “in a moment”, without a calendar entry
+- All-day events can remind you “on the day at 9:00” or the day before
+- A calendar of all spaces on the home screen and a “Calendar” button in the sidebar
+- Layers icon next to a calendar’s name: turn events, timers and lists on or off, and in a Gantt project also milestones, stages, starts, ends and task ranges
+- One colour per item: the colour set on a tile or on the Gantt chart also shows on the chart bar and icon, in the calendar and in linked events
+- New Material-style tile type icons throughout the app – colourful or simple (Settings → Appearance)
+- Events saved to Google Calendar are regular events there, and TickDown remembers which space they belong to
+- The mini window shows one space – a space switcher at the top in every layout; the icon after a space name opens its configurator: main module and visible thumbnails
+- The mini window’s main module always shows something: the nearest countdown, or the clock when nothing is counting; up to 6 thumbnails below it, up to 9 in the list and strip
+- Learning course in the mini window: path progress, current session, ▶ opens the lesson, ■ stops the course
+- Gantt project in the mini window: time left until the project ends, elapsed time, current and next stage
+
 ## 0.2.16 – 2026-11-22
 
 - Fixed loading of built-in learning packs and courses in the launcher (“Could not load the pack” message)

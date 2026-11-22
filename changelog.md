@@ -1,5 +1,20 @@
 # TickDown – historia zmian
 
+## 0.2.17 – 2026-11-22
+
+- Nowy kafelek „Wydarzenie” – spotkanie, rozmowa, termin, urodziny, impreza, podróż, wizyta, sport, egzamin – z dużą ilustracją typu, datą, odliczaniem i alarmem
+- Kafelek przeciągnięty na kalendarz otwiera okno wydarzenia z alarmem w dniu, nad którym go upuszczono (kalendarz nie odsuwa się przy przeciąganiu); notatki i listy można też przypomnieć „za chwilę”, bez wpisu w kalendarzu
+- Wydarzenia całodniowe mogą przypominać „w dniu o 9:00” albo dzień wcześniej
+- Kalendarz wszystkich przestrzeni na ekranie głównym i przycisk „Kalendarz” w panelu bocznym
+- Ikonka warstw przy nazwie kalendarza: włączasz i wyłączasz wydarzenia, liczniki i listy, a w projekcie Gantta także kamienie milowe, etapy, początki, końce i przedziały zadań
+- Jeden kolor dla każdego elementu: kolor ustawiony na kafelku albo na wykresie Gantta widać też na pasku i ikonie wykresu, w kalendarzu i w powiązanych wydarzeniach
+- Nowe ikony rodzajów kafelków w stylu Material w całej aplikacji – do wyboru kolorowe albo proste (Ustawienia → Wygląd)
+- Wydarzenia zapisane w Kalendarzu Google są tam zwykłymi wydarzeniami, a TickDown pamięta, do której przestrzeni należą
+- Okno mini pokazuje jedną przestrzeń – przełącznik przestrzeni na górze w każdym układzie; ikonka po nazwie przestrzeni otwiera jej konfigurator: moduł główny i widoczne miniaturki
+- Okno mini z modułem głównym zawsze coś pokazuje: najbliższe odliczanie, a gdy nic nie odlicza – zegar; pod spodem do 6 miniaturek, w liście i pasku do 9
+- Kurs nauki w oknie mini: postęp ścieżki, bieżąca sesja, ▶ otwiera lekcję, ■ zatrzymuje kurs
+- Projekt Gantta w oknie mini: ile zostało do końca projektu, upływ czasu, bieżący i następny etap
+
 ## 0.2.16 – 2026-11-22
 
 - Naprawiono wczytywanie wbudowanych paczek nauki i kursów w launcherze (komunikat „Nie udało się wczytać paczki”)
