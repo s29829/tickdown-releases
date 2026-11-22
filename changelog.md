@@ -1,5 +1,11 @@
 # TickDown – historia zmian
 
+## 0.2.18 – 2026-11-22
+
+- Okno „Nauka” podzielone na działy: ★ Wybrane (gwiazdka na kafelku paczki), Rekomendowane, Języki, Informatyka, Zarządzanie
+- Nowe paczki nauki: Linux – polecenia, ML – drzewa decyzyjne, ML – regresja liniowa, ML – klasyfikacja, Projekty – miary i jakość
+- Wszystkie paczki nauki są dwujęzyczne (PL i EN) – fiszki, testy, ściągi, luki i pary powstają w języku interfejsu; w kursach angielskiego wersja angielska ma objaśnienia i definicje po angielsku; własne paczki też mogą mieć treść po angielsku (pola `_en`)
+
 ## 0.2.17 – 2026-11-22
 
 - Nowy kafelek „Wydarzenie” – spotkanie, rozmowa, termin, urodziny, impreza, podróż, wizyta, sport, egzamin – z dużą ilustracją typu, datą, odliczaniem i alarmem

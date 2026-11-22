@@ -1,5 +1,11 @@
 # TickDown – changelog
 
+## 0.2.18 – 2026-11-22
+
+- The “Study” window is now split into sections: ★ Favourites (star on a pack tile), Recommended, Languages, Computing, Management
+- New study packs: Linux commands, ML – decision trees, ML – linear regression, ML – classification, Projects – metrics and quality
+- All study packs are bilingual (PL and EN) – flashcards, tests, cheat sheets, gap fills and pairs are created in the interface language; in the English courses the English version has explanations and definitions in English; your own packs can include English content too (`_en` fields)
+
 ## 0.2.17 – 2026-11-22
 
 - New “Event” tile – meeting, call, deadline, birthday, party, trip, appointment, sport, exam – with a large illustration of its type, date, countdown and alarm
