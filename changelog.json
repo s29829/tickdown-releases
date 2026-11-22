@@ -1,5 +1,31 @@
 [
   {
+    "version": "0.2.15",
+    "date": "2026-11-22",
+    "items": [
+      "Zakładki przestrzeni nad tablicą: kilka przestrzeni otwartych naraz, przełączanie Cmd/Ctrl+1…9 i Ctrl+Tab, zapamiętywane po ponownym uruchomieniu (opcja w Ustawieniach); ikonka palety na zakładce zmienia wygląd przestrzeni",
+      "Menu przestrzeni pod prawym przyciskiem (panel boczny, zakładka, ekran główny): otwórz, zmień nazwę w miejscu, ustawienia, wklej box, duplikuj, zamknij zakładkę, usuń",
+      "Duplikowanie kafelka (grupa – z całą zawartością) i całej przestrzeni z układem tablicy",
+      "Skróty klawiszowe na kafelkach: kopiuj / wklej box i zawartość, duplikuj, edytuj, zmień nazwę (F2), usuń; kliknięcie zaznacza kafelek, Enter go edytuje, Esc odznacza; lista skrótów w Ustawieniach → Ogólne",
+      "Nazwę karty zmienisz dwuklikiem wprost na kafelku; ikonka na końcu nazwy otwiera dymek z typem, proporcjami, skórką i kolorem",
+      "Listy do zrobienia: pozycje edytujesz wprost na kafelku, Enter dodaje kolejną, Tab / Shift+Tab robi podpunkty, uchwyt ⋮⋮ przeciąga pozycję razem z podpunktami",
+      "Gantt: własny kolor paska (kliknięcie paska albo okno harmonogramu) i linii powiązania; dwuklik w pasek otwiera harmonogram",
+      "Ekran główny: do wyboru kafelki, małe kafelki albo lista przestrzeni",
+      "Okno „O aplikacji” i stopka strony pokazują autora i pomysłodawców"
+    ],
+    "items_en": [
+      "Space tabs above the board: several spaces open at once, switch with Cmd/Ctrl+1…9 and Ctrl+Tab, remembered after restart (option in Settings); the palette icon on a tab changes the space’s look",
+      "Right-click space menu (sidebar, tab, home screen): open, rename in place, settings, paste box, duplicate, close tab, delete",
+      "Duplicate a tile (a group – with all its content) or a whole space with its board layout",
+      "Keyboard shortcuts on tiles: copy / paste box and content, duplicate, edit, rename (F2), delete; a click selects a tile, Enter edits it, Esc deselects; the shortcut list is in Settings → General",
+      "Rename a card by double-clicking its name right on the tile; the icon at the end of the name opens the bubble with type, proportions, skin and colour",
+      "To-do lists: edit items right on the tile, Enter adds the next one, Tab / Shift+Tab makes sub-items, the ⋮⋮ handle drags an item together with its sub-items",
+      "Gantt: custom bar colour (click a bar or use the schedule window) and link colour; double-click a bar to open its schedule",
+      "Home screen: choose tiles, small tiles or a list of spaces",
+      "The About window and the website footer show the author and idea contributors"
+    ]
+  },
+  {
     "version": "0.2.14",
     "date": "2026-11-22",
     "items": [

@@ -1,5 +1,17 @@
 # TickDown – changelog
 
+## 0.2.15 – 2026-11-22
+
+- Space tabs above the board: several spaces open at once, switch with Cmd/Ctrl+1…9 and Ctrl+Tab, remembered after restart (option in Settings); the palette icon on a tab changes the space’s look
+- Right-click space menu (sidebar, tab, home screen): open, rename in place, settings, paste box, duplicate, close tab, delete
+- Duplicate a tile (a group – with all its content) or a whole space with its board layout
+- Keyboard shortcuts on tiles: copy / paste box and content, duplicate, edit, rename (F2), delete; a click selects a tile, Enter edits it, Esc deselects; the shortcut list is in Settings → General
+- Rename a card by double-clicking its name right on the tile; the icon at the end of the name opens the bubble with type, proportions, skin and colour
+- To-do lists: edit items right on the tile, Enter adds the next one, Tab / Shift+Tab makes sub-items, the ⋮⋮ handle drags an item together with its sub-items
+- Gantt: custom bar colour (click a bar or use the schedule window) and link colour; double-click a bar to open its schedule
+- Home screen: choose tiles, small tiles or a list of spaces
+- The About window and the website footer show the author and idea contributors
+
 ## 0.2.14 – 2026-11-22
 
 - Learning: the “Course” tile plans study sessions (a path topic by topic, reviews), reminds you when it’s lesson time and shows progress; a lesson opens in its own window with the materials

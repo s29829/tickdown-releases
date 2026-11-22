@@ -1,5 +1,17 @@
 # TickDown – historia zmian
 
+## 0.2.15 – 2026-11-22
+
+- Zakładki przestrzeni nad tablicą: kilka przestrzeni otwartych naraz, przełączanie Cmd/Ctrl+1…9 i Ctrl+Tab, zapamiętywane po ponownym uruchomieniu (opcja w Ustawieniach); ikonka palety na zakładce zmienia wygląd przestrzeni
+- Menu przestrzeni pod prawym przyciskiem (panel boczny, zakładka, ekran główny): otwórz, zmień nazwę w miejscu, ustawienia, wklej box, duplikuj, zamknij zakładkę, usuń
+- Duplikowanie kafelka (grupa – z całą zawartością) i całej przestrzeni z układem tablicy
+- Skróty klawiszowe na kafelkach: kopiuj / wklej box i zawartość, duplikuj, edytuj, zmień nazwę (F2), usuń; kliknięcie zaznacza kafelek, Enter go edytuje, Esc odznacza; lista skrótów w Ustawieniach → Ogólne
+- Nazwę karty zmienisz dwuklikiem wprost na kafelku; ikonka na końcu nazwy otwiera dymek z typem, proporcjami, skórką i kolorem
+- Listy do zrobienia: pozycje edytujesz wprost na kafelku, Enter dodaje kolejną, Tab / Shift+Tab robi podpunkty, uchwyt ⋮⋮ przeciąga pozycję razem z podpunktami
+- Gantt: własny kolor paska (kliknięcie paska albo okno harmonogramu) i linii powiązania; dwuklik w pasek otwiera harmonogram
+- Ekran główny: do wyboru kafelki, małe kafelki albo lista przestrzeni
+- Okno „O aplikacji” i stopka strony pokazują autora i pomysłodawców
+
 ## 0.2.14 – 2026-11-22
 
 - Nauka: kafelek „Kurs” planuje sesje (ścieżka temat po temacie, powtórki), przypomina o porze lekcji i pokazuje postęp; lekcja otwiera się w osobnym oknie z materiałami
