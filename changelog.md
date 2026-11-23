@@ -1,5 +1,15 @@
 # TickDown – historia zmian
 
+## 0.2.19 – 2026-11-23
+
+- Konto TickDown w aplikacji: zaloguj się tym samym kontem co w wersji web, a tablice, listy, notatniki i archiwum będą takie same na komputerze i w przeglądarce
+- Przy pierwszym uruchomieniu nowej wersji wybierasz: zaloguj się, załóż konto albo korzystaj lokalnie – konto można dodać później
+- Zakładanie konta w aplikacji i w przeglądarce: po potwierdzeniu adresu e-mail konto zaczyna działać, gdy zaakceptuje je administrator; osoba z zaproszeniem ma konto od razu
+- Zaproszenia: jeśli masz przydział, zaprosisz znajomych z Ustawienia → Konto (link ważny 14 dni)
+- Kilka kont na jednym urządzeniu – panel konta po lewej, nad Ustawieniami: lista kont, przełączanie, praca lokalna; każde konto ma osobne dane
+- Gdy konto ma już dane, przy pierwszym otwarciu na komputerze wybierasz: pobierz z konta, wyślij dane z komputera albo połącz – praca lokalna zostaje nietknięta
+- Bezpieczeństwo: wylogowanie po 14 dniach nieużywania i ponowne logowanie hasłem co 90 dni
+
 ## 0.2.18 – 2026-11-22
 
 - Okno „Nauka” podzielone na działy: ★ Wybrane (gwiazdka na kafelku paczki), Rekomendowane, Języki, Informatyka, Zarządzanie

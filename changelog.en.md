@@ -1,5 +1,15 @@
 # TickDown – changelog
 
+## 0.2.19 – 2026-11-23
+
+- TickDown account in the app: sign in with the same account as in the web version, and your boards, lists, notebooks and archive stay the same on the computer and in the browser
+- On the first launch of the new version you choose: sign in, create an account, or use the app locally – you can add an account later
+- Creating an account in the app and in the browser: after you confirm your email address, the account starts working once the administrator approves it; people with an invitation get their account right away
+- Invitations: if you have a quota, you can invite friends from Settings → Account (the link is valid for 14 days)
+- Several accounts on one device – the account panel on the left, above Settings: account list, switching, local work; each account has its own data
+- When an account already has data, the first time you open it on a computer you choose: download from the account, upload the computer's data, or merge – your local work stays untouched
+- Security: you're signed out after 14 days without use and asked for your password again every 90 days
+
 ## 0.2.18 – 2026-11-22
 
 - The “Study” window is now split into sections: ★ Favourites (star on a pack tile), Recommended, Languages, Computing, Management

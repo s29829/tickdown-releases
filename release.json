@@ -1,22 +1,22 @@
 {
-  "tag_name": "v0.2.17",
-  "published_at": "2026-11-22T16:44:24Z",
-  "html_url": "https://github.com/s29829/tickdown-releases/releases/tag/v0.2.17",
+  "tag_name": "v0.2.18",
+  "published_at": "2026-11-22T17:47:22Z",
+  "html_url": "https://github.com/s29829/tickdown-releases/releases/tag/v0.2.18",
   "assets": [
     {
       "name": "SHA256SUMS.txt",
       "size": 196,
-      "browser_download_url": "https://github.com/s29829/tickdown-releases/releases/download/v0.2.17/SHA256SUMS.txt"
+      "browser_download_url": "https://github.com/s29829/tickdown-releases/releases/download/v0.2.18/SHA256SUMS.txt"
     },
     {
-      "name": "TickDown_0.2.17_universal.app.zip",
-      "size": 5974189,
-      "browser_download_url": "https://github.com/s29829/tickdown-releases/releases/download/v0.2.17/TickDown_0.2.17_universal.app.zip"
+      "name": "TickDown_0.2.18_universal.app.zip",
+      "size": 6133589,
+      "browser_download_url": "https://github.com/s29829/tickdown-releases/releases/download/v0.2.18/TickDown_0.2.18_universal.app.zip"
     },
     {
-      "name": "TickDown_0.2.17_universal.dmg",
-      "size": 6201734,
-      "browser_download_url": "https://github.com/s29829/tickdown-releases/releases/download/v0.2.17/TickDown_0.2.17_universal.dmg"
+      "name": "TickDown_0.2.18_universal.dmg",
+      "size": 6360850,
+      "browser_download_url": "https://github.com/s29829/tickdown-releases/releases/download/v0.2.18/TickDown_0.2.18_universal.dmg"
     }
   ]
 }
