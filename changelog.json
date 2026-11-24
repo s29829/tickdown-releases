@@ -1,5 +1,31 @@
 [
   {
+    "version": "0.2.20",
+    "date": "2026-11-24",
+    "items": [
+      "Szybsze logowanie: z nowego urządzenia lub nowej sieci (np. z telefonu) nie trzeba już czekać do 15 sekund",
+      "Wersja web: po stuknięciu „Zaloguj” od razu widać, że trwa logowanie, a potem wczytywanie danych konta; gdy serwer nie odpowiada, pojawia się komunikat i „Spróbuj ponownie”",
+      "Wersja web startuje szybciej, szczególnie w sieci komórkowej; na telefonie okno logowania ma większe pola i przyciski i nie przesuwa się, gdy chowa się klawiatura",
+      "Okno logowania przy pierwszym uruchomieniu aplikacji na komputerze: logujesz się albo wybierasz „Pracuj lokalnie”; 5 kolorów panelu logowania do wyboru",
+      "Przycisk „Dodaj konto” po lewej, nad nazwą użytkownika",
+      "Czas pracy: przyciski „Spóźnienie”, „Nadgodziny” i „Raport” są zawsze pod ręką – w pracy, po pracy i w dni wolne",
+      "Czas pracy: na poziomym kafelku obok zegara lista prac (do wykonania i wykonane); można ją też pokazać jako osobny kafelek",
+      "Terminy w listach do zrobienia: dzień i opcjonalnie godzina, z kolorem „po terminie”, „dziś”, „jutro”",
+      "Wersja web na telefonie: tablica w 3–4 kolumnach, menu na dole ekranu"
+    ],
+    "items_en": [
+      "Faster sign-in: signing in from a new device or network (e.g. your phone) no longer takes up to 15 seconds",
+      "Web version: after you tap “Sign in” you immediately see that sign-in is in progress, then that your account data is loading; if the server doesn't respond, you get a message and “Try again”",
+      "The web version starts faster, especially on mobile networks; on a phone the sign-in window has larger fields and buttons and doesn't move when the keyboard hides",
+      "Sign-in window on the first launch of the desktop app: sign in or choose “Work locally”; 5 sign-in panel colors to choose from",
+      "“Add account” button on the left, above the user name",
+      "Working hours: the “Late”, “Overtime” and “Report” buttons are always at hand – at work, after work and on days off",
+      "Working hours: a work list (to do and done) next to the clock on horizontal tiles; you can also show it as a separate tile",
+      "Deadlines in to-do lists: a day and optionally a time, colored “overdue”, “today”, “tomorrow”",
+      "Web version on a phone: a 3–4 column board and a menu at the bottom of the screen"
+    ]
+  },
+  {
     "version": "0.2.19",
     "date": "2026-11-23",
     "items": [

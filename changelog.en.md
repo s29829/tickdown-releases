@@ -1,5 +1,17 @@
 # TickDown – changelog
 
+## 0.2.20 – 2026-11-24
+
+- Faster sign-in: signing in from a new device or network (e.g. your phone) no longer takes up to 15 seconds
+- Web version: after you tap “Sign in” you immediately see that sign-in is in progress, then that your account data is loading; if the server doesn't respond, you get a message and “Try again”
+- The web version starts faster, especially on mobile networks; on a phone the sign-in window has larger fields and buttons and doesn't move when the keyboard hides
+- Sign-in window on the first launch of the desktop app: sign in or choose “Work locally”; 5 sign-in panel colors to choose from
+- “Add account” button on the left, above the user name
+- Working hours: the “Late”, “Overtime” and “Report” buttons are always at hand – at work, after work and on days off
+- Working hours: a work list (to do and done) next to the clock on horizontal tiles; you can also show it as a separate tile
+- Deadlines in to-do lists: a day and optionally a time, colored “overdue”, “today”, “tomorrow”
+- Web version on a phone: a 3–4 column board and a menu at the bottom of the screen
+
 ## 0.2.19 – 2026-11-23
 
 - TickDown account in the app: sign in with the same account as in the web version, and your boards, lists, notebooks and archive stay the same on the computer and in the browser

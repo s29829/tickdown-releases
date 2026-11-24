@@ -1,5 +1,17 @@
 # TickDown – historia zmian
 
+## 0.2.20 – 2026-11-24
+
+- Szybsze logowanie: z nowego urządzenia lub nowej sieci (np. z telefonu) nie trzeba już czekać do 15 sekund
+- Wersja web: po stuknięciu „Zaloguj” od razu widać, że trwa logowanie, a potem wczytywanie danych konta; gdy serwer nie odpowiada, pojawia się komunikat i „Spróbuj ponownie”
+- Wersja web startuje szybciej, szczególnie w sieci komórkowej; na telefonie okno logowania ma większe pola i przyciski i nie przesuwa się, gdy chowa się klawiatura
+- Okno logowania przy pierwszym uruchomieniu aplikacji na komputerze: logujesz się albo wybierasz „Pracuj lokalnie”; 5 kolorów panelu logowania do wyboru
+- Przycisk „Dodaj konto” po lewej, nad nazwą użytkownika
+- Czas pracy: przyciski „Spóźnienie”, „Nadgodziny” i „Raport” są zawsze pod ręką – w pracy, po pracy i w dni wolne
+- Czas pracy: na poziomym kafelku obok zegara lista prac (do wykonania i wykonane); można ją też pokazać jako osobny kafelek
+- Terminy w listach do zrobienia: dzień i opcjonalnie godzina, z kolorem „po terminie”, „dziś”, „jutro”
+- Wersja web na telefonie: tablica w 3–4 kolumnach, menu na dole ekranu
+
 ## 0.2.19 – 2026-11-23
 
 - Konto TickDown w aplikacji: zaloguj się tym samym kontem co w wersji web, a tablice, listy, notatniki i archiwum będą takie same na komputerze i w przeglądarce
