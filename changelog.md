@@ -1,5 +1,20 @@
 # TickDown – historia zmian
 
+## 0.2.21 – 2026-11-25
+
+- Zespół: zaproś osoby do przestrzeni jako edytorów albo czytelników – wszyscy widzą te same elementy, a zmiany pojawiają się u innych po chwili (ustawienia przestrzeni → Zespół)
+- We wspólnej przestrzeni listy łączą się po pozycjach, alarmy każdy włącza sobie sam, a historia pracy, wyniki nauki i potwierdzenia dawek zostają prywatne
+- Kosz i historia wspólnej przestrzeni: przywrócisz elementy usunięte lub nadpisane przez innych w ostatnich 30 dniach; leki udostępniasz dopiero po zgodzie, kopiowanie poza przestrzeń włącza właściciel
+- Link do podglądu: pokaż tablicę albo grupę osobie bez konta – tylko do odczytu i do wybranej daty, treść zaszyfrowana; lista linków z liczbą otwarć, przedłużaniem i unieważnianiem (ustawienia przestrzeni → Linki)
+- Ta sama zawartość na komputerze i w przeglądarce: zmiany z obu miejsc łączą się same, a gdy ten sam element zmieniono w dwóch miejscach, okno „Zmiany do decyzji” pokazuje różnice – zostawiasz jedną albo obie wersje
+- Logowanie z pracą lokalną: wybierasz, które przestrzenie połączyć z kontem, na miniaturach tablic
+- Typ konta i limity widać na pasku statusu i w Ustawieniach → Konto
+- Przypomnienia w jednym oknie: kilka zaległych spraw (lekcje, dawki, listy) zamiast wielu okienek; okno leków pokazuje też niepotwierdzone dawki z ostatniej doby
+- Moduły nauki: kurs z paczki to grupa z własnym kursem – kilka modułów na jednej tablicy
+- Przestrzeń przeciągnięta w panelu bocznym na inną staje się w niej grupą
+- Ikony jednokolorowe jako domyślne (kolorowe – Ustawienia → Wygląd), krótkie dźwięki w fiszkach i testach (można wyłączyć)
+- Okno aplikacji przesuniesz także za nagłówek otwartego okna i panel boczny; dwuklik powiększa okno
+
 ## 0.2.20 – 2026-11-24
 
 - Szybsze logowanie: z nowego urządzenia lub nowej sieci (np. z telefonu) nie trzeba już czekać do 15 sekund

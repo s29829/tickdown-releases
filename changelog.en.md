@@ -1,5 +1,20 @@
 # TickDown – changelog
 
+## 0.2.21 – 2026-11-25
+
+- Team: invite people to a space as editors or viewers – everyone sees the same items and changes show up for others after a moment (space settings → Team)
+- In a shared space lists merge item by item, everyone turns alarms on for themselves, and work history, learning scores and dose confirmations stay private
+- Trash and history of a shared space: restore items deleted or overwritten by others in the last 30 days; medication is shared only after consent, copying out of the space is allowed by the owner
+- View link: show a board or a group to someone without an account – read only and until the date you choose, with encrypted content; a list of links with open counts, extending and revoking (space settings → Links)
+- The same content on the computer and in the browser: changes from both places merge by themselves, and when the same item was changed in two places, the “Changes to review” window shows the differences – keep one or both versions
+- Signing in with local work: choose which spaces to merge with the account, on board thumbnails
+- Account type and limits are shown in the status bar and in Settings → Account
+- Reminders in one window: several pending things (lessons, doses, lists) instead of many pop-ups; the medication window also shows unconfirmed doses from the last day
+- Learning modules: a course from a pack is a group with its own course – several modules on one board
+- A space dragged onto another in the sidebar becomes a group in it
+- Monochrome icons by default (colourful – Settings → Appearance), short sounds in flashcards and quizzes (can be turned off)
+- You can also move the app window by the header of an open window and by the sidebar; double-click maximises it
+
 ## 0.2.20 – 2026-11-24
 
 - Faster sign-in: signing in from a new device or network (e.g. your phone) no longer takes up to 15 seconds
