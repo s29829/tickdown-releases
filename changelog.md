@@ -1,5 +1,11 @@
 # TickDown – historia zmian
 
+## 0.2.24 – 2026-11-26
+
+- Nauka z AI (faza testowa): w oknie „Prompt dla AI” zalogowane konto może wybrać model – Claude albo Gemini – i kliknąć „Wygeneruj”. Paczka nauki powstaje na serwerze TickDown i sama się wczytuje, bez kopiowania promptu i wklejania odpowiedzi.
+- Generowanie ma dzienne limity. Gdy limit się wyczerpie, aplikacja pokazuje „Brak limitów w tym okresie” i odlicza, za ile się odnowi; model wraca na listę sam.
+- Generowanie można zostawić w tle – okno da się zamknąć, a gotowa paczka trafi do okna paczek.
+
 ## 0.2.23 – 2026-11-26
 
 - Panel boczny: szerokość zmienisz, przeciągając kreskę podziału (dwuklik przywraca domyślną); przy przestrzeni ikonka udostępniania – w kolorze, gdy przestrzeń jest wspólna; bez liczb elementów przy nazwach

@@ -1,5 +1,11 @@
 # TickDown – changelog
 
+## 0.2.24 – 2026-11-26
+
+- Learning with AI (test phase): in the "Prompt for AI" window a signed-in account can pick a model – Claude or Gemini – and click "Generate". The learning pack is created on the TickDown server and loads by itself, with no copying of the prompt or pasting of the answer.
+- Generation has daily limits. When a limit runs out, the app shows "No limits left for this period" with a countdown to the refresh; the model comes back on its own.
+- Generation can run in the background – you can close the window and the finished pack lands in the packs window.
+
 ## 0.2.23 – 2026-11-26
 
 - Sidebar: drag the divider to change its width (double-click restores the default); each space has a share icon – coloured when the space is shared; no item counts next to the names
