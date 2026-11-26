@@ -1,5 +1,14 @@
 # TickDown – changelog
 
+## 0.2.23 – 2026-11-26
+
+- Sidebar: drag the divider to change its width (double-click restores the default); each space has a share icon – coloured when the space is shared; no item counts next to the names
+- Share (formerly “Team”): a new icon and limit bars – shared spaces, people in a space, joined spaces
+- The app version is shown under the app name in the sidebar (“beta · v…”)
+- New accounts (beta): after confirming the address, a short form for the administrators; an account awaiting approval can ask for invitations
+- Signing up with an invitation: the account becomes active when you click the link in the email – the person who invited you gets an activation message
+- Invitations: copy the activation link or send it yourself (e.g. via a messenger), and the list shows whether the person has created an account and whether it is active yet
+
 ## 0.2.22 – 2026-11-26
 
 - Account invitations: when the server cannot send the email, the app says so instead of “Sent” – the invitation stays valid

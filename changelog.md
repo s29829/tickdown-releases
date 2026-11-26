@@ -1,5 +1,14 @@
 # TickDown – historia zmian
 
+## 0.2.23 – 2026-11-26
+
+- Panel boczny: szerokość zmienisz, przeciągając kreskę podziału (dwuklik przywraca domyślną); przy przestrzeni ikonka udostępniania – w kolorze, gdy przestrzeń jest wspólna; bez liczb elementów przy nazwach
+- Udostępnianie (dawniej „Zespół”): nowa ikona i paski limitów – wspólne przestrzenie, osoby w przestrzeni, dołączone przestrzenie
+- Pod nazwą aplikacji w panelu bocznym widać wersję („beta · v…”)
+- Nowe konta (faza beta): po potwierdzeniu adresu krótka ankieta dla administratorów; konto czekające na akceptację może poprosić o zaproszenia
+- Rejestracja z zaproszeniem: konto staje się aktywne po kliknięciu linku w mailu – osoba zapraszająca dostaje wiadomość o aktywacji
+- Zaproszenia: link aktywacyjny możesz skopiować albo wysłać sam (np. komunikatorem), a na liście widać, czy osoba założyła konto i czy jest ono już aktywne
+
 ## 0.2.22 – 2026-11-26
 
 - Zaproszenia do konta: gdy serwer nie zdoła wysłać maila, aplikacja mówi to wprost zamiast „Wysłano” – zaproszenie zostaje ważne
