@@ -1,5 +1,10 @@
 # TickDown – historia zmian
 
+## 0.2.22 – 2026-11-26
+
+- Zaproszenia do konta: gdy serwer nie zdoła wysłać maila, aplikacja mówi to wprost zamiast „Wysłano” – zaproszenie zostaje ważne
+- Liczba dostępnych zaproszeń odświeża się po otwarciu Ustawień – nowe zaproszenia przydzielone przez administratora widać bez ponownego logowania
+
 ## 0.2.21 – 2026-11-25
 
 - Zespół: zaproś osoby do przestrzeni jako edytorów albo czytelników – wszyscy widzą te same elementy, a zmiany pojawiają się u innych po chwili (ustawienia przestrzeni → Zespół)

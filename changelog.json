@@ -1,5 +1,17 @@
 [
   {
+    "version": "0.2.22",
+    "date": "2026-11-26",
+    "items": [
+      "Zaproszenia do konta: gdy serwer nie zdoła wysłać maila, aplikacja mówi to wprost zamiast „Wysłano” – zaproszenie zostaje ważne",
+      "Liczba dostępnych zaproszeń odświeża się po otwarciu Ustawień – nowe zaproszenia przydzielone przez administratora widać bez ponownego logowania"
+    ],
+    "items_en": [
+      "Account invitations: when the server cannot send the email, the app says so instead of “Sent” – the invitation stays valid",
+      "The number of available invitations refreshes when you open Settings – new invitations granted by the administrator show up without signing in again"
+    ]
+  },
+  {
     "version": "0.2.21",
     "date": "2026-11-25",
     "items": [

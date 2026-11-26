@@ -1,5 +1,10 @@
 # TickDown – changelog
 
+## 0.2.22 – 2026-11-26
+
+- Account invitations: when the server cannot send the email, the app says so instead of “Sent” – the invitation stays valid
+- The number of available invitations refreshes when you open Settings – new invitations granted by the administrator show up without signing in again
+
 ## 0.2.21 – 2026-11-25
 
 - Team: invite people to a space as editors or viewers – everyone sees the same items and changes show up for others after a moment (space settings → Team)
