@@ -1,5 +1,19 @@
 [
   {
+    "version": "0.2.26",
+    "date": "2026-11-27",
+    "items": [
+      "„Kopiuj jako” w menu kafelka i przestrzeni: Markdown albo tekst sformatowany (wkleja się z formatowaniem do edytorów tekstu i poczty). Każdy rodzaj kopiuje się po swojemu: listy z polami do odhaczania i terminami, testy i luki z kluczem odpowiedzi, fiszki i Gantt jako tabela, kalendarz jako plan widocznego tygodnia lub miesiąca. Kalendarz i wydarzenie można też skopiować jako iCalendar.",
+      "Kalendarz: wklejenie zawartości do innego kalendarza dopisuje wydarzenia zamiast zastępować dotychczasowe; kopiowane są też kafelki „Wydarzenie” z tej przestrzeni. Do kalendarza można wkleić tekst iCalendar.",
+      "Inspiracja: przy każdym module i rodzaju przestrzeni widać, kto podsunął pomysł i jak moduł się zmieniał (menu kafelka lub przestrzeni → „Inspiracja…”, kreator, zestawy startowe, Ustawienia → Ogólne). Po zalogowaniu można wysłać autorowi podziękowanie – dostanie maila."
+    ],
+    "items_en": [
+      "\"Copy as\" in the tile and space menu: Markdown or formatted text (pastes with formatting into text editors and email). Each kind copies in its own way: lists with checkboxes and due dates, tests and gaps with an answer key, flashcards and Gantt as a table, a calendar as a plan of the visible week or month. A calendar and an event can also be copied as iCalendar.",
+      "Calendar: pasting content into another calendar adds the events instead of replacing the existing ones; \"Event\" tiles from the same space are copied too. You can paste iCalendar text into a calendar.",
+      "Inspiration: every module and kind of space shows who suggested the idea and how the module changed (tile or space menu → \"Inspiration…\", the wizard, starter sets, Settings → General). When signed in, you can send the author a thank-you – they get an email."
+    ]
+  },
+  {
     "version": "0.2.25",
     "date": "2026-11-27",
     "items": [

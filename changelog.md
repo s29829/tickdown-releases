@@ -1,5 +1,11 @@
 # TickDown – historia zmian
 
+## 0.2.26 – 2026-11-27
+
+- „Kopiuj jako” w menu kafelka i przestrzeni: Markdown albo tekst sformatowany (wkleja się z formatowaniem do edytorów tekstu i poczty). Każdy rodzaj kopiuje się po swojemu: listy z polami do odhaczania i terminami, testy i luki z kluczem odpowiedzi, fiszki i Gantt jako tabela, kalendarz jako plan widocznego tygodnia lub miesiąca. Kalendarz i wydarzenie można też skopiować jako iCalendar.
+- Kalendarz: wklejenie zawartości do innego kalendarza dopisuje wydarzenia zamiast zastępować dotychczasowe; kopiowane są też kafelki „Wydarzenie” z tej przestrzeni. Do kalendarza można wkleić tekst iCalendar.
+- Inspiracja: przy każdym module i rodzaju przestrzeni widać, kto podsunął pomysł i jak moduł się zmieniał (menu kafelka lub przestrzeni → „Inspiracja…”, kreator, zestawy startowe, Ustawienia → Ogólne). Po zalogowaniu można wysłać autorowi podziękowanie – dostanie maila.
+
 ## 0.2.25 – 2026-11-27
 
 - Nauka z AI: w panelu bocznym pod „Dodaj nowy” nowy przycisk „Dodaj naukę z AI” – otwiera od razu okno paczki nauki z promptem dla AI. Gdy na serwerze nie ma jeszcze kluczy do modeli, zamiast wyboru modelu pojawia się zapowiedź „Wkrótce” – prompt nadal można skopiować do dowolnego czatu AI.

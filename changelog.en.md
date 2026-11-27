@@ -1,5 +1,11 @@
 # TickDown – changelog
 
+## 0.2.26 – 2026-11-27
+
+- "Copy as" in the tile and space menu: Markdown or formatted text (pastes with formatting into text editors and email). Each kind copies in its own way: lists with checkboxes and due dates, tests and gaps with an answer key, flashcards and Gantt as a table, a calendar as a plan of the visible week or month. A calendar and an event can also be copied as iCalendar.
+- Calendar: pasting content into another calendar adds the events instead of replacing the existing ones; "Event" tiles from the same space are copied too. You can paste iCalendar text into a calendar.
+- Inspiration: every module and kind of space shows who suggested the idea and how the module changed (tile or space menu → "Inspiration…", the wizard, starter sets, Settings → General). When signed in, you can send the author a thank-you – they get an email.
+
 ## 0.2.25 – 2026-11-27
 
 - Learning with AI: a new "Add AI learning" button under "Add new" in the sidebar opens the learning pack window with the AI prompt right away. When the server has no model keys yet, a "Coming soon" note replaces the model picker – you can still copy the prompt into any AI chat.
