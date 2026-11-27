@@ -1,5 +1,16 @@
 # TickDown – historia zmian
 
+## 0.2.25 – 2026-11-27
+
+- Nauka z AI: w panelu bocznym pod „Dodaj nowy” nowy przycisk „Dodaj naukę z AI” – otwiera od razu okno paczki nauki z promptem dla AI. Gdy na serwerze nie ma jeszcze kluczy do modeli, zamiast wyboru modelu pojawia się zapowiedź „Wkrótce” – prompt nadal można skopiować do dowolnego czatu AI.
+- Karteczki: w lewym dolnym rogu 6 kolorów do szybkiej zmiany papieru, tytuł tą samą czcionką co na innych kafelkach, krótsza nazwa domyślna („Notka 1”). Karteczkę upuszczoną na inną karteczkę układa się w stos – przeglądasz go strzałkami ‹ ›, a „Rozłóż stos” w menu kafelka rozkłada go z powrotem.
+- Kalendarz 4×2 i 6×2 w widoku miesiąca: po lewej miesiąc, po prawej lista wydarzeń; kliknięcie dnia pokazuje listę od tego dnia.
+- Terminy pozycji list do zrobienia pojawiają się na tablicy jako kafelki „Termin” i w kalendarzu; w ustawieniach przestrzeni nowa sekcja „Terminy”.
+- Licznik tygodnia ma listę tematów „W tygodniu” / „Weekend” z historią i raportem; w historii pracy pozycje „Dziś” i „Później”.
+- Usunięte elementy trafiają do Kosza (razem z zawartością grup) i można je stamtąd przywrócić. Sprawy konta i Kosz są w osobnym oknie „Ustawienia konta”.
+- Pasek menu: ikony liczników i przestrzeni takie jak w aplikacji – jednokolorowe albo kolorowe.
+- Wersja web uruchamia się szybciej – od razu z kopii na urządzeniu, bez czekania na serwer.
+
 ## 0.2.24 – 2026-11-26
 
 - Nauka z AI (faza testowa): w oknie „Prompt dla AI” zalogowane konto może wybrać model – Claude albo Gemini – i kliknąć „Wygeneruj”. Paczka nauki powstaje na serwerze TickDown i sama się wczytuje, bez kopiowania promptu i wklejania odpowiedzi.

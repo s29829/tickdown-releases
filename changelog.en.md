@@ -1,5 +1,16 @@
 # TickDown – changelog
 
+## 0.2.25 – 2026-11-27
+
+- Learning with AI: a new "Add AI learning" button under "Add new" in the sidebar opens the learning pack window with the AI prompt right away. When the server has no model keys yet, a "Coming soon" note replaces the model picker – you can still copy the prompt into any AI chat.
+- Sticky notes: 6 colours in the bottom-left corner for a quick paper change, the title in the same font as other tiles, a shorter default name ("Sticky 1"). Drop a sticky note on another one to make a stack – browse it with ‹ › and use "Spread the stack" in the tile menu to lay it out again.
+- 4×2 and 6×2 calendar in month view: the month on the left, the event list on the right; click a day to list events from that day.
+- Due dates of to-do items show up on the board as "Deadline" tiles and in the calendar; a new "Dates" section in space settings.
+- The week counter has a topic list "Weekdays" / "Weekend" with history and a report; work history gets "Today" and "Later" items.
+- Deleted items go to the Trash (together with group contents) and can be restored from there. Account matters and the Trash live in a separate "Account settings" window.
+- Menu bar: counter and space icons match the app – monochrome or colour.
+- The web version starts faster – straight from the copy on the device, without waiting for the server.
+
 ## 0.2.24 – 2026-11-26
 
 - Learning with AI (test phase): in the "Prompt for AI" window a signed-in account can pick a model – Claude or Gemini – and click "Generate". The learning pack is created on the TickDown server and loads by itself, with no copying of the prompt or pasting of the answer.
