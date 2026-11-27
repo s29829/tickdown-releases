@@ -1,5 +1,14 @@
 # TickDown – historia zmian
 
+## 0.2.27 – 2026-11-27
+
+- Kalendarz: nowy przycisk „Kalendarz” w panelu bocznym (pod „Ekran główny”, który ma teraz ikonę domku) otwiera kalendarz wszystkich przestrzeni na cały ekran. Domyślnie widok tygodnia; doszedł widok roku – 12 miesięcy na jednym ekranie, dni z wydarzeniami oznaczone kropką, kliknięcie dnia lub miesiąca otwiera jego widok. Widok roku mają też duże kafelki kalendarza (6×2 i większe).
+- Ekran główny pokazuje już tylko przestrzenie. Duże kafelki: liczby obok mniejszego podglądu tablicy; małe kafelki: najbliższy koniec i postęp list; widok listy: statystyki przestrzeni w jednej linii.
+- Na dole ekranu głównego i kalendarza pasek statystyk wszystkich przestrzeni – taki jak na tablicy.
+- Przyciski usuwania wyglądają jak pozostałe przyciski, bez jaskrawego czerwonego tła.
+- Karteczki: nowa karteczka ma domyślnie wielkość 1×1 i kolor inny niż karteczki już leżące na tablicy.
+- „Kopiuj jako”: termin pozycji listy podany samą datą pokazuje właściwy dzień.
+
 ## 0.2.26 – 2026-11-27
 
 - „Kopiuj jako” w menu kafelka i przestrzeni: Markdown albo tekst sformatowany (wkleja się z formatowaniem do edytorów tekstu i poczty). Każdy rodzaj kopiuje się po swojemu: listy z polami do odhaczania i terminami, testy i luki z kluczem odpowiedzi, fiszki i Gantt jako tabela, kalendarz jako plan widocznego tygodnia lub miesiąca. Kalendarz i wydarzenie można też skopiować jako iCalendar.

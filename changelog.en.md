@@ -1,5 +1,14 @@
 # TickDown – changelog
 
+## 0.2.27 – 2026-11-27
+
+- Calendar: a new "Calendar" button in the sidebar (below "Home", which now has a house icon) opens the calendar of all spaces full screen. Week view by default; there is a new year view – 12 months on one screen, days with events marked with a dot, click a day or a month to open it. Large calendar tiles (6×2 and bigger) get the year view too.
+- Home now shows only spaces. Large tiles: numbers next to a smaller board preview; small tiles: the nearest end and list progress; list view: space statistics in one line.
+- Home and the calendar get a statistics bar for all spaces at the bottom – just like on a board.
+- Delete buttons look like the other buttons, without a bright red background.
+- Sticky notes: a new sticky note is 1×1 by default and gets a colour different from the notes already on the board.
+- "Copy as": a list item due on a date (without a time) shows the right day.
+
 ## 0.2.26 – 2026-11-27
 
 - "Copy as" in the tile and space menu: Markdown or formatted text (pastes with formatting into text editors and email). Each kind copies in its own way: lists with checkboxes and due dates, tests and gaps with an answer key, flashcards and Gantt as a table, a calendar as a plan of the visible week or month. A calendar and an event can also be copied as iCalendar.

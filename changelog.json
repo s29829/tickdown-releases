@@ -1,5 +1,25 @@
 [
   {
+    "version": "0.2.27",
+    "date": "2026-11-27",
+    "items": [
+      "Kalendarz: nowy przycisk „Kalendarz” w panelu bocznym (pod „Ekran główny”, który ma teraz ikonę domku) otwiera kalendarz wszystkich przestrzeni na cały ekran. Domyślnie widok tygodnia; doszedł widok roku – 12 miesięcy na jednym ekranie, dni z wydarzeniami oznaczone kropką, kliknięcie dnia lub miesiąca otwiera jego widok. Widok roku mają też duże kafelki kalendarza (6×2 i większe).",
+      "Ekran główny pokazuje już tylko przestrzenie. Duże kafelki: liczby obok mniejszego podglądu tablicy; małe kafelki: najbliższy koniec i postęp list; widok listy: statystyki przestrzeni w jednej linii.",
+      "Na dole ekranu głównego i kalendarza pasek statystyk wszystkich przestrzeni – taki jak na tablicy.",
+      "Przyciski usuwania wyglądają jak pozostałe przyciski, bez jaskrawego czerwonego tła.",
+      "Karteczki: nowa karteczka ma domyślnie wielkość 1×1 i kolor inny niż karteczki już leżące na tablicy.",
+      "„Kopiuj jako”: termin pozycji listy podany samą datą pokazuje właściwy dzień."
+    ],
+    "items_en": [
+      "Calendar: a new \"Calendar\" button in the sidebar (below \"Home\", which now has a house icon) opens the calendar of all spaces full screen. Week view by default; there is a new year view – 12 months on one screen, days with events marked with a dot, click a day or a month to open it. Large calendar tiles (6×2 and bigger) get the year view too.",
+      "Home now shows only spaces. Large tiles: numbers next to a smaller board preview; small tiles: the nearest end and list progress; list view: space statistics in one line.",
+      "Home and the calendar get a statistics bar for all spaces at the bottom – just like on a board.",
+      "Delete buttons look like the other buttons, without a bright red background.",
+      "Sticky notes: a new sticky note is 1×1 by default and gets a colour different from the notes already on the board.",
+      "\"Copy as\": a list item due on a date (without a time) shows the right day."
+    ]
+  },
+  {
     "version": "0.2.26",
     "date": "2026-11-27",
     "items": [
